@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beckenbodenstuhl – HaarFrei Trier</title>
+  <meta name="description" content="Nicht-invasives Beckenbodentraining mit dem Beckenbodenstuhl bei HaarFrei Trier. HIFEM-Technologie gegen Inkontinenz und für mehr Lebensqualität – ohne Entkleiden, ohne Schmerzen." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── BECKENBODEN-SPEZIFISCH ── */
+    .pelvi-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .pelvi-step {
+      text-align: center; padding: 2rem 1.5rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.3s var(--trans), box-shadow 0.3s;
+    }
+    .pelvi-step:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .pelvi-step-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white; font-size: 1.1rem; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .pelvi-step h4 { font-size: 0.9rem; font-weight: 600; color: var(--dark); margin-bottom: 0.5rem; }
+    .pelvi-step p { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+
+    .indication-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    .indication-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.4rem 1.6rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .indication-item:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); }
+    .indication-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--primary-ultra);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary);
+    }
+    .indication-icon svg { width: 18px; height: 18px; }
+    .indication-item strong { display: block; font-size: 0.88rem; color: var(--dark); font-weight: 600; margin-bottom: 3px; }
+    .indication-item span { font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--primary-ultra), var(--primary-pale));
+      border: 1.5px solid var(--border-strong);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 3rem;
+      margin-top: 3rem;
+      display: flex; align-items: center; gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .highlight-stat { text-align: center; flex: 1; min-width: 120px; }
+    .highlight-stat .h-num {
+      font-family: var(--font-serif); font-size: 3rem; font-weight: 300;
+      color: var(--primary); line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .highlight-stat .h-label { font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
+    .highlight-stat .h-divider { width: 1px; height: 60px; background: var(--border-strong); }
+
+    .contra-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .contra-item {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+    .contra-item svg { width: 16px; height: 16px; color: var(--primary-light); flex-shrink: 0; }
+
+    .pelvi-photo-section {
+      position: relative; border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-lg);
+    }
+    .pelvi-photo-section img {
+      width: 100%; height: 480px;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .pelvi-photo-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(12,34,34,0.75), transparent);
+      color: white;
+    }
+    .pelvi-photo-overlay strong { display: block; font-size: 1rem; font-weight: 500; margin-bottom: 4px; }
+    .pelvi-photo-overlay span { font-size: 0.8rem; opacity: 0.75; }
+
+    @media (max-width: 1024px) {
+      .pelvi-steps { grid-template-columns: 1fr 1fr; }
+      .indication-grid { grid-template-columns: 1fr; }
+      .highlight-box { padding: 2rem; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .pelvi-steps { grid-template-columns: 1fr 1fr; }
+      .highlight-box { flex-direction: column; gap: 1.5rem; }
+      .pelvi-photo-section img { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <a href="beckenbodenstuhl.html" class="nav-link active">Beckenbodenstuhl</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Start</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Beckenbodenstuhl</span>
+        </div>
+        <h1>Der <em>Beckenbodenstuhl</em></h1>
+        <p>Nicht-invasives Beckenbodentraining mit HIFEM-Technologie – vollständig bekleidet, schmerzfrei und nachhaltig wirksam.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO CARDS -->
+  <section class="section">
+    <div class="container">
+      <div class="info-cards">
+        <div class="info-card reveal-up">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <strong>28 Minuten</strong>
+          <span>Pro Sitzung · vollständig bekleidet</span>
+        </div>
+        <div class="info-card reveal-up" data-delay="100">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <strong>10.000+</strong>
+          <span>Muskelkontraktionen pro Sitzung</span>
+        </div>
+        <div class="info-card reveal-up" data-delay="200">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <strong>FDA-zugelassen</strong>
+          <span>Klinisch geprüft &amp; CE-zertifiziert</span>
+        </div>
+        <div class="info-card reveal-up" data-delay="300">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857"/></svg>
+          </div>
+          <strong>Für Damen &amp; Herren</strong>
+          <span>Geeignet für alle Altersgruppen</span>
+        </div>
+      </div>
+
+      <!-- MAIN INTRO -->
+      <div class="about-grid" style="margin-top:5rem">
+        <div class="about-text">
+          <p class="section-label reveal-left">Was ist der Beckenbodenstuhl?</p>
+          <h2 class="section-title reveal-left">
+            Starker Beckenboden –<br /><em>ganz ohne Sport.</em>
+          </h2>
+          <div class="divider reveal-left"></div>
+          <p class="about-desc reveal-left">
+            Der Beckenbodenstuhl ist eine revolutionäre, nicht-invasive Behandlung zur gezielten Stärkung
+            der Beckenbodenmuskulatur. Mittels hochintensiver elektromagnetischer Energie (HIFEM-Technologie)
+            werden in nur einer 28-minütigen Sitzung über <strong>10.000 supramaximale Muskelkontraktionen</strong>
+            ausgelöst – ein Trainingseffekt, der durch Eigentraining kaum erreichbar wäre.
+          </p>
+          <p class="about-desc reveal-left">
+            Die Behandlung erfolgt vollständig bekleidet, ist vollkommen schmerzfrei und erfordert
+            keine Ausfallzeiten. Sie setzen sich einfach hin – der Stuhl übernimmt den Rest.
+          </p>
+          <div class="about-features reveal-left">
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Vollständig bekleidet</strong><span>Kein Entkleiden, kein Fremdkörperkontakt</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Keine Ausfallzeiten</strong><span>Sofort wieder alltagsfähig</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Ergebnisse ab Sitzung 1</strong><span>Spürbare Verbesserung schon früh</span></div>
+            </div>
+          </div>
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-primary reveal-left" style="margin-top:2rem">Jetzt Termin buchen</a>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="pelvi-photo-section">
+            <img src="Fotos/pelvistuhl.jpg" alt="Beckenbodenstuhl HaarFrei Trier"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div style="display:none;align-items:center;justify-content:center;height:480px;background:linear-gradient(135deg,var(--primary-pale),var(--primary-ultra));border-radius:var(--radius-lg)">
+              <div style="text-align:center;color:var(--primary-light)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="width:64px;height:64px;margin:0 auto 12px"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span style="font-size:0.75rem;letter-spacing:2px;text-transform:uppercase">Beckenbodenstuhl</span>
+              </div>
+            </div>
+            <div class="pelvi-photo-overlay">
+              <strong>Beckenbodenstuhl bei HaarFrei Trier</strong>
+              <span>HIFEM-Technologie · FDA-zugelassen · CE-zertifiziert</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHTS -->
+      <div class="highlight-box reveal-up">
+        <div class="highlight-stat">
+          <div class="h-num">10.000</div>
+          <div class="h-label">supramaximale Muskel-<br/>kontraktionen pro Sitzung</div>
+        </div>
+        <div class="highlight-stat">
+          <div class="h-num">28</div>
+          <div class="h-label">Minuten pro<br/>Behandlung</div>
+        </div>
+        <div class="highlight-stat">
+          <div class="h-num">4–6</div>
+          <div class="h-label">Sitzungen für<br/>optimale Ergebnisse</div>
+        </div>
+        <div class="highlight-stat">
+          <div class="h-num">0</div>
+          <div class="h-label">Schmerzen &amp;<br/>Ausfallzeiten</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIE -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Technologie</p>
+        <h2 class="section-title reveal-up">Wie funktioniert<br /><em>der Beckenbodenstuhl?</em></h2>
+        <p class="section-desc reveal-up">Die HIFEM-Technologie macht möglich, was klassisches Beckenbodentraining nicht leisten kann.</p>
+      </div>
+
+      <div class="about-grid" style="margin-top:3rem">
+        <div class="about-visual reveal-left">
+          <div class="tech-orb-wrap" style="padding:3rem 2rem">
+            <div class="tech-orb">
+              <div class="orb-ring r1"></div>
+              <div class="orb-ring r2"></div>
+              <div class="orb-ring r3"></div>
+              <div class="orb-core"><span style="font-size:0.75rem">HIFEM</span><small>Magnetwellen</small></div>
+            </div>
+            <div class="tech-spec t1"><strong>Tiefe Muskelschicht</strong><span>Alle 3 Schichten</span></div>
+            <div class="tech-spec t2"><strong>10.000+</strong><span>Kontraktionen</span></div>
+            <div class="tech-spec t3"><strong>28 min</strong><span>Pro Sitzung</span></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label reveal-right">HIFEM-Technologie</p>
+          <h3 class="section-title reveal-right" style="font-size:1.8rem">Hochintensive fokussierte<br /><em>Elektromagnetfelder.</em></h3>
+          <div class="divider reveal-right"></div>
+          <p class="about-desc reveal-right">
+            HIFEM steht für <strong>High-Intensity Focused Electro Magnetic Field</strong>. Die Technologie
+            nutzt fokussierte elektromagnetische Energie, um die motorischen Neuronen der Beckenbodenmuskulatur
+            direkt zu stimulieren – und löst dabei supramaximale Kontraktionen aus, die selbst bei intensivstem
+            Sport nicht erreichbar wären.
+          </p>
+          <p class="about-desc reveal-right">
+            Die Muskulatur wird abwechselnd an- und entspannt, was einen nachhaltigen Regenerationsprozess
+            in Gang setzt. Gleichzeitig wird die Kollagenproduktion angeregt und die neuromuskuläre
+            Kontrolle des Beckenbodens verbessert.
+          </p>
+          <div class="tech-features reveal-right" style="margin-top:1.5rem">
+            <div class="tech-feature">
+              <div class="tf-info"><span>Muskelkräftigung</span><strong>nachhaltig</strong></div>
+              <div class="tf-bar"><div class="tf-fill" style="width:95%"></div></div>
+            </div>
+            <div class="tech-feature">
+              <div class="tf-info"><span>Schmerzfreiheit</span><strong>100%</strong></div>
+              <div class="tf-bar"><div class="tf-fill" style="width:100%"></div></div>
+            </div>
+            <div class="tech-feature">
+              <div class="tf-info"><span>Komfort</span><strong>vollbekleidet</strong></div>
+              <div class="tf-bar"><div class="tf-fill" style="width:100%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDIKATIONEN -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Anwendungsgebiete</p>
+        <h2 class="section-title reveal-up">Für wen ist der<br /><em>Beckenbodenstuhl geeignet?</em></h2>
+        <p class="section-desc reveal-up">Ob nach der Geburt, nach einer OP oder einfach zur Vorbeugung – der Beckenbodenstuhl hilft vielen Menschen.</p>
+      </div>
+      <div class="indication-grid">
+        <div class="indication-item reveal-up" data-delay="0">
+          <div class="indication-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <strong>Blasenschwäche &amp; Inkontinenz</strong>
+            <span>Bei Belastungsinkontinenz, Tröpfeln oder unwillkürlichem Urinverlust</span>
+          </div>
+        </div>
+        <div class="indication-item reveal-up" data-delay="100">
+          <div class="indication-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0112 0v1"/></svg>
+          </div>
+          <div>
+            <strong>Nach der Geburt</strong>
+            <span>Gezielte Regeneration der Beckenbodenmuskulatur nach Schwangerschaft &amp; Entbindung</span>
+          </div>
+        </div>
+        <div class="indication-item reveal-up" data-delay="0">
+          <div class="indication-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <strong>Vaginale Schlaffheit &amp; Trockenheit</strong>
+            <span>Nicht-invasive Straffung und Verbesserung der Elastizität des Gewebes</span>
+          </div>
+        </div>
+        <div class="indication-item reveal-up" data-delay="100">
+          <div class="indication-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857"/></svg>
+          </div>
+          <div>
+            <strong>Für Männer: nach Prostata-OP</strong>
+            <span>Wiedererlangung der Kontinenz und Verbesserung der Lebensqualität</span>
+          </div>
+        </div>
+        <div class="indication-item reveal-up" data-delay="0">
+          <div class="indication-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </div>
+          <div>
+            <strong>Unterer Rückenschmerz</strong>
+            <span>Kräftigung des Beckenbodens zur Vorbeugung und Linderung von Rückenbeschwerden</span>
+          </div>
+        </div>
+        <div class="indication-item reveal-up" data-delay="100">
+          <div class="indication-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02l.707.707M1 12h2m18 0h2"/></svg>
+          </div>
+          <div>
+            <strong>Vorbeugung &amp; Prophylaxe</strong>
+            <span>Aktive Stärkung als Prävention – auch ohne bestehende Beschwerden</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEHANDLUNGSABLAUF -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Behandlungsablauf</p>
+        <h2 class="section-title reveal-up">So einfach ist<br /><em>Ihre Behandlung.</em></h2>
+        <p class="section-desc reveal-up">In wenigen Schritten zu einem stärkeren Beckenboden – ganz entspannt und ohne Aufwand.</p>
+      </div>
+      <div class="pelvi-steps">
+        <div class="pelvi-step reveal-up" data-delay="0">
+          <div class="pelvi-step-num">1</div>
+          <h4>Beratung</h4>
+          <p>Wir besprechen Ihre Anliegen, Ihre Vorgeschichte und klären, ob der Beckenbodenstuhl für Sie geeignet ist.</p>
+        </div>
+        <div class="pelvi-step reveal-up" data-delay="100">
+          <div class="pelvi-step-num">2</div>
+          <h4>Hinsetzen &amp; Entspannen</h4>
+          <p>Vollständig bekleidet nehmen Sie auf dem Stuhl Platz. Keine Umziehkabine, kein Unbehagen.</p>
+        </div>
+        <div class="pelvi-step reveal-up" data-delay="200">
+          <div class="pelvi-step-num">3</div>
+          <h4>28 Minuten Behandlung</h4>
+          <p>Die HIFEM-Technologie stimuliert Ihren Beckenboden mit über 10.000 Kontraktionen – Sie spüren ein leichtes Kribbeln.</p>
+        </div>
+        <div class="pelvi-step reveal-up" data-delay="300">
+          <div class="pelvi-step-num">4</div>
+          <h4>Sofort wieder fit</h4>
+          <p>Keine Ausfallzeiten – Sie gehen direkt in Ihren Alltag. Empfohlen: 4–6 Sitzungen in 2–4 Wochen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VORTEILE -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label reveal-left">Ihre Vorteile</p>
+          <h2 class="section-title reveal-left">Was Sie von uns<br /><em>erwarten können.</em></h2>
+          <div class="divider reveal-left"></div>
+          <p class="about-desc reveal-left">
+            Bei HaarFrei Trier bieten wir den Beckenbodenstuhl als diskrete, professionelle Behandlung an –
+            in vertrauter Atmosphäre, mit einfühlsamer Begleitung und höchsten Hygienestandards.
+          </p>
+          <div class="about-features reveal-left">
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Vollständig bekleidet</strong><span>Kein Entkleiden, kein Fremdkörperkontakt</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Klinisch geprüft</strong><span>FDA-zugelassen, CE-zertifiziert, 7 Studien</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Schnelle Ergebnisse</strong><span>Spürbare Verbesserung bereits nach der 1. Sitzung</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Für Damen &amp; Herren</strong><span>Geeignet für alle Altersgruppen</span></div>
+            </div>
+          </div>
+          <a href="kontakt.html" class="btn btn-outline reveal-left" style="margin-top:2rem">Beratung anfragen</a>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="about-img-wrap">
+            <div class="about-img-box">
+              <img src="Fotos/beratung-1.jpg" alt="Beratung bei HaarFrei Trier"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div style="display:none" class="about-img-placeholder-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0112 0v1"/></svg>
+                <span>Beratungsfoto</span>
+              </div>
+            </div>
+            <div class="about-accent-line"></div>
+          </div>
+          <!-- Kontraindikationen -->
+          <div style="margin-top:2rem;padding:1.5rem 2rem;background:var(--off-white);border:1.5px solid var(--border);border-radius:var(--radius-lg)">
+            <p style="font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-faint);margin-bottom:1rem">Kontraindikationen</p>
+            <div class="contra-list">
+              <div class="contra-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                Herzschrittmacher oder metallische Implantate
+              </div>
+              <div class="contra-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                Schwangerschaft
+              </div>
+              <div class="contra-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                Frische Wunden / OP kürzer als 6–9 Wochen zurück
+              </div>
+              <div class="contra-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+                Kupfer-Spirale (IUD)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section-teal">
+    <div class="container">
+      <div class="booking-inner reveal-up">
+        <p class="section-label section-label-white">Jetzt starten</p>
+        <h2 class="booking-title">Stärken Sie Ihren<br /><em>Beckenboden noch heute.</em></h2>
+        <p class="booking-sub">Kostenlose Erstberatung · Diskrete Atmosphäre · Keine Ausfallzeiten</p>
+        <div class="booking-actions">
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-white btn-lg">
+            <span>Online Termin buchen</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:016072176446" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.11 12 19.79 19.79 0 011.09 3.39 2 2 0 013.1 1.21H6.1a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>0160 / 721 76 46</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" class="footer-logo-img" />
+          <p>Premium Laser-Haarentfernung &amp; Beckenbodenstuhl in Trier.<br />Seit über 8 Jahren Ihr Experte.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Studio</h4>
+          <a href="einrichtung-team.html">Team &amp; Studio</a>
+          <a href="behandlungsmethoden.html">Methoden</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a>
+          <a href="preise-gutscheine.html">Preise</a>
+          <a href="faq.html">FAQ</a>
+          <a href="job.html">Jobs</a>
+        </div>
+        <div class="footer-links">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+        </div>
+        <div class="footer-links">
+          <h4>Kontakt</h4>
+          <a href="tel:016072176446">0160 / 721 76 46</a>
+          <a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a>
+          <a href="kontakt.html">Südallee 34, Trier</a>
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank">Online Termin buchen</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 HaarFrei Trier · Alle Rechte vorbehalten</span>
+        <span>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a> ·
+          <a href="agb.html">AGB</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

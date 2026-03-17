@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ – HaarFrei Trier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <a href="faq.html" class="nav-link active">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container"><div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Start</a><span class="breadcrumb-sep">›</span><span>FAQ</span></div>
+      <h1>Häufig gestellte <em>Fragen</em></h1>
+      <p>Antworten auf die wichtigsten Fragen rund um die dauerhafte Laser-Haarentfernung.</p>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 3fr;gap:4rem;align-items:start">
+        <div>
+          <p class="section-label reveal-left">Kategorien</p>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;margin-top:0.5rem" class="reveal-left">
+            <a href="#allgemein" style="font-size:0.85rem;color:var(--primary);padding:0.5rem 0;border-bottom:1px solid var(--border)">Allgemeines</a>
+            <a href="#behandlung" style="font-size:0.85rem;color:var(--text-dim);padding:0.5rem 0;border-bottom:1px solid var(--border);transition:color 0.2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-dim)'">Behandlung</a>
+            <a href="#vorbereitung" style="font-size:0.85rem;color:var(--text-dim);padding:0.5rem 0;border-bottom:1px solid var(--border);transition:color 0.2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-dim)'">Vorbereitung</a>
+            <a href="#nachsorge" style="font-size:0.85rem;color:var(--text-dim);padding:0.5rem 0;border-bottom:1px solid var(--border);transition:color 0.2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-dim)'">Nachsorge</a>
+            <a href="#preise" style="font-size:0.85rem;color:var(--text-dim);padding:0.5rem 0;transition:color 0.2s" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-dim)'">Kosten &amp; Termine</a>
+          </div>
+        </div>
+
+        <div>
+          <!-- Allgemeines -->
+          <div id="allgemein" style="margin-bottom:3rem">
+            <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:2px solid var(--primary-pale)" class="reveal-up">Allgemeines</h3>
+            <div class="faq-list reveal-up">
+              <div class="faq-item">
+                <button class="faq-question">Wie funktioniert die Laser-Haarentfernung?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Bei der Laser-Haarentfernung wird hochenergetisches Licht auf die Haut geleitet. Das Licht wird vom Melanin (dem Farbstoff) im Haar absorbiert und in Wärme umgewandelt. Diese Wärme zerstört den Haarfollikel dauerhaft, ohne das umgebende Gewebe zu schädigen.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Ist die Behandlung dauerhaft wirksam?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Ja! Nach dem vollständigen Behandlungszyklus (in der Regel 6–8 Sitzungen) ist die Haarentfernung dauerhaft. Da sich Haare in verschiedenen Wachstumsphasen befinden, sind mehrere Sitzungen notwendig, um alle Haarfollikel zu treffen.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Für wen ist die Behandlung geeignet?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Unser 3-Wellenlängen-Diodenlaser ist für alle Hauttypen (I–VI) geeignet. Die Behandlung eignet sich für Damen und Herren ab 18 Jahren. Bei hormonellen Erkrankungen oder bestimmten Medikamenten empfehlen wir ein kostenloses Erstgespräch.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Behandlung -->
+          <div id="behandlung" style="margin-bottom:3rem">
+            <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:2px solid var(--primary-pale)" class="reveal-up">Behandlung</h3>
+            <div class="faq-list reveal-up">
+              <div class="faq-item">
+                <button class="faq-question">Ist die Behandlung schmerzhaft?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Dank der SHR-Methode (Super Hair Removal) und der integrierten Kühltechnologie ist die Behandlung in der Regel nahezu schmerzfrei. Manche Kunden beschreiben ein leichtes Kribbeln oder ein Wärmegefühl – aber keine Schmerzen.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Wie viele Sitzungen sind notwendig?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Im Durchschnitt werden 6–8 Sitzungen für ein optimales Ergebnis empfohlen. Der Abstand zwischen den Sitzungen beträgt je nach Körperzone 4–8 Wochen. In einem kostenlosen Erstgespräch beraten wir Sie individuell.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Wie lange dauert eine Behandlung?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Die Behandlungsdauer hängt von der Zone ab: Kleine Zonen wie Oberlippe (5–10 Min.), mittlere Zonen wie Achseln (15–20 Min.) und große Zonen wie ganze Beine (45–60 Min.).</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Welche Körperzonen können behandelt werden?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Nahezu alle Körperzonen können behandelt werden: Gesicht (Oberlippe, Kinn, Wangen), Achseln, Arme, Beine, Bikinizone, Rücken, Brust, Bauch sowie für Herren: Bart, Nacken, Schultern und mehr.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vorbereitung -->
+          <div id="vorbereitung" style="margin-bottom:3rem">
+            <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:2px solid var(--primary-pale)" class="reveal-up">Vorbereitung</h3>
+            <div class="faq-list reveal-up">
+              <div class="faq-item">
+                <button class="faq-question">Was muss ich vor der Behandlung beachten?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Vor der Behandlung: Betroffene Stellen rasieren (nicht wachsen/zupfen), kein Solarium oder intensive Sonneneinstrahlung 4 Wochen vorher, keine Selbstbräuner, saubere Haut ohne Cremes oder Deodorant.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Darf ich vor der Behandlung in die Sonne?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Intensive Sonneneinstrahlung sollte 4 Wochen vor und nach der Behandlung vermieden werden. Eine leichte Bräune ist bei der SHR-Methode oft kein Ausschlussgrund – fragen Sie uns gerne im Erstgespräch.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nachsorge -->
+          <div id="nachsorge" style="margin-bottom:3rem">
+            <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:2px solid var(--primary-pale)" class="reveal-up">Nachsorge</h3>
+            <div class="faq-list reveal-up">
+              <div class="faq-item">
+                <button class="faq-question">Was muss ich nach der Behandlung beachten?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Nach der Behandlung: 24–48 Std. kein Sport/Sauna/heißes Bad, Sonnenschutz (LSF 50+) auf behandelten Stellen, keine irritierenden Hautpflegeprodukte für 24 Std. Die Haut kann leicht gerötet sein – das ist normal und vergeht schnell.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Wann sehe ich erste Ergebnisse?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Nach der ersten Sitzung können Sie bereits eine Reduktion der Haarwachstumsrate bemerken. Nach 3–4 Sitzungen ist der Unterschied deutlich sichtbar. Nach dem vollständigen Zyklus sind bis zu 95% der Haare dauerhaft weg.</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kosten & Termine -->
+          <div id="preise">
+            <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:400;color:var(--dark);margin-bottom:1.5rem;padding-bottom:0.8rem;border-bottom:2px solid var(--primary-pale)" class="reveal-up">Kosten &amp; Termine</h3>
+            <div class="faq-list reveal-up">
+              <div class="faq-item">
+                <button class="faq-question">Gibt es eine Vertragsbindung?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Nein! Bei HaarFrei Trier gibt es keine Vertragsbindung. Jede Behandlung wird einzeln gebucht und bezahlt. Wir überzeugen durch Qualität, nicht durch Verträge.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Gibt es Rabatte?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Ja! Ab der zweiten Behandlungszone erhalten Sie einen Rabatt von 10 € pro Zone (ausgenommen Paketpreise). Außerdem posten wir jede Woche Sonderangebote auf Instagram und Facebook.</p></div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Wie buche ich einen Termin?<svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+                <div class="faq-answer"><p>Sie können bequem online über unsere Buchungsseite (etermin.net/haarfrei-trier) einen Termin buchen, uns telefonisch unter 0160 / 721 76 46 anrufen oder eine E-Mail an info@haarfrei-trier.de senden.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-teal">
+    <div class="container"><div class="booking-inner reveal-up">
+      <p class="section-label section-label-white">Noch Fragen?</p>
+      <h2 class="booking-title">Wir beraten Sie<br /><em>kostenlos &amp; unverbindlich.</em></h2>
+      <p class="booking-sub">Persönlich, telefonisch oder per E-Mail – wir sind für Sie da.</p>
+      <div class="booking-actions">
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-white btn-lg">Termin buchen</a>
+        <a href="kontakt.html" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">Kontakt aufnehmen</a>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="einrichtung-team.html">Team &amp; Studio</a><a href="behandlungsmethoden.html">Methoden</a><a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="faq.html">FAQ</a><a href="job.html">Jobs</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
+      <div class="footer-links"><h4>Kontakt</h4><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 HaarFrei Trier</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
+  </div></footer>
+  <script src="main.js"></script>
+</body>
+</html>

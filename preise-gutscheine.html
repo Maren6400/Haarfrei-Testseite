@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preise &amp; Gutscheine – HaarFrei Trier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .pricing-section { max-width: 900px; margin: 0 auto; }
+    .pricing-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+    .voucher-card {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 60%, var(--primary-light) 100%);
+      border-radius: var(--radius-lg); padding: 3rem; text-align: center; color: white;
+      position: relative; overflow: hidden;
+    }
+    .voucher-card::before {
+      content: ''; position: absolute; top: -50px; right: -50px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .voucher-card h3 { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; margin-bottom: 1rem; }
+    .voucher-card p { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 2rem; line-height: 1.7; }
+    .discount-badge {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      color: white; border-radius: var(--radius-lg); padding: 1.5rem 2rem;
+      margin-bottom: 3rem; text-align: center;
+      border: 2px solid var(--border-strong);
+    }
+    .discount-badge strong { display: block; font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; color: white; }
+    .discount-badge span { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+    @media(max-width:768px){.pricing-cols{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link active">Preise</a>
+        <a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container"><div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Start</a><span class="breadcrumb-sep">›</span><span>Preise &amp; Gutscheine</span></div>
+      <h1>Preise &amp; <em>Gutscheine</em></h1>
+      <p>Transparente Preise ohne versteckte Kosten. Keine Vertragsbindung – wir überzeugen durch Qualität.</p>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="pricing-section">
+
+        <!-- Rabatt Hinweis -->
+        <div class="discount-badge reveal-up">
+          <strong>10 € Rabatt pro Zone</strong>
+          <span>Ab der zweiten Behandlungszone erhalten Sie 10 € Rabatt pro Zone (ausgenommen Paketpreise)</span>
+        </div>
+
+        <!-- Preise Damen -->
+        <div class="pricing-cols">
+          <div class="reveal-left">
+            <div class="pricing-group">
+              <h3 class="pricing-group-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0112 0v1"/></svg>
+                Damen – Gesicht
+              </h3>
+              <div class="price-row"><span class="price-zone">Oberlippe</span><span class="price-amount">ab 29 €</span></div>
+              <div class="price-row"><span class="price-zone">Kinn</span><span class="price-amount">ab 29 €</span></div>
+              <div class="price-row"><span class="price-zone">Wangen</span><span class="price-amount">ab 39 €</span></div>
+              <div class="price-row"><span class="price-zone">Oberlippe + Kinn</span><span class="price-amount">ab 49 €</span></div>
+              <div class="price-row"><span class="price-zone">Ganzes Gesicht</span><span class="price-amount">ab 69 €</span></div>
+              <div class="price-row"><span class="price-zone">Nasenspitze</span><span class="price-amount">ab 19 €</span></div>
+            </div>
+            <div class="pricing-group">
+              <h3 class="pricing-group-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                Damen – Oberkörper
+              </h3>
+              <div class="price-row"><span class="price-zone">Achseln</span><span class="price-amount">ab 39 €</span></div>
+              <div class="price-row"><span class="price-zone">Unterarme</span><span class="price-amount">ab 49 €</span></div>
+              <div class="price-row"><span class="price-zone">Ganze Arme</span><span class="price-amount">ab 69 €</span></div>
+              <div class="price-row"><span class="price-zone">Bauch</span><span class="price-amount">ab 49 €</span></div>
+              <div class="price-row"><span class="price-zone">Rücken</span><span class="price-amount">ab 79 €</span></div>
+              <div class="price-row"><span class="price-zone">Dekolleté</span><span class="price-amount">ab 49 €</span></div>
+            </div>
+          </div>
+          <div class="reveal-right">
+            <div class="pricing-group">
+              <h3 class="pricing-group-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+                Damen – Unterkörper
+              </h3>
+              <div class="price-row"><span class="price-zone">Bikinizone (Standard)</span><span class="price-amount">ab 39 €</span></div>
+              <div class="price-row"><span class="price-zone">Bikinizone (Brazilian)</span><span class="price-amount">ab 59 €</span></div>
+              <div class="price-row"><span class="price-zone">Bikinizone (Full)</span><span class="price-amount">ab 69 €</span></div>
+              <div class="price-row"><span class="price-zone">Halbe Beine</span><span class="price-amount">ab 59 €</span></div>
+              <div class="price-row"><span class="price-zone">Ganze Beine</span><span class="price-amount">ab 99 €</span></div>
+              <div class="price-row"><span class="price-zone">Unterschenkel</span><span class="price-amount">ab 49 €</span></div>
+              <div class="price-row"><span class="price-zone">Po</span><span class="price-amount">ab 49 €</span></div>
+            </div>
+            <div class="pricing-group">
+              <h3 class="pricing-group-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Damen – Pakete
+              </h3>
+              <div class="price-row"><span class="price-zone">Full Body Basic</span><span class="price-amount">ab 199 €</span></div>
+              <div class="price-row"><span class="price-zone">Full Body Premium</span><span class="price-amount">ab 299 €</span></div>
+              <div class="price-row"><span class="price-zone">Beine + Bikini Paket</span><span class="price-amount">ab 129 €</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preise Herren -->
+        <div class="pricing-group reveal-up">
+          <h3 class="pricing-group-title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            Herren
+          </h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+            <div>
+              <div class="price-row"><span class="price-zone">Bart / Kontur</span><span class="price-amount">ab 39 €</span></div>
+              <div class="price-row"><span class="price-zone">Nacken</span><span class="price-amount">ab 29 €</span></div>
+              <div class="price-row"><span class="price-zone">Schultern</span><span class="price-amount">ab 49 €</span></div>
+              <div class="price-row"><span class="price-zone">Brust</span><span class="price-amount">ab 59 €</span></div>
+            </div>
+            <div>
+              <div class="price-row"><span class="price-zone">Rücken</span><span class="price-amount">ab 79 €</span></div>
+              <div class="price-row"><span class="price-zone">Achseln</span><span class="price-amount">ab 39 €</span></div>
+              <div class="price-row"><span class="price-zone">Intimbereich</span><span class="price-amount">ab 69 €</span></div>
+              <div class="price-row"><span class="price-zone">Brust + Rücken Paket</span><span class="price-amount">ab 119 €</span></div>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--text-faint);text-align:center;margin:1rem 0 3rem">* Alle Preise sind Einzelbehandlungspreise. Für individuelle Beratung und genaue Preisangaben kontaktieren Sie uns bitte direkt.</p>
+
+        <!-- Gutscheine -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center" class="reveal-up">
+          <div class="voucher-card">
+            <div style="font-size:3rem;margin-bottom:1rem">🎁</div>
+            <h3>Gutscheine</h3>
+            <p>Schenken Sie das Geschenk dauerhaft glatter Haut. Unsere Gutscheine sind für jeden Betrag erhältlich und das perfekte Geschenk für jeden Anlass.</p>
+            <a href="kontakt.html" class="btn btn-white">Gutschein anfragen</a>
+          </div>
+          <div>
+            <p class="section-label">Wöchentliche Angebote</p>
+            <h2 class="section-title">Sonderangebote<br /><em>jede Woche.</em></h2>
+            <div class="divider"></div>
+            <p style="font-size:0.92rem;color:var(--text-dim);line-height:1.8;margin-bottom:1.5rem">Jeden Mittwoch posten wir ein neues Sonderangebot auf Instagram und Facebook. Folgen Sie uns, um keine Angebote zu verpassen!</p>
+            <a href="https://www.facebook.com/maren.viergutz/" target="_blank" class="btn btn-outline">Facebook folgen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-teal">
+    <div class="container"><div class="booking-inner reveal-up">
+      <p class="section-label section-label-white">Jetzt buchen</p>
+      <h2 class="booking-title">Bereit für<br /><em>dauerhaft glatte Haut?</em></h2>
+      <p class="booking-sub">Keine Vertragsbindung · 10 € Rabatt ab Zone 2</p>
+      <div class="booking-actions">
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-white btn-lg">Termin buchen</a>
+        <a href="kontakt.html" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">Beratung anfragen</a>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="einrichtung-team.html">Team &amp; Studio</a><a href="behandlungsmethoden.html">Methoden</a><a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="faq.html">FAQ</a><a href="job.html">Jobs</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
+      <div class="footer-links"><h4>Kontakt</h4><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a><a href="kontakt.html">Südallee 34, Trier</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 HaarFrei Trier</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
+  </div></footer>
+  <script src="main.js"></script>
+</body>
+</html>

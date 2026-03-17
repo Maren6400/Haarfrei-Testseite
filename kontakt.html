@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – HaarFrei Trier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .map-wrap { width:100%;height:400px;border-radius:var(--radius-lg);overflow:hidden;border:1.5px solid var(--border); }
+    .map-wrap iframe { width:100%;height:100%;border:0; }
+    .hours-grid { display:grid;grid-template-columns:1fr 1fr;gap:0.5rem; }
+    .hour-row { display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--primary-ultra);font-size:0.88rem; }
+    .hour-row .day { color:var(--text-dim); }
+    .hour-row .time { color:var(--primary);font-weight:500; }
+    .hour-row .closed { color:var(--text-faint); }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link active">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container"><div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Start</a><span class="breadcrumb-sep">›</span><span>Kontakt</span></div>
+      <h1>Kontakt &amp; <em>Anfahrt</em></h1>
+      <p>Besuchen Sie uns in der Südallee 34 in Trier oder kontaktieren Sie uns jederzeit.</p>
+    </div></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+        <div>
+          <p class="section-label reveal-left">So erreichen Sie uns</p>
+          <h2 class="section-title reveal-left">Wir sind<br /><em>für Sie da.</em></h2>
+          <div class="divider reveal-left"></div>
+
+          <div class="contact-details">
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><strong>Adresse</strong><span>Südallee 34<br />54290 Trier</span></div>
+            </div>
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.11 12 19.79 19.79 0 011.09 3.39 2 2 0 013.1 1.21H6.1a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div><strong>Telefon</strong><span><a href="tel:016072176446">0160 / 721 76 46</a></span></div>
+            </div>
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><strong>E-Mail</strong><span><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></span></div>
+            </div>
+          </div>
+
+          <!-- Öffnungszeiten -->
+          <div style="margin-top:2.5rem" class="reveal-left">
+            <p class="section-label" style="margin-bottom:1rem">Öffnungszeiten</p>
+            <div class="hours-grid">
+              <div><div class="hour-row"><span class="day">Montag</span><span class="time">nach Termin</span></div>
+              <div class="hour-row"><span class="day">Dienstag</span><span class="time">nach Termin</span></div>
+              <div class="hour-row"><span class="day">Mittwoch</span><span class="time">nach Termin</span></div>
+              <div class="hour-row"><span class="day">Donnerstag</span><span class="time">nach Termin</span></div></div>
+              <div><div class="hour-row"><span class="day">Freitag</span><span class="time">nach Termin</span></div>
+              <div class="hour-row"><span class="day">Samstag</span><span class="time">nach Termin</span></div>
+              <div class="hour-row"><span class="day">Sonntag</span><span class="closed">geschlossen</span></div></div>
+            </div>
+            <p style="font-size:0.78rem;color:var(--text-faint);margin-top:0.8rem">Termine nach Vereinbarung · Online-Buchung jederzeit möglich</p>
+          </div>
+
+          <div class="social-links reveal-left" style="margin-top:2rem">
+            <a href="https://www.facebook.com/maren.viergutz/" target="_blank" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-form-wrap reveal-right">
+            <form class="contact-form" id="contactForm">
+              <h3>Nachricht senden</h3>
+              <div class="form-row">
+                <div class="form-group"><label>Name</label><input type="text" placeholder="Ihr Name" required /></div>
+                <div class="form-group"><label>E-Mail</label><input type="email" placeholder="ihre@email.de" required /></div>
+              </div>
+              <div class="form-group"><label>Telefon</label><input type="tel" placeholder="0160 / ..." /></div>
+              <div class="form-group">
+                <label>Anliegen</label>
+                <select>
+                  <option value="">Bitte wählen...</option>
+                  <option>Terminanfrage</option>
+                  <option>Beratung / Erstgespräch</option>
+                  <option>Gutschein anfragen</option>
+                  <option>Preisanfrage</option>
+                  <option>Sonstiges</option>
+                </select>
+              </div>
+              <div class="form-group"><label>Nachricht</label><textarea rows="5" placeholder="Ihre Nachricht..." required></textarea></div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <span>Nachricht senden</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div style="margin-top:4rem" class="reveal-up">
+        <p class="section-label" style="text-align:center;margin-bottom:1.5rem">Anfahrt</p>
+        <div class="map-wrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.8!2d6.6411!3d49.7487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47952ddc6bc73c9f%3A0x1a0d4c9f!2sS%C3%BCdallee%2034%2C%2054290%20Trier!5e0!3m2!1sde!2sde!4v1000000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="einrichtung-team.html">Team &amp; Studio</a><a href="behandlungsmethoden.html">Methoden</a><a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="faq.html">FAQ</a><a href="job.html">Jobs</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
+      <div class="footer-links"><h4>Kontakt</h4><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 HaarFrei Trier</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
+  </div></footer>
+  <script src="main.js"></script>
+</body>
+</html>

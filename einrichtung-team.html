@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Einrichtung &amp; Team – HaarFrei Trier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .studio-gallery { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin:3rem 0; }
+    .gallery-item {
+      aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden;
+      background: linear-gradient(135deg, var(--primary-pale), var(--primary-ultra));
+      border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--primary-light); transition: transform 0.3s;
+    }
+    .gallery-item:hover { transform: scale(1.02); }
+    .gallery-item img { width:100%;height:100%;object-fit:cover; }
+    .gallery-item-placeholder { display:flex;flex-direction:column;align-items:center;gap:8px; }
+    .gallery-item-placeholder svg { width:40px;height:40px;opacity:0.4; }
+    .gallery-item-placeholder span { font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-faint); }
+    .gallery-item.large { grid-column: span 2; aspect-ratio: 16/7; }
+    @media(max-width:768px){.studio-gallery{grid-template-columns:1fr 1fr;}.gallery-item.large{grid-column:span 2;}}
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link active">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container"><div class="page-hero-content">
+      <div class="breadcrumb"><a href="index.html">Start</a><span class="breadcrumb-sep">›</span><span>Studio &amp; Team</span></div>
+      <h1>Einrichtung &amp; <em>Team</em></h1>
+      <p>Lernen Sie unser Studio und unser Team kennen – eine Wohlfühloase mitten in Trier.</p>
+    </div></div>
+  </section>
+
+  <!-- Studio -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label reveal-left">Das Studio</p>
+          <h2 class="section-title reveal-left">Eine Wohlfühloase<br /><em>mitten in Trier.</em></h2>
+          <div class="divider reveal-left"></div>
+          <p class="about-desc reveal-left">Unser Studio in der Südallee 34 ist modern, ruhig und einladend gestaltet. Von dem Moment, in dem Sie durch unsere Tür treten, sollen Sie sich wohlfühlen und entspannen können.</p>
+          <p class="about-desc reveal-left">Wir legen größten Wert auf Sauberkeit und Hygiene. Alle Geräte werden nach höchsten Standards gewartet und gereinigt. Ihr Wohlbefinden und Ihre Sicherheit haben für uns oberste Priorität.</p>
+          <div class="about-features reveal-left">
+            <div class="feature-item"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><strong>Moderne Ausstattung</strong><span>Neueste Laser-Technologie</span></div></div>
+            <div class="feature-item"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><strong>Höchste Hygiene-Standards</strong><span>Regelmäßig gewartet &amp; geprüft</span></div></div>
+            <div class="feature-item"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><strong>Zentrale Lage</strong><span>Südallee 34, 54290 Trier</span></div></div>
+          </div>
+        </div>
+        <div class="about-visual reveal-right">
+          <div class="about-img-wrap">
+            <div class="about-img-box">
+              <img src="Fotos/einrichtung.jpg" alt="Studio Einrichtung" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <div class="about-img-placeholder-icon" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Studio-Foto</span></div>
+            </div>
+            <div class="about-accent-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="studio-gallery reveal-up">
+        <div class="gallery-item large">
+          <img src="Fotos/studio-1.jpg" alt="Studio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="gallery-item-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Studio-Foto 1</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Fotos/studio-2.jpg" alt="Behandlungsraum" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="gallery-item-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Behandlungsraum</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Fotos/studio-3.jpg" alt="Empfang" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="gallery-item-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Empfang</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Fotos/studio-4.jpg" alt="Gerät" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="gallery-item-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Lasergerät</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Fotos/studio-5.jpg" alt="Ambiente" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="gallery-item-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Ambiente</span></div>
+        </div>
+        <div class="gallery-item">
+          <img src="Fotos/studio-6.jpg" alt="Detail" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="gallery-item-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>Detail</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Das Team</p>
+        <h2 class="section-title reveal-up">Expertinnen für<br /><em>Ihre Haut.</em></h2>
+        <p class="section-desc reveal-up">Erfahrung, Kompetenz und Herzlichkeit – das zeichnet unser Team aus.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card reveal-up" data-delay="0">
+          <div class="team-img">
+            <img src="Fotos/maren.jpg" alt="Maren Burmeister" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+            <div class="team-img-placeholder" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0112 0v1"/></svg></div>
+          </div>
+          <div class="team-info">
+            <h3>Maren Burmeister</h3>
+            <span>Inhaberin &amp; Expertin</span>
+            <p>Mit über 8 Jahren Erfahrung in der Laser-Haarentfernung ist Maren Burmeister die treibende Kraft hinter HaarFrei Trier. Ihre Leidenschaft: jedem Kunden zu dauerhaft glatter Haut zu verhelfen.</p>
+          </div>
+        </div>
+        <div class="team-card reveal-up" data-delay="100">
+          <div class="team-img">
+            <img src="Fotos/anna.jpg" alt="Anna" onerror="this.src='Fotos/team-1.jpg'" />
+          </div>
+          <div class="team-info">
+            <h3>Anna</h3>
+            <span>Zertifizierte Spezialistin</span>
+            <p>Einfühlsam, präzise und immer mit einem Lächeln – Anna betreut unsere Kundinnen und Kunden mit größter Sorgfalt und Fachwissen.</p>
+          </div>
+        </div>
+        <div class="team-card reveal-up" data-delay="150">
+          <div class="team-img">
+            <img src="Fotos/inesa.jpg" alt="Inesa" onerror="this.src='Fotos/team-2.jpg'" />
+          </div>
+          <div class="team-info">
+            <h3>Inesa</h3>
+            <span>Zertifizierte Spezialistin</span>
+            <p>Mit viel Engagement und Leidenschaft widmet sich Inesa jedem Kunden individuell – für optimale Ergebnisse bei jeder Behandlung.</p>
+          </div>
+        </div>
+        <div class="team-card reveal-up" data-delay="200">
+          <div class="team-img" style="background:linear-gradient(135deg,var(--primary),var(--primary-light))">
+            <div class="team-img-placeholder" style="display:flex">
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1" style="width:60px;height:60px"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>Wir suchen Verstärkung!</h3>
+            <span>Offene Stelle</span>
+            <p>Sie möchten Teil unseres Teams werden? Wir freuen uns auf Ihre Bewerbung! Besuchen Sie unsere Job-Seite für mehr Informationen.</p>
+            <a href="job.html" class="btn btn-outline" style="margin-top:1rem;font-size:0.72rem;padding:0.6rem 1.2rem">Zur Stellenanzeige</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZERTIFIKATE -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Qualität</p>
+        <h2 class="section-title reveal-up">Zertifiziert &amp;<br /><em>geprüft.</em></h2>
+        <p class="section-desc reveal-up">Unsere Behandlerinnen sind zertifiziert und werden regelmäßig weitergebildet.</p>
+      </div>
+      <div class="zert-grid reveal-up">
+        <div class="zert-item">
+          <img src="Fotos/zertifikate.png" alt="Zertifikate HaarFrei Trier" />
+        </div>
+        <div class="zert-item">
+          <img src="Fotos/zertifikate-2.jpg" alt="Zertifikate" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-teal">
+    <div class="container"><div class="booking-inner reveal-up">
+      <p class="section-label section-label-white">Wir freuen uns auf Sie</p>
+      <h2 class="booking-title">Besuchen Sie uns<br /><em>in der Südallee.</em></h2>
+      <p class="booking-sub">Südallee 34 · 54290 Trier · Mo–Sa nach Vereinbarung</p>
+      <div class="booking-actions">
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-white btn-lg">Termin buchen</a>
+        <a href="kontakt.html" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">Wegbeschreibung</a>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="einrichtung-team.html">Team &amp; Studio</a><a href="behandlungsmethoden.html">Methoden</a><a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="faq.html">FAQ</a><a href="job.html">Jobs</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
+      <div class="footer-links"><h4>Kontakt</h4><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 HaarFrei Trier</span><span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span></div>
+  </div></footer>
+  <script src="main.js"></script>
+</body>
+</html>

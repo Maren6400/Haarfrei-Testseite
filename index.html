@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HaarFrei Trier – Dauerhafte Laser-Haarentfernung</title>
+  <meta name="description" content="Premium Laser-Haarentfernung in Trier. 3-Wellenlängen Diodenlaser, IPL & SHR. Dauerhaft glatte Haut. 150+ Fünf-Sterne-Bewertungen." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <img src="Logos/Logo_mittel.jpg" alt="HaarFrei Trier" class="loader-logo-img" />
+      <div class="loader-line"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" />
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-shape"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          <span>Premium Laser Studio · Trier</span>
+        </div>
+        <h1 class="hero-title reveal-up">
+          <span class="title-normal">Dauerhaft</span><br />
+          <span class="title-serif">glatte Haut,</span><br />
+          <span class="title-normal">für </span><span class="title-serif">immer.</span>
+        </h1>
+        <p class="hero-sub reveal-up">
+          Modernste 3-Wellenlängen Diodenlaser-Technologie für dauerhaft glatte Haut.
+          Professionell, schmerzarm und effektiv.
+        </p>
+        <div class="hero-actions reveal-up">
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-primary btn-lg">
+            <span>Termin vereinbaren</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="preise-gutscheine.html" class="btn btn-outline">Preise ansehen</a>
+        </div>
+        <div class="hero-stats reveal-up">
+          <div class="stat">
+            <div><span class="stat-num" data-target="150">0</span><span class="stat-plus">+</span></div>
+            <span class="stat-label">5-Sterne<br/>Bewertungen</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div><span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span></div>
+            <span class="stat-label">Zufriedene<br/>Kunden</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div><span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span></div>
+            <span class="stat-label">Jahre<br/>Erfahrung</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right reveal-right">
+        <div class="hero-photo-wrap">
+          <img src="Fotos/team-1.jpg" alt="HaarFrei Trier Team" class="hero-photo" />
+          <div class="hero-photo-badge">
+            <span class="badge-icon">⭐</span>
+            <div>
+              <strong>Top bewertet in Trier</strong>
+              <small>Google 5.0 · 150+ Reviews</small>
+            </div>
+          </div>
+          <div class="hero-photo-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Keine Vertragsbindung
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"><div class="scroll-dot"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Dauerhafte Haarentfernung</span><span class="sep">✦</span>
+      <span>3-Wellenlängen Diodenlaser</span><span class="sep">✦</span>
+      <span>IPL &amp; SHR Technologie</span><span class="sep">✦</span>
+      <span>Keine Vertragsbindung</span><span class="sep">✦</span>
+      <span>150+ Fünf-Sterne-Bewertungen</span><span class="sep">✦</span>
+      <span>Trier Südallee 34</span><span class="sep">✦</span>
+      <span>Dauerhafte Haarentfernung</span><span class="sep">✦</span>
+      <span>3-Wellenlängen Diodenlaser</span><span class="sep">✦</span>
+      <span>IPL &amp; SHR Technologie</span><span class="sep">✦</span>
+      <span>Keine Vertragsbindung</span><span class="sep">✦</span>
+      <span>150+ Fünf-Sterne-Bewertungen</span><span class="sep">✦</span>
+      <span>Trier Südallee 34</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-img-wrap">
+            <div class="about-img-box">
+              <img src="Fotos/beratung-1.jpg" alt="HaarFrei Trier – Beratung" />
+            </div>
+            <div class="about-accent-line"></div>
+            <div class="about-badge-float">
+              <span class="badge-icon">⭐</span>
+              <div>
+                <strong>Top bewertet in Trier</strong>
+                <small>Google 5.0 · 150+ Reviews</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label reveal-left">Über uns</p>
+          <h2 class="section-title reveal-left">
+            Wo Präzision auf<br /><em>Leidenschaft</em> trifft.
+          </h2>
+          <div class="divider reveal-left"></div>
+          <p class="about-desc reveal-left">
+            HaarFrei Trier ist Ihr premium Laser-Studio für dauerhafte Haarentfernung in der Domstadt.
+            Seit über 8 Jahren bieten wir ausschließlich dauerhafte Haarentfernung mit modernsten Methoden
+            und höchsten Sicherheitsstandards.
+          </p>
+          <p class="about-desc reveal-left">
+            Unser Studio in der Südallee 34 ist eine Wohlfühloase – eine ruhige, moderne Einrichtung,
+            die die perfekte Atmosphäre für Ihre Behandlung bietet.
+          </p>
+          <div class="about-features reveal-left">
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Keine Vertragsbindung</strong><span>Flexibel buchen, jederzeit</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02l.707.707M1 12h2m18 0h2"/></svg></div>
+              <div><strong>Schmerzarme Behandlung</strong><span>Modernste SHR-Technologie</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857"/></svg></div>
+              <div><strong>Für alle Hauttypen</strong><span>Geeignet für Damen &amp; Herren</span></div>
+            </div>
+          </div>
+          <a href="einrichtung-team.html" class="btn btn-primary reveal-left">Studio kennenlernen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Leistungen</p>
+        <h2 class="section-title reveal-up">Jede Zone.<br /><em>Perfekt behandelt.</em></h2>
+        <p class="section-desc reveal-up">10 € Rabatt pro Zone ab der zweiten Behandlungszone</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal-up" data-delay="0">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0112 0v1"/></svg></div>
+            <h3>Gesicht</h3>
+            <p>Oberlippe, Kinn, Wangen, Ganzes Gesicht – für ein makelloses Hautbild ohne tägliches Rasieren.</p>
+            <div class="service-tag">Beliebt</div>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="100">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div>
+            <h3>Körper</h3>
+            <p>Achseln, Bikinizone, Beine, Arme, Bauch, Rücken – für samtene Haut am ganzen Körper.</p>
+            <div class="service-tag">Bestseller</div>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="200">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M16 7a4 4 0 00-8 0"/></svg></div>
+            <h3>Herren</h3>
+            <p>Bart, Nacken, Schultern, Brust, Rücken – maßgeschneiderte Behandlungen für den modernen Mann.</p>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="300">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Komplettpakete</h3>
+            <p>Full Body, Halbe Beine, Bikini-Full – attraktive Pakete für maximale Ersparnis und Rundum-Pflege.</p>
+            <div class="service-tag">Sparvorteil</div>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="150">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <h3>Beckenbodenstuhl</h3>
+            <p>HIFEM-Technologie gegen Inkontinenz und Beckenbodenschwäche – 28 Minuten, vollständig bekleidet, schmerzfrei.</p>
+            <a href="beckenbodenstuhl.html" class="service-link">Mehr erfahren →</a>
+            <div class="service-tag">Neu</div>
+          </div>
+        </div>
+        <div class="service-card service-card-wide reveal-up" data-delay="250">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+            <h3>Gutscheine</h3>
+            <p>Schenken Sie das Geschenk dauerhaft glatter Haut! Unsere Gutscheine sind das perfekte Geschenk für jeden Anlass – individuell, wertvoll und persönlich.</p>
+            <a href="kontakt.html" class="service-link">Gutschein anfragen →</a>
+          </div>
+        </div>
+      </div>
+      <div class="services-cta reveal-up">
+        <p>Nicht sicher welche Zone? Wir beraten Sie kostenlos und unverbindlich.</p>
+        <a href="preise-gutscheine.html" class="btn btn-primary">Alle Preise sehen</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-outline">Termin buchen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section" id="technology">
+    <div class="container">
+      <div class="tech-grid">
+        <div class="tech-visual">
+          <div class="tech-orb-wrap">
+            <div class="tech-orb">
+              <div class="orb-ring r1"></div>
+              <div class="orb-ring r2"></div>
+              <div class="orb-ring r3"></div>
+              <div class="orb-core"><span>LASER</span><small>3-Wellenlängen</small></div>
+            </div>
+            <div class="tech-spec t1"><strong>808 nm</strong><span>Diode</span></div>
+            <div class="tech-spec t2"><strong>755 nm</strong><span>Alexandrit</span></div>
+            <div class="tech-spec t3"><strong>1064 nm</strong><span>Nd:YAG</span></div>
+          </div>
+        </div>
+        <div class="tech-text">
+          <p class="section-label reveal-right">Technologie</p>
+          <h2 class="section-title reveal-right">Modernste<br /><em>Laser-Technologie.</em></h2>
+          <div class="divider reveal-right"></div>
+          <p class="tech-desc reveal-right">
+            Unser 3-Wellenlängen-Diodenlaser kombiniert die drei effektivsten Wellenlängen für optimale
+            Ergebnisse bei allen Hauttypen und Haarfarben – sicher, schmerzarm und dauerhaft wirksam.
+          </p>
+          <div class="tech-features reveal-right">
+            <div class="tech-feature">
+              <div class="tf-info"><span>Wirksamkeit</span><strong>95%</strong></div>
+              <div class="tf-bar"><div class="tf-fill" style="width:95%"></div></div>
+            </div>
+            <div class="tech-feature">
+              <div class="tf-info"><span>Schmerzfreiheit</span><strong>88%</strong></div>
+              <div class="tf-bar"><div class="tf-fill" style="width:88%"></div></div>
+            </div>
+            <div class="tech-feature">
+              <div class="tf-info"><span>Hauttypen-Kompatibilität</span><strong>100%</strong></div>
+              <div class="tf-bar"><div class="tf-fill" style="width:100%"></div></div>
+            </div>
+          </div>
+          <div class="tech-tags reveal-right">
+            <span class="tech-tag">IPL</span>
+            <span class="tech-tag">SHR</span>
+            <span class="tech-tag">Diodenlaser</span>
+            <span class="tech-tag">Alle Hauttypen</span>
+            <span class="tech-tag">Schmerzarm</span>
+          </div>
+          <a href="behandlungsmethoden.html" class="btn btn-outline" style="margin-top:2rem">Mehr erfahren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VORHER / NACHHER -->
+  <section class="section section-alt" id="results">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Ergebnisse</p>
+        <h2 class="section-title reveal-up">Sichtbare Resultate.<br /><em>Echte Kunden.</em></h2>
+        <p class="section-desc reveal-up">Überzeugen Sie sich selbst – unsere Kunden sprechen durch ihre Ergebnisse.</p>
+      </div>
+      <div class="vn-grid reveal-up">
+        <div class="vn-card">
+          <div class="vn-img-wrap">
+            <img src="Fotos/vorher-nachher-achseln.png" alt="Vorher-Nachher Achseln" />
+          </div>
+          <div class="vn-label">Achseln</div>
+        </div>
+        <div class="vn-card">
+          <div class="vn-img-wrap">
+            <img src="Fotos/vorher-nachher-bikini.png" alt="Vorher-Nachher Bikinizone" />
+          </div>
+          <div class="vn-label">Bikinizone</div>
+        </div>
+        <div class="vn-card">
+          <div class="vn-img-wrap">
+            <img src="Fotos/vorher-nachher-ruecken.png" alt="Vorher-Nachher Rücken" />
+          </div>
+          <div class="vn-label">Rücken</div>
+        </div>
+      </div>
+      <p class="vn-note reveal-up">Individuelle Ergebnisse können variieren. Alle Fotos stammen von echten Kunden mit Einwilligung.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Bewertungen</p>
+        <h2 class="section-title reveal-up">Was unsere Kunden<br /><em>sagen.</em></h2>
+        <div class="stars-row reveal-up">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          <span class="star-label">5.0 · 150+ Google Bewertungen</span>
+        </div>
+      </div>
+      <div class="testimonials-track reveal-up">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Absolut professionelles Studio! Das Ergebnis nach nur wenigen Behandlungen ist unglaublich. Ich bin restlos begeistert!"</p>
+          <div class="t-author"><div class="t-avatar">A</div><div><strong>Anna M.</strong><span>Beine &amp; Bikinizone</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Sehr freundliche und kompetente Beratung. Die Behandlungen sind fast schmerzlos und die Ergebnisse sprechen für sich."</p>
+          <div class="t-author"><div class="t-avatar">S</div><div><strong>Sarah K.</strong><span>Ganzer Körper</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Top Studio in Trier! Faire Preise, modernste Geräte und ein super nettes Team. Kann ich nur wärmstens empfehlen!"</p>
+          <div class="t-author"><div class="t-avatar">M</div><div><strong>Michael R.</strong><span>Bart &amp; Nacken</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Nach 5 Behandlungen bin ich das Rasieren komplett losgeworden. Das Beste, was ich je für meine Haut getan habe!"</p>
+          <div class="t-author"><div class="t-avatar">L</div><div><strong>Laura B.</strong><span>Achseln &amp; Unterarme</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="section section-teal">
+    <div class="container">
+      <div class="booking-inner reveal-up">
+        <p class="section-label section-label-white">Jetzt starten</p>
+        <h2 class="booking-title">Ihr erster Schritt zu<br /><em>dauerhaft glatter Haut.</em></h2>
+        <p class="booking-sub">Kostenlose Erstberatung · Keine Wartezeit · Sofortige Termine</p>
+        <div class="booking-actions">
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-white btn-lg">
+            <span>Online Termin buchen</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:016072176446" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.11 12 19.79 19.79 0 011.09 3.39 2 2 0 013.1 1.21H6.1a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>0160 / 721 76 46</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT PREVIEW -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label reveal-left">Kontakt</p>
+          <h2 class="section-title reveal-left">Besuchen Sie<br /><em>uns.</em></h2>
+          <div class="divider reveal-left"></div>
+          <div class="contact-details">
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><strong>Adresse</strong><span>Südallee 34<br />54290 Trier</span></div>
+            </div>
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.11 12 19.79 19.79 0 011.09 3.39 2 2 0 013.1 1.21H6.1a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div><strong>Telefon</strong><span><a href="tel:016072176446">0160 / 721 76 46</a></span></div>
+            </div>
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><strong>E-Mail</strong><span><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></span></div>
+            </div>
+          </div>
+          <div class="social-links reveal-left">
+            <a href="https://www.facebook.com/maren.viergutz/" target="_blank" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm">
+            <h3>Nachricht senden</h3>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Name</label><input type="text" id="name" placeholder="Ihr Name" required /></div>
+              <div class="form-group"><label for="email">E-Mail</label><input type="email" id="email" placeholder="ihre@email.de" required /></div>
+            </div>
+            <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" placeholder="0160 / ..." /></div>
+            <div class="form-group"><label for="message">Nachricht</label><textarea id="message" rows="4" placeholder="Ihre Nachricht..." required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Nachricht senden</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier" class="footer-logo-img" />
+          <p>Premium Laser-Haarentfernung in Trier.<br />Seit über 8 Jahren Ihr Experte für dauerhafte Haarentfernung.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Studio</h4>
+          <a href="einrichtung-team.html">Team &amp; Studio</a>
+          <a href="behandlungsmethoden.html">Methoden</a>
+          <a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a>
+          <a href="faq.html">FAQ</a>
+          <a href="job.html">Jobs</a>
+        </div>
+        <div class="footer-links">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+        </div>
+        <div class="footer-links">
+          <h4>Kontakt</h4>
+          <a href="tel:016072176446">0160 / 721 76 46</a>
+          <a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a>
+          <a href="kontakt.html">Südallee 34, Trier</a>
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank">Online Termin buchen</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 HaarFrei Trier · Alle Rechte vorbehalten</span>
+        <span>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a> ·
+          <a href="agb.html">AGB</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

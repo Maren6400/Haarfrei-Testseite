@@ -995,4 +995,18 @@ button { cursor: none; font-family: inherit; }
   .tech-orb-wrap { min-height: 180px; }
   .orb-ring, .tech-spec { display: none; }
   .about-badge-float { display: none; }
+
+  /* ── HERO MOBIL: Reihenfolge Headline → Foto → CTAs ── */
+  .hero-content { display: flex; flex-direction: column; gap: 1.5rem; }
+  .hero-left { display: contents; }
+  .hero-badge  { order: 1; }
+  .hero-title  { order: 2; }
+  .hero-sub    { order: 3; }
+  .hero-right  { order: 4; }
+  .hero-actions { order: 5; }
+  .hero-stats  { order: 6; }
+  .hero-photo-wrap { max-width: 100%; }
+  .hero-photo { height: auto; min-height: 400px; max-height: 520px; object-fit: cover; object-position: top center; }
+  .hero-photo-badge { left: 0; bottom: -10px; min-width: unset; padding: 10px 14px; }
+  .hero-scroll { display: none; }
 }

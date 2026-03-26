@@ -865,12 +865,15 @@ button { cursor: none; font-family: inherit; }
 }
 .probe-content { position: relative; z-index: 1; }
 .probe-section-label {
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  font-weight: 500;
-  color: var(--primary);
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
   margin-bottom: 20px;
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 1.5px solid rgba(255,255,255,0.35);
 }
 .probe-content h2 {
   font-family: var(--font-serif);

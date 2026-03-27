@@ -470,6 +470,17 @@ button { cursor: none; font-family: inherit; }
 }
 .service-icon { width: 42px; height: 42px; color: var(--primary); margin-bottom: 1.2rem; }
 .service-icon svg { width: 100%; height: 100%; }
+.service-icon.service-icon-sprite {
+  width: 54px; height: 88px;
+  background-image: url('Fotos/Icons_Koerper.png');
+  background-size: 500% auto;
+  background-repeat: no-repeat;
+}
+.service-icon.icon-gesicht        { background-position: 0%   0; }
+.service-icon.icon-koerper        { background-position: 25%  0; }
+.service-icon.icon-herren         { background-position: 50%  0; }
+.service-icon.icon-komplettpakete { background-position: 75%  0; }
+.service-icon.icon-beckenboden    { background-position: 100% 0; }
 .service-card h3 { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 400; color: var(--dark); margin-bottom: 0.7rem; }
 .service-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.7; }
 .service-tag {

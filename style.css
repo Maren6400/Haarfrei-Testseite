@@ -471,7 +471,7 @@ button { cursor: none; font-family: inherit; }
 .service-icon { width: 42px; height: 42px; color: var(--primary); margin-bottom: 1.2rem; }
 .service-icon svg { width: 100%; height: 100%; }
 .service-icon.service-icon-sprite {
-  width: 54px; height: 88px;
+  width: 70px; height: 120px;
   background-image: url('Fotos/Icons_Koerper.png');
   background-size: 500% auto;
   background-repeat: no-repeat;

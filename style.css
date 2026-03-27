@@ -471,7 +471,7 @@ button { cursor: none; font-family: inherit; }
 .service-icon { width: 42px; height: 42px; color: var(--primary); margin-bottom: 1.2rem; }
 .service-icon svg { width: 100%; height: 100%; }
 .service-icon.service-icon-img {
-  width: auto; height: 68px;
+  width: auto; height: 54px;
 }
 .service-icon.service-icon-img img {
   height: 100%; width: auto; display: block;

@@ -1,157 +1,520 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laser Haarentfernung Trier | HaarFrei Trier – 19 Jahre Erfahrung</title>
+  <meta name="description" content="Dauerhaft haarfrei in Trier – mit Diodenlaser & IPL. 19 Jahre Erfahrung, 160+ Google-Bewertungen, kostenlose Probebehandlung. Jetzt Termin buchen." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "HaarFrei Trier",
+  "description": "Premium Laser-Haarentfernung in Trier. Diodenlaser und IPL für alle Hauttypen. Seit 19 Jahren.",
+  "url": "https://www.haarfrei-trier.de",
+  "telephone": "+491607217646",
+  "email": "info@haarfrei-trier.de",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Südallee 34",
+    "addressLocality": "Trier",
+    "postalCode": "54290",
+    "addressCountry": "DE"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "14:00", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "12:30", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "14:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "09:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "20:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00"}
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "160"
+  }
+}
+</script>
+</head>
+<body>
 
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
 
-￼
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <img src="Logos/Logo_mittel.jpg" alt="HaarFrei Trier Logo" class="loader-logo-img" />
+      <div class="loader-line"><div class="loader-progress" id="loaderProgress"></div></div>
+    </div>
+  </div>
 
-￼
-Studio & Team Methoden Preise
-Beckenbodenstuhl
-Preise
-FAQ Kontakt Termin buchen
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier Logo" />
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <div class="nav-item"><a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a><div class="nav-dropdown"><a href="beckenbodenstuhl.html#preise">Preise</a></div></div>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-gradient"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-shape"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          <span>Premium Laser Studio · Trier</span>
+        </div>
+        <h1 class="hero-title reveal-up">
+          <span class="title-normal">Nie wieder rasieren.</span><br />
+          <span class="title-serif">Dauerhaft glatt –</span><br />
+          <span class="title-normal">mit 19 Jahren </span><span class="title-serif">Erfahrung.</span>
+        </h1>
+        <h2>Laser Haarentfernung in Trier – dauerhaft, sicher, professionell.</h2>
+        <p>HaarFrei Trier ist Ihr Studio für dauerhafte Laser-Haarentfernung in Trier. Seit über 19 Jahren behandeln wir Frauen und Männer mit modernster Diodenlaser- und IPL-Technologie – für alle Hauttypen, ohne Vertragsbindung. Ob Gesicht, Körper oder Bikinizone: Wir beraten Sie persönlich und diskret in unserem Premium-Studio in der Südallee 34 in Trier.</p>
+        <p class="hero-sub reveal-up">
+          Sanft, sicher und dauerhaft wirksam – für alle Hauttypen. In unserem Studio in Trier
+          behandeln wir Sie persönlich, diskret und ohne Vertragsbindung.
+        </p>
+        <div class="hero-actions reveal-up">
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-primary btn-lg">
+            <span>Kostenlose Probebehandlung buchen</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="preise-gutscheine.html" class="btn btn-outline">Preise ansehen</a>
+        </div>
+        <div class="hero-stats reveal-up">
+          <div class="stat">
+            <div><span class="stat-num" data-target="19">0</span><span class="stat-plus">+ Jahre</span></div>
+            <span class="stat-label">Erfahrung</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div><span class="stat-num" data-target="160">0</span><span class="stat-plus">+</span></div>
+            <span class="stat-label">Bewertungen</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <div><span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span></div>
+            <span class="stat-label">zufrieden</span>
+          </div>
+        </div>
+      </div>
 
+      <div class="hero-right reveal-right">
+        <div class="hero-photo-wrap">
+          <img src="Fotos/team-1.jpg" alt="Team HaarFrei Trier – Expertinnen für Laser Haarentfernung" class="hero-photo" />
+          <div class="hero-photo-badge">
+            <span class="badge-icon">⭐</span>
+            <div>
+              <strong>Top bewertet in Trier</strong>
+              <small>Google 5.0 · 160+ Reviews</small>
+            </div>
+          </div>
+          <div class="hero-photo-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Keine Vertragsbindung
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"><div class="scroll-dot"></div></div>
+      </div>
+    </div>
+  </section>
 
-Premium Laser Studio · Trier
-Nie wieder rasieren. Dauerhaft glatt – mit 19 Jahren Erfahrung.
-Laser Haarentfernung in Trier – dauerhaft, sicher, professionell.
-HaarFrei Trier ist Ihr Studio für dauerhafte Laser-Haarentfernung in Trier. Seit über 19 Jahren behandeln wir Frauen und Männer mit modernster Diodenlaser- und IPL-Technologie – für alle Hauttypen, ohne Vertragsbindung. Ob Gesicht, Körper oder Bikinizone: Wir beraten Sie persönlich und diskret in unserem Premium-Studio in der Südallee 34 in Trier.
-Sanft, sicher und dauerhaft wirksam – für alle Hauttypen. In unserem Studio in Trier behandeln wir Sie persönlich, diskret und ohne Vertragsbindung.
-Kostenlose Probebehandlung buchen Preise ansehen
-0+ Jahre
-Erfahrung
+  <!-- PROBE SECTION -->
+  <section class="probe-section" id="probe">
+    <div class="probe-image-wrap reveal-left">
+      <img src="Fotos/haarfrei-152.jpg" alt="Beratungsgespräch Laser Haarentfernung HaarFrei Trier">
+    </div>
+    <div class="probe-content reveal-right">
+      <div class="probe-section-label">Kostenlos &amp; Unverbindlich</div>
+      <h2>Erst erleben.<br><em>Dann entscheiden.</em></h2>
+      <p class="probe-text">
+        In Ihrer kostenlosen Probebehandlung erklären wir Ihnen alles – Ablauf, Methode, was Sie erwartet. Dann behandeln wir an jeder Ihrer gewünschten Zonen eine kleine Stelle.
+      </p>
+      <p class="probe-text">
+        Sie spüren, wie es sich anfühlt. Ihre Haut zeigt, wie sie reagiert. Und nach 10 bis 14 Tagen sehen Sie das erste Ergebnis.
+      </p>
+      <p class="probe-tagline">Kein Druck. Keine Folgepflicht. Nur Klarheit.</p>
+      <div class="probe-trust">
+        <div class="probe-trust-item">
+          <div class="probe-trust-check">✓</div>
+          Persönliche Beratung inklusive
+        </div>
+        <div class="probe-trust-item">
+          <div class="probe-trust-check">✓</div>
+          Geeignet für alle Hauttypen
+        </div>
+        <div class="probe-trust-item">
+          <div class="probe-trust-check">✓</div>
+          Ohne Vertragsbindung
+        </div>
+      </div>
+      <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn-probe">
+        Jetzt Probebehandlung buchen →
+      </a>
+    </div>
+  </section>
 
-0+
-Bewertungen
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Dauerhafte Haarentfernung</span><span class="sep">✦</span>
+      <span>3-Wellenlängen Diodenlaser</span><span class="sep">✦</span>
+      <span>IPL &amp; SHR Technologie</span><span class="sep">✦</span>
+      <span>Keine Vertragsbindung</span><span class="sep">✦</span>
+      <span>160+ Fünf-Sterne-Bewertungen</span><span class="sep">✦</span>
+      <span>Trier Südallee 34</span><span class="sep">✦</span>
+      <span>Dauerhafte Haarentfernung</span><span class="sep">✦</span>
+      <span>3-Wellenlängen Diodenlaser</span><span class="sep">✦</span>
+      <span>IPL &amp; SHR Technologie</span><span class="sep">✦</span>
+      <span>Keine Vertragsbindung</span><span class="sep">✦</span>
+      <span>160+ Fünf-Sterne-Bewertungen</span><span class="sep">✦</span>
+      <span>Trier Südallee 34</span><span class="sep">✦</span>
+    </div>
+  </div>
 
-0%
-zufrieden
-￼
-⭐
-Top bewertet in Trier Google 5.0 · 160+ Reviews
-Keine Vertragsbindung
-Scroll
+  <!-- SERVICES -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Leistungen</p>
+        <h2 class="section-title reveal-up">Jede Zone.<br /><em>Perfekt behandelt.</em></h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal-up" data-delay="0">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0112 0v1"/></svg></div>
+            <h3>Gesicht</h3>
+            <p>Oberlippe, Kinn, Wangen, Ganzes Gesicht – für ein makelloses Hautbild ohne tägliches Rasieren.</p>
+            <div class="service-tag">Beliebt</div>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="100">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></div>
+            <h3>Körper</h3>
+            <p>Achseln, Bikinizone, Beine, Arme, Bauch, Rücken – für samtene Haut am ganzen Körper.</p>
+            <div class="service-tag">Bestseller</div>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="200">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M16 7a4 4 0 00-8 0"/></svg></div>
+            <h3>Herren</h3>
+            <p>Bart, Nacken, Schultern, Brust, Rücken – diskret, professionell und dauerhaft wirksam.</p>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="300">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3>Komplettpakete</h3>
+            <p>Full Body, Halbe Beine, Bikini-Full – attraktive Pakete für maximale Ersparnis und Rundum-Pflege.</p>
+            <div class="service-tag">Empfohlen</div>
+          </div>
+        </div>
+        <div class="service-card reveal-up" data-delay="150">
+          <div class="service-card-inner">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <h3>Beckenbodenstuhl</h3>
+            <p>HIFEM-Technologie gegen Inkontinenz und Beckenbodenschwäche – 28 Minuten, vollständig bekleidet, schmerzfrei.</p>
+            <a href="beckenbodenstuhl.html" class="service-link">Mehr erfahren →</a>
+            <div class="service-tag">Neu</div>
+          </div>
+        </div>
+      </div>
+      <div class="services-cta reveal-up">
+        <p>Welche Zone passt zu Ihnen? Wir beraten Sie persönlich – kostenlos und ohne Verpflichtung.</p>
+        <a href="preise-gutscheine.html" class="btn btn-primary">Alle Preise sehen</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-outline">Termin buchen</a>
+      </div>
+    </div>
+  </section>
 
-￼
-Kostenlos & Unverbindlich
-Erst erleben. Dann entscheiden.
-In Ihrer kostenlosen Probebehandlung erklären wir Ihnen alles – Ablauf, Methode, was Sie erwartet. Dann behandeln wir an jeder Ihrer gewünschten Zonen eine kleine Stelle.
-Sie spüren, wie es sich anfühlt. Ihre Haut zeigt, wie sie reagiert. Und nach 10 bis 14 Tagen sehen Sie das erste Ergebnis.
-Kein Druck. Keine Folgepflicht. Nur Klarheit.
-✓
-Persönliche Beratung inklusive
-✓
-Geeignet für alle Hauttypen
-✓
-Ohne Vertragsbindung
-Jetzt Probebehandlung buchen →
-Dauerhafte Haarentfernung✦ 3-Wellenlängen Diodenlaser✦ IPL & SHR Technologie✦ Keine Vertragsbindung✦ 160+ Fünf-Sterne-Bewertungen✦ Trier Südallee 34✦ Dauerhafte Haarentfernung✦ 3-Wellenlängen Diodenlaser✦ IPL & SHR Technologie✦ Keine Vertragsbindung✦ 160+ Fünf-Sterne-Bewertungen✦ Trier Südallee 34✦
-Leistungen
-Jede Zone. Perfekt behandelt.
+  <!-- GUTSCHEINE -->
+  <section class="section" id="gutscheine">
+    <div class="container">
+      <div class="gutschein-banner reveal-up">
+        <div class="gutschein-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="gutschein-text">
+          <h3>Gutscheine</h3>
+          <p>Schenken Sie das Geschenk dauerhaft glatter Haut! Unsere Gutscheine sind das perfekte Geschenk für jeden Anlass – individuell, wertvoll und persönlich.</p>
+        </div>
+        <a href="https://www.gutschein.software/kunden/haarfrei-trier/" target="_blank" class="btn btn-primary">Gutschein direkt kaufen</a>
+      </div>
+    </div>
+  </section>
 
-Gesicht
-Oberlippe, Kinn, Wangen, Ganzes Gesicht – für ein makelloses Hautbild ohne tägliches Rasieren.
-Beliebt
+  <!-- VORHER / NACHHER -->
+  <section class="section section-alt" id="results">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Ergebnisse</p>
+        <h2 class="section-title reveal-up">Sichtbare Resultate.<br /><em>Echte Kunden.</em></h2>
+        <p class="section-desc reveal-up">Überzeugen Sie sich selbst – unsere Kunden sprechen durch ihre Ergebnisse.</p>
+      </div>
+      <div class="vn-grid reveal-up">
+        <div class="vn-card">
+          <div class="vn-img-wrap">
+            <img src="Fotos/vorher-nachher-achseln.png" alt="Laser Haarentfernung Achseln Trier – Vorher Nachher" />
+          </div>
+          <div class="vn-label">Achseln</div>
+        </div>
+        <div class="vn-card">
+          <div class="vn-img-wrap">
+            <img src="Fotos/vorher-nachher-bikini.png" alt="Laser Haarentfernung Bikinizone Trier – Vorher Nachher" />
+          </div>
+          <div class="vn-label">Bikinizone</div>
+        </div>
+        <div class="vn-card">
+          <div class="vn-img-wrap">
+            <img src="Fotos/vorher-nachher-ruecken.png" alt="Vorher-Nachher Rücken" />
+          </div>
+          <div class="vn-label">Rücken</div>
+        </div>
+      </div>
+      <p class="vn-note reveal-up">Individuelle Ergebnisse können variieren. Alle Fotos stammen von echten Kunden mit Einwilligung.</p>
+    </div>
+  </section>
 
-Körper
-Achseln, Bikinizone, Beine, Arme, Bauch, Rücken – für samtene Haut am ganzen Körper.
-Bestseller
+  <!-- TESTIMONIALS -->
+  <section class="section section-alt" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label reveal-up">Bewertungen</p>
+        <h2 class="section-title reveal-up">Was unsere Kunden<br /><em>sagen.</em></h2>
+        <div class="stars-row reveal-up">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          <span class="star-label">5.0 · 160+ Google Bewertungen</span>
+        </div>
+      </div>
+      <div class="testimonials-track reveal-up">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Mein Mann und ich kommen aus Luxemburg und fahren gerne bis nach Trier, weil wir so einen professionellen Service nirgendwo sonst geboten bekommen. Frau Burmeister ist jederzeit erreichbar, nimmt sich Zeit für alle Fragen und erklärt jeden Schritt genau. Klare Empfehlung!"</p>
+          <div class="t-author"><div class="t-avatar">F</div><div><strong>Françoise B.</strong><span>Gesicht &amp; Beine</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Ich bin seit drei Jahren Kundin in diesem Salon und würde ihn gegen keinen anderen eintauschen! Die Chefin kümmert sich stets darum, dass die Mitarbeiter ihre Qualifikationen entsprechend der neuen Methoden verbessern. Das Ergebnis ist hervorragend. Ich empfehle es!"</p>
+          <div class="t-author"><div class="t-avatar">L</div><div><strong>Lina M.</strong><span>Achseln &amp; Bikinibereich</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Sehr zufrieden! Vorab hab ich per Mail ein Video bekommen mit allen Erklärungen. Die Behandlung war schmerzfrei und ich hab mich in jedem Moment sehr wohlgefühlt. Sie hat immer erklärt was sie gerade macht und auf alle Fragen geantwortet. 100% zu empfehlen."</p>
+          <div class="t-author"><div class="t-avatar">S</div><div><strong>Sidney V.</strong><span>Achseln, Bikinibereich &amp; Unterschenkel</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Es wird äußerst professionell und mit Liebe gearbeitet und das in einer sauberen und einladenden Umgebung. Ich kann Haarfrei Trier wärmstens weiterempfehlen. Werde bald aus Trier wegziehen aber trotzdem weiterhin für meine Behandlungen kommen!"</p>
+          <div class="t-author"><div class="t-avatar">A</div><div><strong>Anahita</strong><span>Gesicht &amp; Arme</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Die beiden Damen sind sehr professionell und einfühlsam. Das Aufklärungsgespräch war sehr intensiv und alle Fragen wurden zur vollsten Zufriedenheit beantwortet. Das Ergebnis nach nur 3 Behandlungen ist bereits sehr gut. Ich kann dieses Unternehmen absolut empfehlen."</p>
+          <div class="t-author"><div class="t-avatar">S</div><div><strong>Siegfried D.</strong><span>Badehosenbereich</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>„Ein dickes Lob für die wirklich freundliche und vor allem sehr kompetente Betreuung. Sicherheit geht vor und ich fühle mich seit der ersten Sitzung bestens aufgehoben! Bin von dem Behandlungsergebnis überzeugt. Einen fetten Sonderstern für die herzliche Atmosphäre!"</p>
+          <div class="t-author"><div class="t-avatar">U</div><div><strong>Uli W.</strong><span>Rücken &amp; Oberarme</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-Herren
-Bart, Nacken, Schultern, Brust, Rücken – diskret, professionell und dauerhaft wirksam.
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal-left">
+          <div class="about-img-wrap">
+            <div class="about-img-box">
+              <img src="Fotos/beratung-1.jpg" alt="HaarFrei Trier – Beratung" />
+            </div>
+            <div class="about-accent-line"></div>
+            <div class="about-badge-float">
+              <span class="badge-icon">⭐</span>
+              <div>
+                <strong>Top bewertet in Trier</strong>
+                <small>Google 5.0 · 160+ Reviews</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label reveal-left">Über uns</p>
+          <h2 class="section-title reveal-left">
+            Seit 2007. Aus <em>Überzeugung.</em>
+          </h2>
+          <div class="divider reveal-left"></div>
+          <p class="about-desc reveal-left">
+            Maren Burmeister eröffnete HaarFrei Trier im März 2007 – weil sie selbst erlebt hatte, wie gut
+            dauerhafte Haarentfernung funktioniert. Seitdem ist es ihre einzige Aufgabe: echte, dauerhafte
+            Ergebnisse für ihre Kundinnen und Kunden.
+          </p>
+          <p class="about-desc reveal-left">
+            Keine Knebelverträge. Keine Überredung. Keine Behandlung, wenn das Ergebnis nicht realistisch ist.
+            Wer zu uns kommt, bekommt ehrliche Beratung – und entscheidet selbst.
+          </p>
+          <div class="about-features reveal-left">
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <div><strong>Keine Vertragsbindung</strong><span>Sie zahlen nur die erfolgte Behandlung</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02l.707.707M1 12h2m18 0h2"/></svg></div>
+              <div><strong>Ehrliche Beratung</strong><span>Keine Behandlung ohne realistische Erfolgsaussicht</span></div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857"/></svg></div>
+              <div><strong>Viel Zeit für Sie</strong><span>Ausführliche Beratung inklusive</span></div>
+            </div>
+          </div>
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-primary reveal-left">Jetzt Probebehandlung buchen</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-Komplettpakete
-Full Body, Halbe Beine, Bikini-Full – attraktive Pakete für maximale Ersparnis und Rundum-Pflege.
-Empfohlen
+  <!-- BOOKING CTA -->
+  <section class="section section-teal">
+    <div class="container">
+      <div class="booking-inner reveal-up">
+        <p class="section-label section-label-white">Jetzt starten</p>
+        <h2 class="booking-title">Ihr erster Schritt zu<br /><em>dauerhaft glatter Haut.</em></h2>
+        <p class="booking-sub">Kostenlose Erstberatung · Keine Wartezeit · Sofortige Termine</p>
+        <div class="booking-actions">
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-white btn-lg">
+            <span>Online Termin buchen</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="tel:016072176446" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.11 12 19.79 19.79 0 011.09 3.39 2 2 0 013.1 1.21H6.1a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>0160 / 721 76 46</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-Beckenbodenstuhl
-HIFEM-Technologie gegen Inkontinenz und Beckenbodenschwäche – 28 Minuten, vollständig bekleidet, schmerzfrei.
-Mehr erfahren →
-Neu
-Welche Zone passt zu Ihnen? Wir beraten Sie persönlich – kostenlos und ohne Verpflichtung.
-Alle Preise sehen Termin buchen
+  <!-- CONTACT PREVIEW -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="section-label reveal-left">Kontakt</p>
+          <h2 class="section-title reveal-left">Besuchen Sie<br /><em>uns.</em></h2>
+          <div class="divider reveal-left"></div>
+          <div class="contact-details">
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><strong>Adresse</strong><span>Südallee 34<br />54290 Trier</span></div>
+            </div>
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.11 12 19.79 19.79 0 011.09 3.39 2 2 0 013.1 1.21H6.1a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+              <div><strong>Telefon</strong><span><a href="tel:016072176446">0160 / 721 76 46</a></span></div>
+            </div>
+            <div class="contact-item reveal-left">
+              <div class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div><strong>E-Mail</strong><span><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></span></div>
+            </div>
+          </div>
+          <div class="social-links reveal-left">
+            <a href="https://www.facebook.com/maren.viergutz/" target="_blank" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm">
+            <h3>Nachricht senden</h3>
+            <div class="form-row">
+              <div class="form-group"><label for="name">Name</label><input type="text" id="name" placeholder="Ihr Name" required /></div>
+              <div class="form-group"><label for="email">E-Mail</label><input type="email" id="email" placeholder="ihre@email.de" required /></div>
+            </div>
+            <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" placeholder="0160 / ..." /></div>
+            <div class="form-group"><label for="message">Nachricht</label><textarea id="message" rows="4" placeholder="Ihre Nachricht..." required></textarea></div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Nachricht senden</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
-Gutscheine
-Schenken Sie das Geschenk dauerhaft glatter Haut! Unsere Gutscheine sind das perfekte Geschenk für jeden Anlass – individuell, wertvoll und persönlich.
-Gutschein direkt kaufen
-Ergebnisse
-Sichtbare Resultate. Echte Kunden.
-Überzeugen Sie sich selbst – unsere Kunden sprechen durch ihre Ergebnisse.
-￼
-Achseln
-￼
-Bikinizone
-￼
-Rücken
-Individuelle Ergebnisse können variieren. Alle Fotos stammen von echten Kunden mit Einwilligung.
-Bewertungen
-Was unsere Kunden sagen.
-★★★★★ 5.0 · 160+ Google Bewertungen
-★★★★★
-„Mein Mann und ich kommen aus Luxemburg und fahren gerne bis nach Trier, weil wir so einen professionellen Service nirgendwo sonst geboten bekommen. Frau Burmeister ist jederzeit erreichbar, nimmt sich Zeit für alle Fragen und erklärt jeden Schritt genau. Klare Empfehlung!"
-F
-Françoise B.Gesicht & Beine
-★★★★★
-„Ich bin seit drei Jahren Kundin in diesem Salon und würde ihn gegen keinen anderen eintauschen! Die Chefin kümmert sich stets darum, dass die Mitarbeiter ihre Qualifikationen entsprechend der neuen Methoden verbessern. Das Ergebnis ist hervorragend. Ich empfehle es!"
-L
-Lina M.Achseln & Bikinibereich
-★★★★★
-„Sehr zufrieden! Vorab hab ich per Mail ein Video bekommen mit allen Erklärungen. Die Behandlung war schmerzfrei und ich hab mich in jedem Moment sehr wohlgefühlt. Sie hat immer erklärt was sie gerade macht und auf alle Fragen geantwortet. 100% zu empfehlen."
-S
-Sidney V.Achseln, Bikinibereich & Unterschenkel
-★★★★★
-„Es wird äußerst professionell und mit Liebe gearbeitet und das in einer sauberen und einladenden Umgebung. Ich kann Haarfrei Trier wärmstens weiterempfehlen. Werde bald aus Trier wegziehen aber trotzdem weiterhin für meine Behandlungen kommen!"
-A
-AnahitaGesicht & Arme
-★★★★★
-„Die beiden Damen sind sehr professionell und einfühlsam. Das Aufklärungsgespräch war sehr intensiv und alle Fragen wurden zur vollsten Zufriedenheit beantwortet. Das Ergebnis nach nur 3 Behandlungen ist bereits sehr gut. Ich kann dieses Unternehmen absolut empfehlen."
-S
-Siegfried D.Badehosenbereich
-★★★★★
-„Ein dickes Lob für die wirklich freundliche und vor allem sehr kompetente Betreuung. Sicherheit geht vor und ich fühle mich seit der ersten Sitzung bestens aufgehoben! Bin von dem Behandlungsergebnis überzeugt. Einen fetten Sonderstern für die herzliche Atmosphäre!"
-U
-Uli W.Rücken & Oberarme
-￼
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="Logos/Logo_klein.jpg" alt="HaarFrei Trier Logo" class="footer-logo-img" />
+          <p>Premium Laser-Haarentfernung in Trier.<br />Seit über 19 Jahren Ihr Experte für dauerhafte Haarentfernung.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Studio</h4>
+          <a href="einrichtung-team.html">Team &amp; Studio</a>
+          <a href="behandlungsmethoden.html">Methoden</a>
+          <a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a>
+          <a href="faq.html">FAQ</a>
+          <a href="job.html">Jobs</a>
+        </div>
+        <div class="footer-links">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+        </div>
+        <div class="footer-links">
+          <h4>Kontakt</h4>
+          <a href="tel:016072176446">0160 / 721 76 46</a>
+          <a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a>
+          <a href="kontakt.html">Südallee 34, Trier</a>
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank">Online Termin buchen</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 HaarFrei Trier · Alle Rechte vorbehalten</span>
+        <span>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a> ·
+          <a href="agb.html">AGB</a>
+        </span>
+      </div>
+    </div>
+  </footer>
 
-⭐
-Top bewertet in Trier Google 5.0 · 160+ Reviews
-Über uns
-Seit 2007. Aus Überzeugung.
-
-Maren Burmeister eröffnete HaarFrei Trier im März 2007 – weil sie selbst erlebt hatte, wie gut dauerhafte Haarentfernung funktioniert. Seitdem ist es ihre einzige Aufgabe: echte, dauerhafte Ergebnisse für ihre Kundinnen und Kunden.
-Keine Knebelverträge. Keine Überredung. Keine Behandlung, wenn das Ergebnis nicht realistisch ist. Wer zu uns kommt, bekommt ehrliche Beratung – und entscheidet selbst.
-
-Keine VertragsbindungSie zahlen nur die erfolgte Behandlung
-
-Ehrliche BeratungKeine Behandlung ohne realistische Erfolgsaussicht
-
-Viel Zeit für SieAusführliche Beratung inklusive
-Jetzt Probebehandlung buchen
-Jetzt starten
-Ihr erster Schritt zu dauerhaft glatter Haut.
-Kostenlose Erstberatung · Keine Wartezeit · Sofortige Termine
-Online Termin buchen 0160 / 721 76 46
-Kontakt
-Besuchen Sie uns.
-
-
-AdresseSüdallee 34
-54290 Trier
-
-Telefon0160 / 721 76 46
-
-E-Mailinfo@haarfrei-trier.de
-
-Nachricht senden
-Name
-E-Mail
-Telefon
-Nachricht
-Nachricht senden
-￼
-Premium Laser-Haarentfernung in Trier. Seit über 19 Jahren Ihr Experte für dauerhafte Haarentfernung.
-Studio
-Team & Studio Methoden Preise Beckenbodenstuhl FAQ Jobs
-Rechtliches
-Impressum Datenschutz AGB
-Kontakt
-0160 / 721 76 46 info@haarfrei-trier.de Südallee 34, Trier Online Termin buchen
-© 2025 HaarFrei Trier · Alle Rechte vorbehalten Impressum · Datenschutz · AGB
+  <script src="main.js"></script>
+</body>
+</html>

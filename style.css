@@ -100,7 +100,7 @@ button { cursor: none; font-family: inherit; }
   display: flex; align-items: center; justify-content: space-between;
   height: 76px;
 }
-.nav-logo img { height: 48px; object-fit: contain; transition: opacity 0.3s; }
+.nav-logo img { height: 72px; object-fit: contain; transition: opacity 0.3s; }
 .nav-logo:hover img { opacity: 0.75; }
 .nav-links { display: flex; align-items: center; gap: 0.1rem; }
 .nav-link {

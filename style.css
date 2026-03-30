@@ -764,7 +764,7 @@ button { cursor: none; font-family: inherit; }
 /* ── FOOTER ── */
 .footer { background: var(--dark); padding: 5rem 0 2rem; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
-.footer-brand .footer-logo-img { height: 52px; margin-bottom: 1rem; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; }
+.footer-brand .footer-logo-img { height: 52px; margin-bottom: 1rem; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; mix-blend-mode: screen; }
 .footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
 .footer-links { display: flex; flex-direction: column; gap: 0.6rem; }
 .footer-links h4 { font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--primary-light); font-weight: 500; margin-bottom: 0.5rem; }

@@ -138,6 +138,7 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 
 /* ── HERO PARALLAX ── */
 window.addEventListener('scroll', () => {
+  if (window.innerWidth < 768) return;
   const hero = document.querySelector('.hero-content');
   if (!hero) return;
   const sy = window.scrollY;

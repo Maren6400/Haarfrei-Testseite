@@ -1016,7 +1016,7 @@ button { cursor: none; font-family: inherit; }
   .hero-stats  { order: 6; }
   .hero-left > h2, .hero-left > p:not(.hero-sub) { display: none; }
   .hero-photo-wrap { max-width: 100%; }
-  .hero-photo { height: auto; min-height: 400px; max-height: 520px; object-fit: cover; object-position: top center; }
+  .hero-photo { height: 250px; min-height: unset; max-height: 250px; object-fit: cover; object-position: top center; }
   .hero-photo-badge { left: 0; bottom: -10px; min-width: unset; padding: 10px 14px; }
   .hero-scroll { display: none; }
 }

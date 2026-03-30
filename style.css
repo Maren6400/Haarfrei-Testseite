@@ -1020,3 +1020,10 @@ button { cursor: none; font-family: inherit; }
   .hero-photo-badge { left: 0; bottom: -10px; min-width: unset; padding: 10px 14px; }
   .hero-scroll { display: none; }
 }
+
+/* Öffnungszeiten */
+.hours-grid { display:grid;grid-template-columns:1fr 1fr;gap:0.5rem; }
+.hour-row { display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid var(--primary-ultra);font-size:0.88rem; }
+.hour-row .day { color:var(--text-dim); }
+.hour-row .time { color:var(--primary);font-weight:500; }
+.hour-row .closed { color:var(--text-faint); }

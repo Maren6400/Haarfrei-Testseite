@@ -28,7 +28,12 @@
     }
     .discount-badge strong { display: block; font-family: var(--font-serif); font-size: 1.8rem; font-weight: 400; color: white; }
     .discount-badge span { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
-    @media(max-width:768px){.pricing-cols{grid-template-columns:1fr;}}
+    .voucher-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+    @media(max-width:768px){
+      .pricing-cols { grid-template-columns: 1fr; }
+      .voucher-grid { grid-template-columns: 1fr; }
+      .voucher-grid > div { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -149,7 +154,7 @@
         </div>
 
         <!-- Gutscheine -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center" class="reveal-up">
+        <div class="voucher-grid reveal-up">
           <div class="voucher-card">
             <div style="font-size:3rem;margin-bottom:1rem">🎁</div>
             <h3>Gutscheine</h3>

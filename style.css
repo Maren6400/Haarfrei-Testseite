@@ -983,9 +983,11 @@ button { cursor: none; font-family: inherit; }
   .about-badge-float { right: 0; }
 }
 @media (max-width: 768px) {
-  body { cursor: auto; }
+  body { cursor: auto; padding-top: 76px; }
   .cursor, .cursor-follower { display: none; }
+  .nav { background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 var(--border); }
   .section { padding: 70px 0; }
+  .page-hero { padding-top: 64px; }
   .nav-links { display: none; position: fixed; top: 76px; left: 0; width: 100%; height: calc(100% - 76px); background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; z-index: 9999; overflow-y: auto; }
   .nav-links.open { display: flex; }
   .nav-mobile-only { display: flex; }

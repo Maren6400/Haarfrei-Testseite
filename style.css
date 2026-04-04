@@ -748,6 +748,7 @@ button { cursor: none; font-family: inherit; }
 .legal-content ul li { font-size: 0.92rem; color: var(--text-dim); margin-bottom: 0.5rem; }
 .legal-content a { color: var(--primary); border-bottom: 1px solid transparent; transition: border-color 0.2s; }
 .legal-content a:hover { border-color: var(--primary); }
+.legal-meta { font-size: 0.82rem; color: var(--text-faint); margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 
 /* ── INFO CARDS ── */
 .info-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 4rem; }

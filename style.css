@@ -238,6 +238,7 @@ button { cursor: none; font-family: inherit; }
 .stat-plus { font-size: 1.3rem; color: var(--primary-2); vertical-align: super; }
 .stat-label { font-size: 0.68rem; letter-spacing: 0.5px; color: var(--text-dim); text-transform: uppercase; line-height: 1.4; margin-top: 3px; }
 .stat-divider { width: 1px; height: 36px; background: linear-gradient(180deg, transparent, var(--primary-light), transparent); }
+.hero-tagline { font-size: 0.62rem; color: var(--text-dim); text-align: center; margin-top: 24px; margin-bottom: 0; font-weight: 400; letter-spacing: 0.3px; }
 
 .hero-right {
   display: flex; flex-direction: column; gap: 1.5rem;

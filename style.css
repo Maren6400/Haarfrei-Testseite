@@ -997,7 +997,8 @@ button { cursor: none; font-family: inherit; }
   .nav-links.open { display: flex; }
   .nav-mobile-only { display: flex; }
   .nav-link { font-size: 1rem; color: var(--text); }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; cursor: pointer; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  button { cursor: auto; }
   .testimonials-track { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .vn-grid { grid-template-columns: 1fr; }

@@ -626,6 +626,10 @@ button { cursor: none; font-family: inherit; }
 .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
   border-color: var(--primary); background: var(--primary-ultra);
 }
+.radio-group { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.radio-option { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; background: var(--off-white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1.2rem; font-size: 0.9rem; color: var(--dark); transition: border-color 0.3s, background 0.3s; }
+.radio-option input[type="radio"] { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+.radio-option:has(input:checked) { border-color: var(--primary); background: var(--primary-ultra); }
 
 /* ── PAGE HERO ── */
 .page-hero {

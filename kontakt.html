@@ -99,7 +99,15 @@
                 <div class="form-group"><label>Name</label><input type="text" placeholder="Ihr Name" required /></div>
                 <div class="form-group"><label>E-Mail</label><input type="email" placeholder="ihre@email.de" required /></div>
               </div>
-              <div class="form-group"><label>Telefon</label><input type="tel" placeholder="0160 / ..." /></div>
+              <div class="form-group"><label>Telefon</label><input type="tel" name="telefon" placeholder="0160 / ..." /></div>
+              <div class="form-group">
+                <label>Wie möchten Sie von uns kontaktiert werden? *</label>
+                <div class="radio-group">
+                  <label class="radio-option"><input type="radio" name="kontaktweg" value="Anruf" required /><span>Anruf</span></label>
+                  <label class="radio-option"><input type="radio" name="kontaktweg" value="WhatsApp" /><span>WhatsApp</span></label>
+                  <label class="radio-option"><input type="radio" name="kontaktweg" value="E-Mail" /><span>E-Mail</span></label>
+                </div>
+              </div>
               <div class="form-group">
                 <label>Anliegen</label>
                 <select>

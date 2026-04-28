@@ -195,3 +195,47 @@ if (!document.getElementById('loader')) {
     initReveal(); initCounters(); initBars();
   }
 }
+
+/* ── GOOGLE ANALYTICS CONSENT ── */
+(function initConsent() {
+  var GA_ID = 'G-C786GT03VX';
+
+  function loadGA() {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+  }
+
+  if (localStorage.getItem('ga_consent') === 'granted') { loadGA(); return; }
+  if (localStorage.getItem('ga_consent') === 'denied') return;
+
+  var banner = document.createElement('div');
+  banner.id = 'cookieBanner';
+  banner.innerHTML =
+    '<p>Diese Website nutzt Google Analytics, um Besucherzahlen zu verstehen. ' +
+    'Daten werden nur mit Ihrer Zustimmung erhoben. ' +
+    '<a href="datenschutz.html">Datenschutz</a></p>' +
+    '<div class="cookie-actions">' +
+    '<button class="btn-cookie-accept" id="cookieAccept">Akzeptieren</button>' +
+    '<button class="btn-cookie-decline" id="cookieDecline">Ablehnen</button>' +
+    '</div>';
+  document.body.appendChild(banner);
+
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('ga_consent', 'granted');
+    banner.remove();
+    loadGA();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('ga_consent', 'denied');
+    banner.remove();
+  });
+})();

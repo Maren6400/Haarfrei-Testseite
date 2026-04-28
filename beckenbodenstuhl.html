@@ -138,6 +138,17 @@
       .pelvi-photo-section img { height: 320px; }
     }
   </style>
+  <!-- Google Analytics 4 (consent-based) -->
+  <script>
+  if(localStorage.getItem("ga_consent")==="granted"){
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;gtag("js",new Date());gtag("config","G-C786GT03VX");
+    var s=document.createElement("script");s.async=true;
+    s.src="https://www.googletagmanager.com/gtag/js?id=G-C786GT03VX";
+    document.head.appendChild(s);
+  }
+  </script>
 </head>
 <body>
   <div class="cursor" id="cursor"></div>

@@ -199,6 +199,7 @@ if (!document.getElementById('loader')) {
 /* ── GOOGLE ANALYTICS CONSENT ── */
 (function initConsent() {
   var GA_ID = 'G-C786GT03VX';
+  var FB_ID = '765528657266056';
 
   function loadGA() {
     if (window.__gaLoaded) return;
@@ -214,13 +215,27 @@ if (!document.getElementById('loader')) {
     document.head.appendChild(s);
   }
 
-  if (localStorage.getItem('ga_consent') === 'granted') { loadGA(); return; }
+  function loadPixel() {
+    if (window.__fbLoaded) return;
+    window.__fbLoaded = true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', FB_ID);
+    fbq('track', 'PageView');
+  }
+
+  function loadAll() { loadGA(); loadPixel(); }
+
+  if (localStorage.getItem('ga_consent') === 'granted') { loadAll(); return; }
   if (localStorage.getItem('ga_consent') === 'denied') return;
 
   var banner = document.createElement('div');
   banner.id = 'cookieBanner';
   banner.innerHTML =
-    '<p>Diese Website nutzt Google Analytics, um Besucherzahlen zu verstehen. ' +
+    '<p>Diese Website nutzt Google Analytics und Meta Pixel, um Besucherzahlen zu verstehen. ' +
     'Daten werden nur mit Ihrer Zustimmung erhoben. ' +
     '<a href="datenschutz.html">Datenschutz</a></p>' +
     '<div class="cookie-actions">' +
@@ -232,7 +247,7 @@ if (!document.getElementById('loader')) {
   document.getElementById('cookieAccept').addEventListener('click', function() {
     localStorage.setItem('ga_consent', 'granted');
     banner.remove();
-    loadGA();
+    loadAll();
   });
   document.getElementById('cookieDecline').addEventListener('click', function() {
     localStorage.setItem('ga_consent', 'denied');

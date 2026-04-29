@@ -1,4 +1,4 @@
-yamlname: Deploy to All-Inkl via FTP
+name: Deploy to All-Inkl via FTP
 
 on:
   push:

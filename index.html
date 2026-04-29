@@ -484,6 +484,25 @@
               <div class="form-group"><label for="email">E-Mail</label><input type="email" id="email" placeholder="ihre@email.de" required /></div>
             </div>
             <div class="form-group"><label for="phone">Telefon</label><input type="tel" id="phone" placeholder="0160 / ..." /></div>
+            <div class="form-group">
+              <label>Wie möchten Sie von uns kontaktiert werden? *</label>
+              <div class="radio-group">
+                <label class="radio-option"><input type="radio" name="kontaktweg" value="Anruf" required /><span>Anruf</span></label>
+                <label class="radio-option"><input type="radio" name="kontaktweg" value="WhatsApp" /><span>WhatsApp</span></label>
+                <label class="radio-option"><input type="radio" name="kontaktweg" value="E-Mail" /><span>E-Mail</span></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Anliegen</label>
+              <select>
+                <option value="">Bitte wählen...</option>
+                <option>Terminanfrage</option>
+                <option>Beratung / Erstgespräch</option>
+                <option>Gutschein anfragen</option>
+                <option>Preisanfrage</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
             <div class="form-group"><label for="message">Nachricht</label><textarea id="message" rows="4" placeholder="Ihre Nachricht..." required></textarea></div>
             <button type="submit" class="btn btn-primary btn-full">
               <span>Nachricht senden</span>

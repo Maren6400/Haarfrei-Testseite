@@ -21,6 +21,9 @@ jobs:
           protocol: ftps
           local-dir: ./
           server-dir: /www/htdocs/w010846b/haarfrei-trier.de/
+          state-name: .ftp-deploy-sync-state-v2.json
+
+                    
           exclude: |
             **/.git*
             **/.git*/**

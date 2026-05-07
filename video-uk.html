@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video | HaarFrei Trier</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .video-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8rem 1.5rem 4rem;
+    }
+    .video-wrapper {
+      width: 100%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="Logos/Logo_Schrift_grün.png" alt="HaarFrei Trier Logo" />
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link nav-mobile-only">Home</a>
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise-gutscheine.html" class="nav-link">Preise</a>
+        <div class="nav-item"><a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a><div class="nav-dropdown"><a href="beckenbodenstuhl.html#preise">Preise</a></div></div>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- VIDEO -->
+  <main class="video-page">
+    <div class="video-wrapper">
+      <!-- PLACEHOLDER: Insert Vimeo URL here (e.g. https://player.vimeo.com/video/YOUR_VIDEO_ID) -->
+      <iframe
+        src="https://player.vimeo.com/video/YOUR_VIDEO_ID?autoplay=0&title=0&byline=0&portrait=0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        title="HaarFrei Trier – Video">
+      </iframe>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="Logos/Logo_Schrift_grün.png" alt="" class="footer-logo-img" />
+          <p>Premium Laser-Haarentfernung in Trier.<br />Seit über 19 Jahren Ihr Experte für dauerhafte Haarentfernung.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Studio</h4>
+          <a href="einrichtung-team.html">Team &amp; Studio</a>
+          <a href="behandlungsmethoden.html">Methoden</a>
+          <a href="preise-gutscheine.html">Preise</a>
+          <a href="beckenbodenstuhl.html">Beckenbodenstuhl</a>
+          <a href="faq.html">FAQ</a>
+        </div>
+        <div class="footer-links">
+          <h4>Rechtliches</h4>
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="agb.html">AGB</a>
+        </div>
+        <div class="footer-links">
+          <h4>Kontakt</h4>
+          <a href="tel:016072176446">0160 / 721 76 46</a>
+          <a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a>
+          <a href="kontakt.html">Südallee 34, Trier</a>
+          <a href="https://www.etermin.net/haarfrei-trier" target="_blank">Online Termin buchen</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 HaarFrei Trier · Alle Rechte vorbehalten</span>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/maren.viergutz/" target="_blank" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="24" rx="4" fill="#1877F2"/>
+              <path d="M16 8h-2a1 1 0 00-1 1v2h3l-.5 3H13v7h-3v-7H8v-3h2V9a4 4 0 014-4h2v3z" fill="white"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/haarfrei_trier/" target="_blank" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+                  <stop offset="0%" stop-color="#fdf497"/>
+                  <stop offset="45%" stop-color="#fd5949"/>
+                  <stop offset="60%" stop-color="#d6249f"/>
+                  <stop offset="90%" stop-color="#285AEB"/>
+                </radialGradient>
+              </defs>
+              <rect width="24" height="24" rx="5" fill="url(#ig-grad)"/>
+              <rect x="6" y="6" width="12" height="12" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+              <circle cx="16.5" cy="7.5" r="0.9" fill="white"/>
+            </svg>
+          </a>
+        </div>
+        <span>
+          <a href="impressum.html">Impressum</a> ·
+          <a href="datenschutz.html">Datenschutz</a> ·
+          <a href="agb.html">AGB</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

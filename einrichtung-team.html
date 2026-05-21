@@ -304,10 +304,28 @@
         <h2 class="section-title reveal-up">Zertifiziert &amp;<br /><em>geprüft.</em></h2>
         <p class="section-desc reveal-up">Unsere Behandlerinnen sind zertifiziert und werden regelmäßig weitergebildet.</p>
       </div>
-      <div class="zert-grid reveal-up" style="max-width:520px;margin:0 auto;">
-        <div class="zert-item">
-          <img src="Fotos/Haarfrei-Trier_zertifikate.png" alt="Zertifikate HaarFrei Trier" style="width:100%;height:auto;object-fit:cover;border-radius:var(--radius-lg);display:block;" />
+      <div class="zert-grid reveal-up">
+        <div class="zert-item" onclick="openLightbox('Zertifikate/01_Haarfrei_trier_Zertifikat_Maren_OS.jpg')">
+          <img src="Zertifikate/01_Haarfrei_trier_Zertifikat_Maren_OS.jpg" alt="Zertifikat Maren OS" />
         </div>
+        <div class="zert-item" onclick="openLightbox('Zertifikate/02_Haarfrei_trier_Zertifikat_Inesa_OS.jpg')">
+          <img src="Zertifikate/02_Haarfrei_trier_Zertifikat_Inesa_OS.jpg" alt="Zertifikat Inesa OS" />
+        </div>
+        <div class="zert-item" onclick="openLightbox('Zertifikate/03_Haarfrei_trier_Zertifikat_Anna_OS.jpg')">
+          <img src="Zertifikate/03_Haarfrei_trier_Zertifikat_Anna_OS.jpg" alt="Zertifikat Anna OS" />
+        </div>
+        <div class="zert-item" onclick="openLightbox('Zertifikate/04_Haarfrei_trier_Zertifikat_EMF_Inesa.jpg')">
+          <img src="Zertifikate/04_Haarfrei_trier_Zertifikat_EMF_Inesa.jpg" alt="Zertifikat EMF Inesa" />
+        </div>
+        <div class="zert-item" onclick="openLightbox('Zertifikate/05_Haarfrei_trier_Zertifikat_EMF_Maren.jpg')">
+          <img src="Zertifikate/05_Haarfrei_trier_Zertifikat_EMF_Maren.jpg" alt="Zertifikat EMF Maren" />
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+        <img id="lightbox-img" src="" alt="Zertifikat" onclick="event.stopPropagation()" />
       </div>
     </div>
   </section>

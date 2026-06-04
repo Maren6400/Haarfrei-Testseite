@@ -1088,7 +1088,11 @@ button { cursor: none; font-family: inherit; }
   .hero-left > h2, .hero-left > p:not(.hero-sub) { display: none; }
   .hero-photo-wrap { max-width: 100%; }
   .hero-photo { height: 250px; min-height: unset; max-height: 250px; object-fit: cover; object-position: top center; }
-  .hero-photo-badge { right: 0; left: auto; bottom: -10px; min-width: unset; padding: 10px 14px; }
+  .hero-photo-badge { right: 0; left: auto; bottom: -10px; min-width: unset; padding: 8px 10px; gap: 8px; }
+  .hero-photo-badge .badge-icon { font-size: 1rem; }
+  .hero-photo-badge strong { font-size: 0.72rem; }
+  .hero-photo-badge small { font-size: 0.62rem; }
+  .hero-photo-tag { font-size: 0.65rem; padding: 6px 12px; top: 10px; right: -8px; }
   .hero-scroll { display: none; }
 }
 

@@ -1031,7 +1031,7 @@ button { cursor: none; font-family: inherit; }
   .hero-right { align-items: center; }
   .hero-card { max-width: 100%; }
   .hero-photo { height: 420px; }
-  .hero-photo-badge { left: 0; bottom: -16px; }
+  .hero-photo-badge { right: 0; left: auto; bottom: -16px; }
   .hero-photo-tag { right: 0; }
   .about-grid, .tech-grid, .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
   .testimonials-track { grid-template-columns: 1fr 1fr; }
@@ -1088,7 +1088,7 @@ button { cursor: none; font-family: inherit; }
   .hero-left > h2, .hero-left > p:not(.hero-sub) { display: none; }
   .hero-photo-wrap { max-width: 100%; }
   .hero-photo { height: 250px; min-height: unset; max-height: 250px; object-fit: cover; object-position: top center; }
-  .hero-photo-badge { left: 0; bottom: -10px; min-width: unset; padding: 10px 14px; }
+  .hero-photo-badge { right: 0; left: auto; bottom: -10px; min-width: unset; padding: 10px 14px; }
   .hero-scroll { display: none; }
 }
 

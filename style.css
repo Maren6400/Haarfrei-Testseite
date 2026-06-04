@@ -259,7 +259,7 @@ button { cursor: none; font-family: inherit; }
   display: block;
 }
 .hero-photo-badge {
-  position: absolute; bottom: -20px; left: -20px;
+  position: absolute; bottom: -20px; right: -20px; left: auto;
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);

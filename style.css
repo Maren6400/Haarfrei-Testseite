@@ -785,6 +785,26 @@ button { cursor: none; font-family: inherit; }
 .footer-social svg { width: 40px; height: 40px; }
 .footer-social a:hover { opacity: 1; transform: translateY(-2px); }
 
+/* Widerrufsbutton */
+#hbRevocationButton {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.45rem 1rem;
+  background: transparent;
+  border: 1.5px solid var(--primary-light);
+  border-radius: 4px;
+  color: var(--primary-light) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.2s, color 0.2s;
+}
+#hbRevocationButton:hover {
+  background: var(--primary-light);
+  color: var(--dark) !important;
+}
+
 /* ── BEHANDLUNGSFOTOS GRID ── */
 .treatment-photo-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;

@@ -17,8 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name    = htmlspecialchars(strip_tags(trim($_POST['name'] ?? '')));
 $email   = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
-$phone   = htmlspecialchars(strip_tags(trim($_POST['phone'] ?? '')));
-$message = htmlspecialchars(strip_tags(trim($_POST['nachricht'] ?? '')));
+$phone    = htmlspecialchars(strip_tags(trim($_POST['phone'] ?? '')));
+$anliegen = htmlspecialchars(strip_tags(trim($_POST['anliegen'] ?? '')));
+$message  = htmlspecialchars(strip_tags(trim($_POST['nachricht'] ?? '')));
 
 if (!$name || !$email || !$message) {
     http_response_code(400);
@@ -34,7 +35,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 $to      = 'info@haarfrei-trier.de';
 $subject = 'Neue Kontaktanfrage von ' . $name;
-$body    = "Name: $name\nE-Mail: $email\nTelefon: $phone\n\nNachricht:\n$message";
+$body    = "Name: $name\nE-Mail: $email\nTelefon: $phone\nAnliegen: $anliegen\n\nNachricht:\n$message";
 $headers = "From: noreply@haarfrei-trier.de\r\n"
          . "Reply-To: $email\r\n"
          . "Content-Type: text/plain; charset=UTF-8\r\n";

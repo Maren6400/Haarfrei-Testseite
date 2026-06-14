@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $name    = htmlspecialchars(strip_tags(trim($_POST['name'] ?? '')));
 $email   = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
 $phone   = htmlspecialchars(strip_tags(trim($_POST['phone'] ?? '')));
-$message = htmlspecialchars(strip_tags(trim($_POST['message'] ?? '')));
+$message = htmlspecialchars(strip_tags(trim($_POST['nachricht'] ?? '')));
 
 if (!$name || !$email || !$message) {
     http_response_code(400);

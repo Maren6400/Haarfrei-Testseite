@@ -167,12 +167,23 @@ document.querySelectorAll('#contactForm').forEach(form => {
     const span = btn?.querySelector('span');
     if (!span) return;
     span.textContent = 'Wird gesendet…'; btn.disabled = true;
-    setTimeout(() => {
-      span.textContent = 'Nachricht gesendet ✓';
-      btn.style.background = 'var(--primary-2)';
-      form.reset();
-      setTimeout(() => { span.textContent = 'Nachricht senden'; btn.disabled = false; btn.style.background = ''; }, 3000);
-    }, 1200);
+    fetch(form.action, { method: 'POST', body: new FormData(form) })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          span.textContent = 'Nachricht gesendet ✓';
+          btn.style.background = 'var(--primary-2)';
+          form.reset();
+          setTimeout(() => { span.textContent = 'Nachricht senden'; btn.disabled = false; btn.style.background = ''; }, 3000);
+        } else {
+          span.textContent = 'Fehler – bitte erneut versuchen';
+          btn.disabled = false;
+        }
+      })
+      .catch(() => {
+        span.textContent = 'Fehler – bitte erneut versuchen';
+        btn.disabled = false;
+      });
   });
 });
 

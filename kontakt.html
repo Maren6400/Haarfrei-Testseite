@@ -108,11 +108,11 @@
 
         <div>
           <div class="contact-form-wrap reveal-right">
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" action="mail.php" method="POST">
               <h3>Nachricht senden</h3>
               <div class="form-row">
-                <div class="form-group"><label>Name</label><input type="text" placeholder="Ihr Name" required /></div>
-                <div class="form-group"><label>E-Mail</label><input type="email" placeholder="ihre@email.de" required /></div>
+                <div class="form-group"><label>Name</label><input type="text" name="name" placeholder="Ihr Name" required /></div>
+                <div class="form-group"><label>E-Mail</label><input type="email" name="email" placeholder="ihre@email.de" required /></div>
               </div>
               <div class="form-group"><label>Telefon</label><input type="tel" name="telefon" placeholder="0160 / ..." /></div>
               <div class="form-group">
@@ -125,7 +125,7 @@
               </div>
               <div class="form-group">
                 <label>Anliegen</label>
-                <select>
+                <select name="anliegen">
                   <option value="">Bitte wählen...</option>
                   <option>Terminanfrage</option>
                   <option>Beratung / Erstgespräch</option>
@@ -134,7 +134,7 @@
                   <option>Sonstiges</option>
                 </select>
               </div>
-              <div class="form-group"><label>Nachricht</label><textarea rows="5" placeholder="Ihre Nachricht..." required></textarea></div>
+              <div class="form-group"><label>Nachricht</label><textarea name="nachricht" rows="5" placeholder="Ihre Nachricht..." required></textarea></div>
               <button type="submit" class="btn btn-primary btn-full">
                 <span>Nachricht senden</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

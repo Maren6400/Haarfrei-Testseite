@@ -100,6 +100,7 @@ function initCounters() {
   document.querySelectorAll('.stat-num').forEach(el => {
     const obs = new IntersectionObserver(entries => {
       if (!entries[0].isIntersecting) return;
+      if (!el.dataset.target) return;
       const target = parseInt(el.dataset.target);
       let cur = 0; const step = target / (1600 / 16);
       const t = setInterval(() => {
@@ -144,7 +145,6 @@ window.addEventListener('scroll', () => {
   const sy = window.scrollY;
   if (sy < window.innerHeight) {
     hero.style.transform = `translateY(${sy * 0.2}px)`;
-    hero.style.opacity = Math.max(0, 1 - sy / (window.innerHeight * 0.75));
   }
 }, { passive: true });
 
@@ -257,25 +257,30 @@ if (!document.getElementById('loader')) {
   if (localStorage.getItem('ga_consent') === 'granted') { loadAll(); return; }
   if (localStorage.getItem('ga_consent') === 'denied') return;
 
-  var banner = document.createElement('div');
-  banner.id = 'cookieBanner';
-  banner.innerHTML =
-    '<p>Diese Website nutzt Google Analytics und Meta Pixel, um Besucherzahlen zu verstehen. ' +
-    'Daten werden nur mit Ihrer Zustimmung erhoben. ' +
-    '<a href="datenschutz.html">Datenschutz</a></p>' +
-    '<div class="cookie-actions">' +
-    '<button class="btn-cookie-accept" id="cookieAccept">Akzeptieren</button>' +
-    '<button class="btn-cookie-decline" id="cookieDecline">Ablehnen</button>' +
-    '</div>';
-  document.body.appendChild(banner);
+  // Banner erst nach Load-Event anzeigen, damit LCP nicht blockiert wird
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var banner = document.createElement('div');
+      banner.id = 'cookieBanner';
+      banner.innerHTML =
+        '<p>Diese Website nutzt Google Analytics und Meta Pixel, um Besucherzahlen zu verstehen. ' +
+        'Daten werden nur mit Ihrer Zustimmung erhoben. ' +
+        '<a href="datenschutz.html">Datenschutz</a></p>' +
+        '<div class="cookie-actions">' +
+        '<button class="btn-cookie-accept" id="cookieAccept">Akzeptieren</button>' +
+        '<button class="btn-cookie-decline" id="cookieDecline">Ablehnen</button>' +
+        '</div>';
+      document.body.appendChild(banner);
 
-  document.getElementById('cookieAccept').addEventListener('click', function() {
-    localStorage.setItem('ga_consent', 'granted');
-    banner.remove();
-    loadAll();
-  });
-  document.getElementById('cookieDecline').addEventListener('click', function() {
-    localStorage.setItem('ga_consent', 'denied');
-    banner.remove();
+      document.getElementById('cookieAccept').addEventListener('click', function() {
+        localStorage.setItem('ga_consent', 'granted');
+        banner.remove();
+        loadAll();
+      });
+      document.getElementById('cookieDecline').addEventListener('click', function() {
+        localStorage.setItem('ga_consent', 'denied');
+        banner.remove();
+      });
+    }, 500);
   });
 })();

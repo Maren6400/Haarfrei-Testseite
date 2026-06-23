@@ -1054,6 +1054,8 @@ button { cursor: none; font-family: inherit; }
   .hero-photo-badge { right: 0; left: auto; bottom: -16px; }
   .hero-photo-tag { right: 0; }
   .about-grid, .tech-grid, .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .about-grid-reverse .about-visual { order: 2; }
+  .about-grid-reverse .about-text { order: 1; }
   .testimonials-track { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .vn-grid { grid-template-columns: 1fr 1fr; }

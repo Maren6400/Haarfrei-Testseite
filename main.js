@@ -257,30 +257,25 @@ if (!document.getElementById('loader')) {
   if (localStorage.getItem('ga_consent') === 'granted') { loadAll(); return; }
   if (localStorage.getItem('ga_consent') === 'denied') return;
 
-  // Banner erst nach Load-Event anzeigen, damit LCP nicht blockiert wird
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      var banner = document.createElement('div');
-      banner.id = 'cookieBanner';
-      banner.innerHTML =
-        '<p>Diese Website nutzt Google Analytics und Meta Pixel, um Besucherzahlen zu verstehen. ' +
-        'Daten werden nur mit Ihrer Zustimmung erhoben. ' +
-        '<a href="datenschutz.html">Datenschutz</a></p>' +
-        '<div class="cookie-actions">' +
-        '<button class="btn-cookie-accept" id="cookieAccept">Akzeptieren</button>' +
-        '<button class="btn-cookie-decline" id="cookieDecline">Ablehnen</button>' +
-        '</div>';
-      document.body.appendChild(banner);
+  var banner = document.createElement('div');
+  banner.id = 'cookieBanner';
+  banner.innerHTML =
+    '<p>Diese Website nutzt Google Analytics und Meta Pixel, um Besucherzahlen zu verstehen. ' +
+    'Daten werden nur mit Ihrer Zustimmung erhoben. ' +
+    '<a href="datenschutz.html">Datenschutz</a></p>' +
+    '<div class="cookie-actions">' +
+    '<button class="btn-cookie-accept" id="cookieAccept">Akzeptieren</button>' +
+    '<button class="btn-cookie-decline" id="cookieDecline">Ablehnen</button>' +
+    '</div>';
+  document.body.appendChild(banner);
 
-      document.getElementById('cookieAccept').addEventListener('click', function() {
-        localStorage.setItem('ga_consent', 'granted');
-        banner.remove();
-        loadAll();
-      });
-      document.getElementById('cookieDecline').addEventListener('click', function() {
-        localStorage.setItem('ga_consent', 'denied');
-        banner.remove();
-      });
-    }, 500);
+  document.getElementById('cookieAccept').addEventListener('click', function() {
+    localStorage.setItem('ga_consent', 'granted');
+    banner.remove();
+    loadAll();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', function() {
+    localStorage.setItem('ga_consent', 'denied');
+    banner.remove();
   });
 })();

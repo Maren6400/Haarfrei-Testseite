@@ -398,6 +398,7 @@ button { cursor: none; font-family: inherit; }
   border-bottom: 1px solid #e5e5e5;
 }
 .beliebte-themen-liste li a {
+  font-size: 0.85rem;
   color: #333;
   text-decoration: none;
 }

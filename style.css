@@ -377,6 +377,39 @@ button { cursor: none; font-family: inherit; }
   margin-bottom: 0.8rem; font-weight: 500;
 }
 .section-label-white { color: rgba(255,255,255,0.7) !important; }
+.beliebte-themen {
+  margin-top: 32px;
+}
+.sidebar-subtitle {
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin-bottom: 12px;
+}
+.beliebte-themen-liste {
+  list-style: none;
+  counter-reset: item;
+  padding: 0;
+  margin: 0;
+}
+.beliebte-themen-liste li {
+  counter-increment: item;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.beliebte-themen-liste li::before {
+  content: counter(item) ". ";
+  color: #4a9b8e;
+  font-weight: 600;
+}
+.beliebte-themen-liste li a {
+  color: #333;
+  text-decoration: none;
+}
+.beliebte-themen-liste li a:hover {
+  color: #4a9b8e;
+}
 .section-title {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.8vw, 3.5rem);

@@ -101,9 +101,30 @@
       color: var(--primary);
     }
     .comfort-icon svg { width: 16px; height: 16px; }
+    .related-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .related-link-card {
+      display: block;
+      padding: 1.8rem 2rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: transform 0.3s var(--trans), box-shadow 0.3s, border-color 0.2s;
+    }
+    .related-link-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+    .related-link-card strong { display: block; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--dark); margin-bottom: 0.5rem; }
+    .related-link-card span { display: block; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+    .related-link-arrow { display: inline-block; margin-top: 0.9rem; font-size: 0.78rem; color: var(--primary); font-weight: 600; }
     @media (max-width: 768px) {
       .zone-grid { grid-template-columns: 1fr; }
       .reason-grid { grid-template-columns: 1fr; }
+      .related-links-grid { grid-template-columns: 1fr; }
     }
   </style>
   <!-- Google Analytics 4 (consent-based) -->
@@ -515,6 +536,27 @@
             Das schafft Sicherheit und ermöglicht eine Entscheidung ohne Zeitdruck.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNE VERLINKUNG -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-title reveal-up" style="font-size:1.8rem">Das könnte Sie<br /><em>ebenfalls interessieren.</em></h3>
+      </div>
+      <div class="related-links-grid reveal-up">
+        <a href="laser-haarentfernung-intimbereich.html" class="related-link-card">
+          <strong>Laser-Haarentfernung im Intimbereich</strong>
+          <span>Informationen zu Ablauf, Behandlung und häufigen Fragen.</span>
+          <span class="related-link-arrow">Mehr erfahren →</span>
+        </a>
+        <a href="laser-oder-ipl-unterschied.html" class="related-link-card">
+          <strong>IPL oder Laser – was ist der Unterschied?</strong>
+          <span>Die wichtigsten Unterschiede verständlich erklärt.</span>
+          <span class="related-link-arrow">Mehr erfahren →</span>
+        </a>
       </div>
     </div>
   </section>

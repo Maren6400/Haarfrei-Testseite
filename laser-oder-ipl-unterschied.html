@@ -82,9 +82,30 @@
     }
     .advantage-box h3 { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 300; margin-bottom: 1rem; }
     .advantage-box p { font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.9); }
+    .related-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .related-link-card {
+      display: block;
+      padding: 1.8rem 2rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      text-decoration: none;
+      transition: transform 0.3s var(--trans), box-shadow 0.3s, border-color 0.2s;
+    }
+    .related-link-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-strong); }
+    .related-link-card strong { display: block; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--dark); margin-bottom: 0.5rem; }
+    .related-link-card span { display: block; font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+    .related-link-arrow { display: inline-block; margin-top: 0.9rem; font-size: 0.78rem; color: var(--primary); font-weight: 600; }
     @media (max-width: 768px) {
       .zone-grid { grid-template-columns: 1fr; }
       .advantage-box { padding: 2rem; }
+      .related-links-grid { grid-template-columns: 1fr; }
     }
   </style>
   <!-- Google Analytics 4 (consent-based) -->
@@ -496,6 +517,27 @@
             Nach dem Beratungsgespräch ist die Technik oft gar nicht mehr der entscheidende Punkt. Wichtiger wird die Gewissheit, eine Behandlung zu wählen, die zu den eigenen Haaren, der eigenen Haut und den persönlichen Zielen passt. Genau dabei unterstützen wir Sie.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNE VERLINKUNG -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-title reveal-up" style="font-size:1.8rem">Das könnte Sie<br /><em>ebenfalls interessieren.</em></h3>
+      </div>
+      <div class="related-links-grid reveal-up">
+        <a href="laser-haarentfernung-intimbereich.html" class="related-link-card">
+          <strong>Laser-Haarentfernung im Intimbereich</strong>
+          <span>Eine der am häufigsten nachgefragten Behandlungen in unserem Studio.</span>
+          <span class="related-link-arrow">Mehr erfahren →</span>
+        </a>
+        <a href="tut-laser-haarentfernung-weh.html" class="related-link-card">
+          <strong>Tut Laser-Haarentfernung weh?</strong>
+          <span>Wie die Behandlung empfunden wird und was Kundinnen berichten.</span>
+          <span class="related-link-arrow">Mehr erfahren →</span>
+        </a>
       </div>
     </div>
   </section>

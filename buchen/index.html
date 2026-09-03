@@ -208,8 +208,19 @@
 
   <script>
   (function () {
+    var ALLOWED_PARAMS = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_content',
+      'utm_term',
+      'utm_id',
+      'utm_source_platform',
+      'utm_creative_format',
+      'utm_marketing_tactic',
+      'oppref'
+    ];
     var pageParams = new URLSearchParams(window.location.search);
-    if (Array.from(pageParams.keys()).length === 0) return;
     document.querySelectorAll('a[href*="etermin.net"]').forEach(function (link) {
       var url;
       try {
@@ -217,9 +228,9 @@
       } catch (e) {
         return;
       }
-      pageParams.forEach(function (value, key) {
-        if (!url.searchParams.has(key)) {
-          url.searchParams.set(key, value);
+      ALLOWED_PARAMS.forEach(function (key) {
+        if (pageParams.has(key) && !url.searchParams.has(key)) {
+          url.searchParams.set(key, pageParams.get(key));
         }
       });
       link.setAttribute('href', url.toString());

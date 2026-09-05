@@ -9,28 +9,8 @@
   <meta name="robots" content="noindex, follow" />
   <link rel="stylesheet" href="../fonts/fonts.css" />
   <link rel="stylesheet" href="../style.css" />
-  <!-- Google Analytics 4 (consent-based) -->
-  <script>
-  if(localStorage.getItem("ga_consent")==="granted"){
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag=gtag;gtag("js",new Date());gtag("config","G-C786GT03VX");
-    var s=document.createElement("script");s.async=true;
-    s.src="https://www.googletagmanager.com/gtag/js?id=G-C786GT03VX";
-    document.head.appendChild(s);
-  }
-  </script>
-  <!-- Meta Pixel (consent-based) -->
-  <script>
-  if(localStorage.getItem("ga_consent")==="granted"){
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','765528657266056');fbq('track','PageView');
-  }
-  </script>
+  <link rel="stylesheet" href="../consent.css" />
+  <script src="../consent.js" defer></script>
   <style>
     body { cursor: auto; }
     button, a, .btn { cursor: pointer; }
@@ -201,7 +181,7 @@
 
     <footer class="ig-footer">
       <span>Südallee 34, 54290 Trier · <a href="tel:016072176446">0160 / 721 76 46</a></span><br />
-      <a href="../impressum.html">Impressum</a><span class="sep">·</span><a href="../datenschutz.html">Datenschutz</a>
+      <a href="../impressum.html">Impressum</a><span class="sep">·</span><a href="../datenschutz.html">Datenschutz</a><span class="sep">·</span><a href="#" class="hf-open-consent">Cookie-Einstellungen</a>
     </footer>
 
   </div>

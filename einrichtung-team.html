@@ -13,6 +13,8 @@
   <meta property="og:locale" content="de_DE" />
   <link rel="stylesheet" href="fonts/fonts.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="consent.css" />
+  <script src="consent.js" defer></script>
   <style>
     /* DIASHOW */
     .slideshow-wrap { position:relative; margin:3rem 0; border-radius: var(--radius); overflow:hidden; background:#000; }
@@ -60,28 +62,6 @@
         "jobTitle": "Zertifizierte Spezialistin"
       }
     ]
-  }
-  </script>
-  <!-- Google Analytics 4 (consent-based) -->
-  <script>
-  if(localStorage.getItem("ga_consent")==="granted"){
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag=gtag;gtag("js",new Date());gtag("config","G-C786GT03VX");
-    var s=document.createElement("script");s.async=true;
-    s.src="https://www.googletagmanager.com/gtag/js?id=G-C786GT03VX";
-    document.head.appendChild(s);
-  }
-  </script>
-  <!-- Meta Pixel (consent-based) -->
-  <script>
-  if(localStorage.getItem("ga_consent")==="granted"){
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init','765528657266056');fbq('track','PageView');
   }
   </script>
 </head>
@@ -344,7 +324,7 @@
           <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="ig-grad" cx="30%" cy="107%" r="150%"><stop offset="0%" stop-color="#fdf497"/><stop offset="45%" stop-color="#fd5949"/><stop offset="60%" stop-color="#d6249f"/><stop offset="90%" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="5" fill="url(#ig-grad)"/><rect x="6" y="6" width="12" height="12" rx="3" fill="none" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16.5" cy="7.5" r="0.9" fill="white"/></svg>
         </a>
       </div>
-      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" class="hf-open-consent">Cookie-Einstellungen</a></span>
     </div>
   </div></footer>
   <script src="main.js"></script>

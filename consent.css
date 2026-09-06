@@ -13,25 +13,24 @@ html.hf-consent-lock body { overflow: hidden !important; }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding: 1rem;
+  padding: 0;
 }
-
-@media (min-width: 640px) {
-  .hf-consent-overlay { align-items: center; }
-}
+.hf-consent-overlay[hidden] { display: none; }
 
 .hf-consent-dialog {
   width: 100%;
-  max-width: 480px;
+  max-width: 560px;
   max-height: calc(100vh - 2rem);
   overflow-y: auto;
   background: var(--white, #fff);
-  border-radius: var(--radius-lg, 12px);
+  border-radius: var(--radius-lg, 12px) var(--radius-lg, 12px) 0 0;
   box-shadow: var(--shadow-lg, 0 20px 60px rgba(0,0,0,0.2));
   padding: 1.6rem;
+  margin: 0 1rem;
   font-family: var(--font-sans, system-ui, sans-serif);
   color: var(--text, #1a3232);
 }
+
 
 .hf-consent-dialog h2 {
   font-family: var(--font-serif, serif);

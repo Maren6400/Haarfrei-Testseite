@@ -8,6 +8,7 @@
   var STORAGE_KEY = 'hf_consent_v2';
   var GA_ID = 'G-C786GT03VX';
   var FB_ID = '765528657266056';
+  var OAI_PIXEL_ID = 'HHuEBuATcivXCVoXxgcySe';
 
   /* ── Consent lesen/schreiben ── */
 
@@ -74,8 +75,32 @@
     fbq('track', 'PageView');
   }
 
-  /* Platz für spätere Marketing-Erweiterung: function loadOpenAIPixel() { ... }
-     wird hier in applyTrackers() im "marketing"-Zweig ergänzt, sobald verfügbar. */
+  function loadOpenAIPixel() {
+    if (window.__hfOaiLoaded) return;
+    window.__hfOaiLoaded = true;
+    (function (w, d, s, u) {
+      if (w.oaiq) return;
+      var q = function () { q.q.push(arguments); };
+      q.q = [];
+      w.oaiq = q;
+      var js = d.createElement(s);
+      js.async = true;
+      js.src = u;
+      var f = d.getElementsByTagName(s)[0];
+      f.parentNode.insertBefore(js, f);
+    })(window, document, 'script', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
+    window.oaiq('init', { pixelId: OAI_PIXEL_ID });
+  }
+
+  /* Feuert ein Conversion-Event nur, wenn Marketing-Einwilligung vorliegt.
+     Lädt das Pixel bei Bedarf nach (z. B. wenn Einwilligung erst auf der
+     Ziel-Seite selbst erteilt wird). */
+  function measureConversion(eventName, data, options) {
+    var consent = readConsent();
+    if (!consent || !consent.marketing) return;
+    loadOpenAIPixel();
+    window.oaiq('measure', eventName, data, options);
+  }
 
   function revealMediaEmbeds() {
     document.querySelectorAll('[data-hf-vimeo-embed]').forEach(function (el) {
@@ -98,7 +123,9 @@
     if (!consent) return;
     if (consent.statistics) loadGA4();
     if (consent.marketing) loadMetaPixel();
+    if (consent.marketing) loadOpenAIPixel();
     if (consent.externalMedia) revealMediaEmbeds();
+    document.dispatchEvent(new CustomEvent('hf:consent-applied', { detail: consent }));
   }
 
   /* ── Dialog-UI ── */
@@ -343,6 +370,13 @@
       });
     });
   }
+
+  /* ── Öffentliche API für Conversion-Tracking auf einzelnen Seiten ── */
+
+  window.hfConsent = {
+    getConsent: readConsent,
+    measureConversion: measureConversion
+  };
 
   /* ── Start ── */
 

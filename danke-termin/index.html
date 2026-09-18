@@ -76,5 +76,21 @@
 
   </div>
 
+  <script>
+  (function () {
+    var fired = false;
+    function fireConversion() {
+      if (fired) return;
+      if (!(window.hfConsent && window.hfConsent.measureConversion)) return;
+      var consent = window.hfConsent.getConsent();
+      if (!consent || !consent.marketing) return;
+      fired = true;
+      window.hfConsent.measureConversion('appointment_scheduled', { type: 'customer_action' });
+    }
+    document.addEventListener('DOMContentLoaded', fireConversion);
+    document.addEventListener('hf:consent-applied', fireConversion);
+  })();
+  </script>
+
 </body>
 </html>

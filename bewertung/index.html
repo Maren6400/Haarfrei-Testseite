@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ihre Bewertung – Haarfrei-Trier</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../fonts/fonts.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../consent.css" />
+  <script src="../consent.js" defer></script>
+  <style>
+    body, button, a, .btn, .chip, label { cursor: auto; }
+    button, a, .btn, .chip, label, .stars button { cursor: pointer; }
+    .cursor, .cursor-follower { display: none !important; }
+
+    .bw-hero { padding: 150px 0 60px; }
+    .bw-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+    .bw-hero p { margin-bottom: 0; }
+
+    .bw-section { padding: 48px 0 90px; background: var(--primary-xtra); }
+    .bw-wrap { max-width: 600px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 18px; }
+
+    .bw-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .bw-stepcount { font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+    .bw-bar { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; }
+    .bw-bar[hidden] { display: none; }
+    .bw-bar i { height: 4px; border-radius: 2px; background: var(--primary-pale); }
+    .bw-bar i.on { background: var(--primary); }
+
+    .bw-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 30px 24px; display: flex; flex-direction: column; gap: 16px; }
+    .bw-card h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2rem); line-height: 1.2; color: var(--dark); }
+    .bw-card p { color: var(--text); }
+    .bw-hint { color: var(--text-dim) !important; font-size: 0.9rem; }
+    .bw-lbl { font-weight: 500; font-size: 0.9rem; color: var(--dark); }
+
+    .bw-card textarea, .bw-card input[type=text] {
+      width: 100%; font: inherit; font-weight: 400; color: var(--text); background: var(--off-white);
+      border: 1.5px solid var(--border-strong); border-radius: var(--radius); padding: 12px 14px;
+    }
+    .bw-card textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+    .bw-card textarea:focus, .bw-card input:focus, .bw-card button:focus-visible, .bw-card a:focus-visible {
+      outline: 2px solid var(--primary); outline-offset: 2px;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { font: inherit; font-size: 0.9rem; font-weight: 400; border: 1.5px solid var(--border-strong); background: var(--white); color: var(--text); border-radius: 999px; padding: 6px 16px; transition: all .2s; }
+    .chip:hover { border-color: var(--primary); }
+    .chip[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--white); }
+
+    .bw-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .bw-row.end { justify-content: space-between; }
+    .bw-card .btn { justify-content: center; text-align: center; }
+    .bw-card .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-textlink { background: none; border: none; color: var(--text-dim); padding: 0.9rem 4px; font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; }
+    .btn-textlink:hover { color: var(--primary); }
+
+    .bw-radio { display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; margin-top: 12px; }
+    .bw-radio label, .bw-check { display: flex; gap: 10px; align-items: flex-start; }
+    .bw-radio input, .bw-check input { margin-top: 5px; accent-color: var(--primary); width: 16px; height: 16px; flex-shrink: 0; }
+
+    .bw-status { font-size: 0.88rem; color: var(--text-dim); min-height: 1.4em; }
+    .bw-ok { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
+    .bw-err { font-size: 0.9rem; color: #a13a2c; }
+    .bw-divider { display: flex; align-items: center; gap: 12px; color: var(--text-faint); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+    .bw-divider::before, .bw-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-strong); }
+    .stars { display: flex; gap: 4px; }
+    .stars button { font-size: 30px; line-height: 1; background: none; border: none; color: var(--primary-pale); padding: 2px; }
+    .stars button.on { color: #E0A526; }
+    .bw-preview { border: 1.5px dashed var(--border-strong); border-radius: var(--radius-lg); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .bw-preview .who { font-weight: 500; font-size: 0.88rem; color: var(--text-dim); }
+    .bw-preview .st { color: #E0A526; letter-spacing: 2px; }
+    .bw-legal { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+    .bw-legal a { text-decoration: underline; }
+    ol.bw-how { margin: 0; padding-left: 20px; font-size: 0.9rem; display: flex; flex-direction: column; gap: 4px; color: var(--text-dim); }
+    .bw-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    @media (prefers-reduced-motion: no-preference) { .bw-card { animation: bwIn .25s ease-out; } @keyframes bwIn { from { transform: translateY(6px); opacity: .6; } to { transform: none; opacity: 1; } } }
+    @media (max-width: 480px) { .bw-card { padding: 24px 18px; } .bw-row.end > .btn-primary.btn-full { width: 100%; } }
+  </style>
+</head>
+<body>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><img src="../Logos/Logo_Schrift_grün.png" alt="Haarfrei-Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html" class="nav-link nav-mobile-only">Home</a>
+        <a href="../einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="../behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="../preise.html" class="nav-link">Preise</a>
+        <a href="../gutscheine.html" class="nav-link">Gutscheine</a>
+        <div class="nav-item"><a href="../beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a><div class="nav-dropdown"><a href="../beckenbodenstuhl.html#preise">Preise</a></div></div>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+        <a href="../kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero bw-hero">
+    <div class="container"><div class="page-hero-content">
+      <h1>Ihre <em>Bewertung</em></h1>
+      <p>Danke, dass Sie sich einen Moment Zeit nehmen.</p>
+    </div></div>
+  </section>
+
+  <section class="bw-section">
+    <div class="bw-wrap">
+      <div class="bw-top">
+        <div class="bw-stepcount" id="stepcount"></div>
+      </div>
+      <div class="bw-bar" id="bar" hidden></div>
+      <main id="screen"></main>
+      <p class="bw-legal">Den Zugang zu dieser Seite erhalten Kundinnen und Kunden persönlich im Studio nach ihrer 4. Behandlung. So stellen wir sicher, dass jede Bewertung von einer echten Kundin oder einem echten Kunden stammt.</p>
+      <p class="bw-legal">Zur Formulierung des Textvorschlags werden Ihre Antworten an den KI-Dienst Anthropic (USA) übermittelt. Wir speichern Ihre Antworten nicht. Mehr dazu in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.</p>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="../Logos/Logo_Schrift_grün.png" alt="Haarfrei-Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="../einrichtung-team.html">Team &amp; Studio</a><a href="../behandlungsmethoden.html">Methoden</a><a href="../preise.html">Preise</a>
+          <a href="../beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="../faq.html">FAQ</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><a href="../agb.html">AGB</a><!-- Widerrufsbutton für haarfrei-trier.com -->
+<a id="hbRevocationButton" href="https://connect.haendlerbund.de/widerrufsformular/haarfrei-trier-com/01KTR38Y5P0MH9XJWDP1ZWBXYX" data-shop-id="01KTR38Y5P0MH9XJWDP1ZWBXYX" data-key="Q61YcGO2QGtcY5LELUb3uIAk5S39bNo3" data-preview="false" data-lang="de" rel="noopener" aria-label="Widerrufsformular öffnen" target="_blank"><span>Vertrag widerrufen</span></a>
+<script async src="https://connect.haendlerbund.de/widgets/revocation-button.js"></script></div>
+      <div class="footer-links"><h4>Kontakt</h4><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Haarfrei-Trier</span>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/maren.viergutz/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="4" fill="#1877F2"/>
+            <path d="M16 8h-2a1 1 0 00-1 1v2h3l-.5 3H13v7h-3v-7H8v-3h2V9a4 4 0 014-4h2v3z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/haarfrei_trier/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+                <stop offset="0%" stop-color="#fdf497"/>
+                <stop offset="45%" stop-color="#fd5949"/>
+                <stop offset="60%" stop-color="#d6249f"/>
+                <stop offset="90%" stop-color="#285AEB"/>
+              </radialGradient>
+            </defs>
+            <rect width="24" height="24" rx="5" fill="url(#ig-grad)"/>
+            <rect x="6" y="6" width="12" height="12" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+            <circle cx="16.5" cy="7.5" r="0.9" fill="white"/>
+          </svg>
+        </a>
+      </div>
+      <span><a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="#" class="hf-open-consent">Cookie-Einstellungen</a></span>
+    </div>
+  </div></footer>
+
+<script>
+const GOOGLE_URL = "https://g.page/r/CZEUW1Eeit01EBM/review";
+const API_TEXT = "../api/bewertung-text.php";
+const API_SENDEN = "../api/bewertung-senden.php";
+
+const QUESTIONS = [
+  {key:"zone", title:"Welche Zone haben Sie behandeln lassen?", hint:"Mehrfachauswahl möglich.", type:"chips",
+   options:["Achseln","Beine","Bikinizone","Gesicht","Arme","Rücken","Brust","Andere"], optional:true},
+  {key:"vorher", title:"Was hat Sie vorher gestört?", hint:"Zum Beispiel Rasieren, Hautreizungen, eingewachsene Haare, der Zeitaufwand."},
+  {key:"beratung", title:"Wie haben Sie die Beratung erlebt?", hint:"Was ist Ihnen davon in Erinnerung geblieben?"},
+  {key:"behandlung", title:"Wie hat sich die Behandlung angefühlt?", hint:"Wie war es mit Schmerz, Dauer und Atmosphäre?"},
+  {key:"veraenderung", title:"Was hat sich bisher verändert?", hint:"Gern mit Angabe, nach wie vielen Sitzungen Sie es bemerkt haben."},
+  {key:"wer", title:"Wer hat Sie behandelt?", hint:"Freiwillig. Der Name erscheint nur, wenn Sie ihn hier eintragen.", type:"short",
+   options:["Anna","Inesa"], optional:true},
+  {key:"zoegern", title:"Was würden Sie jemandem sagen, der noch zögert?", hint:"Ein, zwei Sätze in Ihren eigenen Worten."},
+  {key:"besser", title:"Gibt es etwas, das wir besser machen können?", hint:"Freiwillig. Sie entscheiden, ob es in die Bewertung kommt.", optional:true, withScope:true},
+];
+
+let state = {step:-1, answers:{zone:[], besserScope:"review"}, text:"", stars:5, internSent:"", siteSent:false};
+const $ = s => document.querySelector(s);
+const screen = $("#screen");
+let ctl = null;
+
+function el(html){const t=document.createElement("template");t.innerHTML=html.trim();return t.content.firstElementChild;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+async function postJSON(url, data, signal){
+  const r = await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data),signal});
+  let j=null; try{ j=await r.json(); }catch{}
+  if(!r.ok || !j || !j.ok){ const e=new Error((j&&j.fehler)||"fehler"); e.code=(j&&j.fehler)||"fehler"; e.status=r.status; throw e; }
+  return j;
+}
+
+function setChrome(){
+  const bar=$("#bar"), sc=$("#stepcount");
+  if(state.step>=0 && state.step<QUESTIONS.length){
+    bar.hidden=false;
+    bar.innerHTML=QUESTIONS.map((_,i)=>`<i class="${i<=state.step?'on':''}"></i>`).join("");
+    sc.textContent=`Frage ${state.step+1} von ${QUESTIONS.length}`;
+  } else { bar.hidden=true; sc.textContent = state.step<0 ? "Ihre Bewertung" : "Ihr Text"; }
+}
+
+function render(){
+  setChrome();
+  screen.innerHTML="";
+  if(state.step<0) return renderIntro();
+  if(state.step<QUESTIONS.length) return renderQuestion(QUESTIONS[state.step]);
+  return renderResult();
+}
+
+function goStep(n){
+  state.step=n; render();
+  const top=$("#stepcount").getBoundingClientRect().top;
+  if(top<80) window.scrollBy({top:top-100});
+}
+
+function renderIntro(){
+  const c=el(`<section class="bw-card">
+    <h2>Wie war Ihre Behandlung bisher?</h2>
+    <p>Sie beantworten 8 kurze Fragen. Daraus entsteht ein Vorschlag für Ihre Bewertung, den Sie anschließend frei ändern können. Dauer: etwa 3 Minuten.</p>
+    <p class="bw-hint">Es zählt Ihre ehrliche Erfahrung, auch wenn nicht alles perfekt war.</p>
+    <div class="bw-row">
+      <button class="btn btn-primary" id="start">Los geht's</button>
+    </div>
+  </section>`);
+  screen.append(c);
+  $("#start").onclick=()=>goStep(0);
+}
+
+function renderQuestion(q){
+  const a=state.answers;
+  const c=el(`<section class="bw-card">
+    <h2>${esc(q.title)}</h2>
+    <p class="bw-hint">${esc(q.hint)}</p>
+    <div id="field"></div>
+    <div class="bw-row end">
+      <button class="btn btn-ghost" id="back">Zurück</button>
+      <div class="bw-row">
+        ${q.optional?'<button class="btn-textlink" id="skip">Überspringen</button>':''}
+        <button class="btn btn-primary" id="next">${state.step===QUESTIONS.length-1?'Text erstellen':'Weiter'}</button>
+      </div>
+    </div>
+  </section>`);
+  screen.append(c);
+  const f=c.querySelector("#field");
+  if(q.type==="chips"){
+    const chips=el(`<div class="chips" role="group" aria-label="${esc(q.title)}"></div>`);
+    q.options.forEach(o=>{
+      const b=el(`<button class="chip" type="button" aria-pressed="${a.zone.includes(o)}">${esc(o)}</button>`);
+      b.onclick=()=>{const i=a.zone.indexOf(o); i<0?a.zone.push(o):a.zone.splice(i,1); b.setAttribute("aria-pressed",a.zone.includes(o));};
+      chips.append(b);
+    });
+    f.append(chips);
+  } else if(q.type==="short"){
+    const box=el(`<div style="display:flex;flex-direction:column;gap:10px">
+      <input type="text" id="q-${q.key}" maxlength="60" placeholder="Vorname der Mitarbeiterin" value="${esc(a[q.key]||"")}">
+      <div class="chips"></div></div>`);
+    const inp=box.querySelector("input");
+    q.options.forEach(o=>{const b=el(`<button class="chip" type="button">${esc(o)}</button>`);b.onclick=()=>{inp.value=o;a[q.key]=o;};box.querySelector(".chips").append(b);});
+    inp.oninput=()=>a[q.key]=inp.value;
+    f.append(box);
+  } else {
+    const ta=el(`<textarea id="q-${q.key}" maxlength="1000" aria-label="${esc(q.title)}"></textarea>`);
+    ta.value=a[q.key]||"";
+    ta.oninput=()=>{a[q.key]=ta.value;};
+    f.append(ta);
+    if(q.withScope){
+      const r=el(`<div class="bw-radio">
+        <label><input type="radio" name="scope" id="scope-review" value="review"> In die Bewertung aufnehmen</label>
+        <label><input type="radio" name="scope" id="scope-intern" value="intern"> Nur an das Studio, nicht in die Bewertung</label>
+      </div>`);
+      r.querySelector(`input[value="${a.besserScope||"review"}"]`).checked=true;
+      r.querySelectorAll("input").forEach(i=>i.onchange=()=>a.besserScope=i.value);
+      f.append(r);
+    }
+    setTimeout(()=>ta.focus({preventScroll:true}),0);
+  }
+  $("#back").onclick=()=>goStep(state.step-1);
+  $("#next").onclick=()=>goStep(state.step+1);
+  const sk=$("#skip"); if(sk) sk.onclick=()=>{ if(q.key==="zone")a.zone=[]; else a[q.key]=""; goStep(state.step+1);};
+}
+
+function answeredCount(){
+  return ["vorher","beratung","behandlung","veraenderung","zoegern"].filter(k=>(state.answers[k]||"").trim()).length;
+}
+
+function fallbackText(){
+  const a=state.answers, parts=[];
+  const t=s=>{s=(s||"").trim(); if(!s) return ""; return /[.!?]$/.test(s)?s:s+".";};
+  if(a.zone.length) parts.push(`Ich lasse bei Haarfrei-Trier ${a.zone.join(" und ")} behandeln.`);
+  if(t(a.vorher)) parts.push(t(a.vorher));
+  if(t(a.beratung)) parts.push("Zur Beratung: "+t(a.beratung));
+  if(t(a.behandlung)) parts.push(t(a.behandlung));
+  if(t(a.veraenderung)) parts.push(t(a.veraenderung));
+  if((a.wer||"").trim()) parts.push(`Behandelt hat mich ${a.wer.trim()}.`);
+  if(t(a.zoegern)) parts.push(t(a.zoegern));
+  if((a.besser||"").trim() && a.besserScope==="review") parts.push("Verbesserungswürdig: "+t(a.besser));
+  return parts.join(" ");
+}
+
+async function generate(ta,status){
+  ctl?.abort(); ctl=new AbortController();
+  const timer=setTimeout(()=>ctl.abort(),30000);
+  const my=ctl;
+  ta.disabled=true;
+  status.textContent="Ihr Text wird formuliert …";
+  try{
+    const {text,truncated}=await postJSON(API_TEXT,{answers:state.answers},my.signal);
+    state.text=text.trim(); ta.value=state.text;
+    status.textContent= truncated?"Der Text wurde gekürzt. Bitte prüfen Sie das Ende.":"Fertig. Bitte lesen Sie den Text und ändern Sie alles, was nicht stimmt.";
+  }catch(e){
+    if(ctl!==my) return; // durch neue Anfrage ersetzt
+    state.text=fallbackText(); ta.value=state.text;
+    status.textContent= e.status===429 || e.code==="rate_limited"
+      ? "Gerade zu viele Anfragen. Der Text wurde direkt aus Ihren Antworten zusammengesetzt."
+      : "Die Formulierung hat nicht geklappt. Der Text wurde direkt aus Ihren Antworten zusammengesetzt.";
+  }finally{ clearTimeout(timer); if(ctl===my) ta.disabled=false; }
+}
+
+// Frage 8 mit "Nur an das Studio": per E-Mail an das Studio, nicht in die Bewertung
+function sendInternIfNeeded(){
+  const a=state.answers, txt=(a.besser||"").trim();
+  if(a.besserScope!=="intern" || !txt || state.internSent===txt) return null;
+  const note=el(`<p class="bw-hint" aria-live="polite">Ihr Hinweis an das Studio wird gesendet …</p>`);
+  postJSON(API_SENDEN,{art:"intern",text:txt})
+    .then(()=>{state.internSent=txt; note.textContent="Ihr Hinweis wurde nur an das Studio geschickt. Danke!";})
+    .catch(()=>{note.className="bw-err"; note.textContent="Ihr Hinweis konnte nicht gesendet werden. Gern auch per E-Mail an info@haarfrei-trier.de.";});
+  return note;
+}
+
+function renderResult(){
+  if(answeredCount()<2){
+    const c=el(`<section class="bw-card"><h2>Noch etwas zu wenig</h2>
+      <p>Bitte beantworten Sie mindestens zwei der Fragen zu Beratung, Behandlung oder Ergebnis. Sonst gibt es nichts, woraus ein Text entstehen kann.</p>
+      <div class="bw-row"><button class="btn btn-primary" id="again">Zurück zu den Fragen</button></div></section>`);
+    screen.append(c); $("#again").onclick=()=>goStep(1); return;
+  }
+  const c=el(`<section class="bw-card">
+    <h2>Ihr Bewertungstext</h2>
+    <p class="bw-hint">Der Vorschlag enthält nur, was Sie geschrieben haben. Ändern Sie ihn, bis er für Sie stimmt.</p>
+    <textarea id="review" style="min-height:220px" aria-label="Bewertungstext"></textarea>
+    <p class="bw-status" id="status" aria-live="polite"></p>
+    <div class="bw-row end">
+      <button class="btn btn-ghost" id="toQ">Antworten ändern</button>
+      <button class="btn-textlink" id="regen">Neu formulieren</button>
+    </div>
+  </section>`);
+  const internNote=sendInternIfNeeded();
+  if(internNote) c.append(internNote);
+  const pub=el(`<section class="bw-card">
+    <h2>Veröffentlichen</h2>
+    <a class="btn btn-primary btn-lg btn-full" id="google" href="${GOOGLE_URL}" target="_blank" rel="noopener">Text kopieren und bei Google bewerten</a>
+    <p class="bw-ok" id="copied" hidden>Text ist kopiert.</p>
+    <ol class="bw-how">
+      <li>Im Google-Fenster die Sterne wählen.</li>
+      <li>Den Text in das Feld einfügen (lange tippen, „Einfügen“).</li>
+      <li>Auf „Posten“ tippen.</li>
+    </ol>
+    <div class="bw-divider">oder</div>
+    <button class="btn btn-outline btn-full" id="siteToggle" aria-expanded="false">Kein Google-Konto? Auf haarfrei-trier.de veröffentlichen</button>
+    <div id="site" hidden style="flex-direction:column;gap:14px">
+      <div><label class="bw-lbl">Ihre Sterne</label><div class="stars" id="stars"></div></div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <label class="bw-lbl" for="name">Anzeigename</label>
+        <input type="text" id="name" maxlength="40" placeholder="z. B. Julia M." autocomplete="off">
+        <span class="bw-hint">Nur Vorname und erster Buchstabe des Nachnamens.</span>
+      </div>
+      <div class="bw-hp" aria-hidden="true"><label>Website <input type="text" id="website" tabindex="-1" autocomplete="off"></label></div>
+      <label class="bw-check"><input type="checkbox" id="consent"> <span style="font-size:0.9rem">Ich bin einverstanden, dass meine Bewertung mit diesem Anzeigenamen auf haarfrei-trier.de veröffentlicht wird. Ich kann das jederzeit per E-Mail widerrufen.</span></label>
+      <button class="btn btn-primary" id="siteSubmit" disabled>Bewertung absenden</button>
+      <div id="sitePreview" hidden></div>
+    </div>
+  </section>`);
+  screen.append(c,pub);
+  const ta=$("#review"), status=$("#status");
+  ta.oninput=()=>state.text=ta.value;
+  if(state.text){ta.value=state.text;status.textContent="Bitte lesen Sie den Text und ändern Sie alles, was nicht stimmt.";}
+  else generate(ta,status);
+  $("#regen").onclick=()=>generate(ta,status);
+  $("#toQ").onclick=()=>{state.text="";goStep(1);};
+
+  $("#google").addEventListener("click",()=>{
+    const txt=ta.value;
+    const done=()=>{$("#copied").hidden=false;};
+    try{ navigator.clipboard.writeText(txt).then(done,()=>{ta.select();$("#copied").textContent="Text markiert: bitte kopieren.";done();}); }
+    catch{ ta.select(); $("#copied").textContent="Text markiert: bitte kopieren."; done(); }
+  });
+
+  const site=$("#site"), tog=$("#siteToggle");
+  tog.onclick=()=>{site.hidden=!site.hidden;site.style.display=site.hidden?"":"flex";tog.setAttribute("aria-expanded",!site.hidden);};
+  const starsEl=$("#stars");
+  const drawStars=()=>{starsEl.innerHTML="";for(let i=1;i<=5;i++){const b=el(`<button type="button" aria-label="${i} Sterne" class="${i<=state.stars?'on':''}">★</button>`);b.onclick=()=>{state.stars=i;drawStars();};starsEl.append(b);}};
+  drawStars();
+  const name=$("#name"), consent=$("#consent"), sub=$("#siteSubmit");
+  const valid=()=>{sub.disabled=state.siteSent||!(consent.checked && name.value.trim().length>1 && ta.value.trim());};
+  name.oninput=valid; consent.onchange=valid; ta.addEventListener("input",valid);
+  valid();
+  sub.onclick=async()=>{
+    const p=$("#sitePreview"); p.hidden=false;
+    sub.disabled=true;
+    p.innerHTML=`<p class="bw-hint">Wird gesendet …</p>`;
+    const txt=ta.value.trim(), nm=name.value.trim();
+    try{
+      await postJSON(API_SENDEN,{art:"bewertung",sterne:state.stars,anzeigename:nm,text:txt,einwilligung:consent.checked,website:$("#website").value});
+      state.siteSent=true;
+      p.innerHTML=`<p class="bw-ok">Danke! Ihre Bewertung wird nach Prüfung veröffentlicht.</p>
+        <p class="bw-hint">Vorschau:</p>
+        <div class="bw-preview"><div class="st">${"★".repeat(state.stars)}${"☆".repeat(5-state.stars)}</div>
+        <div>${esc(txt)}</div>
+        <div class="who">${esc(nm)} · verifizierte Kundin/verifizierter Kunde</div></div>`;
+    }catch(e){
+      p.innerHTML=`<p class="bw-err">${e.status===429?"Gerade zu viele Anfragen. Bitte versuchen Sie es später noch einmal.":"Das Senden hat leider nicht geklappt. Bitte versuchen Sie es noch einmal oder schreiben Sie an info@haarfrei-trier.de."}</p>`;
+      valid();
+    }
+  };
+}
+
+render();
+</script>
+<script src="../main.js"></script>
+</body>
+</html>

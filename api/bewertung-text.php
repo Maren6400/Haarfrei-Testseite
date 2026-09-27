@@ -49,6 +49,7 @@ Strenge Regeln:
 - Kurze Antworten ergeben eine kurze Bewertung. Höchstens 130 Wörter.
 - Ich-Form, natürliches Deutsch, wie ein echter Mensch schreibt. Keine Werbesprache, keine Keywords wie "beste Laser-Haarentfernung in Trier", keine Emojis, keine Hashtags, keine Überschrift, keine Sternangabe.
 - Füge keine eigenen Aussagen, Gefühle, Lob oder Zusammenfassungen hinzu, die nicht in den Antworten stehen (z. B. kein "ich bin wirklich zufrieden", "sehr professionell", "hilft, sich sicherer zu fühlen"). Du darfst Antworten sprachlich glätten und verbinden, aber keinen Inhalt ergänzen.
+- Sprich Leserinnen und Leser, wenn überhaupt, immer in der Sie-Form an (z. B. "Machen Sie einfach die Beratung."), niemals mit "du", "dich", "ihr" oder "macht". Das gilt auch, wenn die Person in ihrer Antwort duzt: Formuliere dann in die Sie-Form um oder unpersönlich ("Wer noch zögert, sollte …").
 - Enthält eine Antwort Kritik, bleibt sie sachlich im Text.
 - Nenne einen Mitarbeiternamen nur, wenn er in den Antworten steht. Nenne ihn dann nur als Tatsache (z. B. "Behandelt hat mich Anna."), ohne ihn zu bewerten, außer die Person hat selbst etwas über die Mitarbeiterin geschrieben.
 - Gib nur den Bewertungstext aus, ohne Einleitung oder Anmerkung.

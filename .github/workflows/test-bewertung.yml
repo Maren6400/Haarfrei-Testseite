@@ -1,0 +1,31 @@
+name: Testupload Bewertungsseite (nur bewertung/ und api/)
+
+on:
+  push:
+    branches:
+      - bewertungsseite
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Nur die Bewertungsdateien zusammenstellen
+        run: |
+          mkdir -p _upload/api
+          cp -r bewertung _upload/
+          cp api/.htaccess api/_schutz.php api/bewertung-text.php api/bewertung-senden.php _upload/api/
+
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./_upload/
+          server-dir: /haarfrei-trier.de/
+          state-name: .ftp-deploy-bewertung-test.json

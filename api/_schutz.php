@@ -70,7 +70,10 @@ function kuerze($wert, $max = 1000) {
 // Datei-basiertes Rate-Limit pro IP (gehasht), z. B. 10 Anfragen pro Stunde
 function rate_limit($topf, $max = 10, $fenster = 3600) {
     $basis = dirname(__DIR__, 2) . '/bewertung-ratelimit';
-    if (!is_dir($basis) && !@mkdir($basis, 0700, true)) {
+    if (is_dir($basis) || @mkdir($basis, 0700, true)) {
+        // Ordner liegt evtl. in einem Web-Verzeichnis – Zugriff von außen sperren
+        if (!is_file($basis . '/.htaccess')) @file_put_contents($basis . '/.htaccess', "Require all denied\n");
+    } else {
         $basis = sys_get_temp_dir() . '/haarfrei-bewertung-ratelimit';
         if (!is_dir($basis)) @mkdir($basis, 0700, true);
     }

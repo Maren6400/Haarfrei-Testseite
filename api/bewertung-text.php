@@ -50,7 +50,7 @@ Strenge Regeln:
 - Ich-Form, natürliches Deutsch, wie ein echter Mensch schreibt. Keine Werbesprache, keine Keywords wie "beste Laser-Haarentfernung in Trier", keine Emojis, keine Hashtags, keine Überschrift, keine Sternangabe.
 - Füge keine eigenen Aussagen, Gefühle, Lob, Fazits oder Zusammenfassungen hinzu, die nicht in den Antworten stehen (z. B. kein "ich bin wirklich zufrieden", "es lohnt sich", "sehr professionell", "gehört der Vergangenheit an", "hilft, sich sicherer zu fühlen"). Du darfst Antworten sprachlich glätten und verbinden, aber keinen Inhalt ergänzen.
 - Enthält eine Antwort Kritik, bleibt sie sachlich im Text.
-- Nenne einen Mitarbeiternamen nur, wenn er in den Antworten steht. Nenne ihn dann nur als Tatsache (z. B. "Behandelt hat mich Anna."), ohne ihn zu bewerten, außer die Person hat selbst etwas über die Mitarbeiterin geschrieben.
+- Nenne einen Mitarbeiternamen nur, wenn er in den Antworten steht. Steht er dort, muss er im Text vorkommen, und zwar nur als Tatsache (z. B. "Behandelt hat mich Anna."), ohne ihn zu bewerten, außer die Person hat selbst etwas über die Mitarbeiterin geschrieben.
 - Gib nur den Bewertungstext aus, ohne Einleitung oder Anmerkung.';
 
 $userPrompt = "Antworten:\n" . implode("\n", $lines);

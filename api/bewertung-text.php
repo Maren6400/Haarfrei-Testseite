@@ -51,9 +51,7 @@ Strenge Regeln:
 - Füge keine eigenen Aussagen, Gefühle, Lob, Fazits oder Zusammenfassungen hinzu, die nicht in den Antworten stehen (z. B. kein "ich bin wirklich zufrieden", "es lohnt sich", "sehr professionell", "gehört der Vergangenheit an", "hilft, sich sicherer zu fühlen"). Du darfst Antworten sprachlich glätten und verbinden, aber keinen Inhalt ergänzen.
 - Enthält eine Antwort Kritik, bleibt sie sachlich im Text.
 - Nenne einen Mitarbeiternamen nur, wenn er in den Antworten steht. Nenne ihn dann nur als Tatsache (z. B. "Behandelt hat mich Anna."), ohne ihn zu bewerten, außer die Person hat selbst etwas über die Mitarbeiterin geschrieben.
-- Gib nur den Bewertungstext aus, ohne Einleitung oder Anmerkung.
-
-SIE-FORM (zwingend): Spricht der Text Leserinnen und Leser an, dann ausschließlich in der Sie-Form. Niemals "du", "dich", "dir", "dein", "ihr", "euch" oder Imperative in Du-Form wie "tu", "mach", "macht", "probier". Duzt die Person in ihrer Antwort, formuliere es um und übernimm es NICHT wörtlich, auch nicht als Zitat. Beispiele: "tu es einfach" → "Probieren Sie es einfach aus." / "macht einfach die Beratung" → "Machen Sie einfach die Beratung."';
+- Gib nur den Bewertungstext aus, ohne Einleitung oder Anmerkung.';
 
 $userPrompt = "Antworten:\n" . implode("\n", $lines);
 
@@ -63,7 +61,7 @@ function frage_ki($apiKey, $system, array $messages) {
         CURLOPT_POST           => true,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CONNECTTIMEOUT => 5,
-        CURLOPT_TIMEOUT        => 13,
+        CURLOPT_TIMEOUT        => 25,
         CURLOPT_HTTPHEADER     => [
             'content-type: application/json',
             'x-api-key: ' . $apiKey,
@@ -93,23 +91,9 @@ function frage_ki($apiKey, $system, array $messages) {
     return ['status' => 200, 'text' => trim($text), 'truncated' => ($res['stop_reason'] ?? '') === 'max_tokens'];
 }
 
-// Du-Formen im fertigen Text erkennen
-function hat_du_form($text) {
-    return (bool) preg_match('/\b([Dd]u|[Dd]ich|[Dd]ir|[Dd]ein\w*|[Ee]uch|[Ee]ure?\w*|[Tt]u|[Mm]ach|[Mm]acht|[Pp]robier|[Pp]robiert|[Tt]rau|[Tt]raut)\b/u', $text);
-}
-
-$messages = [['role' => 'user', 'content' => $userPrompt]];
-$r = frage_ki($apiKey, $system, $messages);
+$r = frage_ki($apiKey, $system, [['role' => 'user', 'content' => $userPrompt]]);
 if ($r['status'] !== 200 || $r['text'] === '') {
     antwort(502, ['ok' => false, 'fehler' => $r['status'] === 429 ? 'rate_limited' : 'ki_fehler']);
-}
-
-// Einmal nachbessern lassen, falls doch geduzt wurde
-if (hat_du_form($r['text'])) {
-    $messages[] = ['role' => 'assistant', 'content' => $r['text']];
-    $messages[] = ['role' => 'user', 'content' => 'Der Text enthält eine Du-Form. Schreibe ihn so um, dass Leserinnen und Leser nur in der Sie-Form (oder unpersönlich) angesprochen werden. Sonst nichts ändern. Gib nur den Text aus.'];
-    $r2 = frage_ki($apiKey, $system, $messages);
-    if ($r2['status'] === 200 && $r2['text'] !== '') $r = $r2;
 }
 
 antwort(200, [

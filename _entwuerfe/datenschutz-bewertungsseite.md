@@ -10,10 +10,10 @@ Wenn Sie sich einen Textvorschlag erstellen lassen, übermitteln wir Ihre Antwor
 Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie mit der Nutzung der Funktion erteilen. Die Übermittlung in die USA stützt sich auf [den Angemessenheitsbeschluss der EU-Kommission (EU-US Data Privacy Framework), sofern Anthropic zertifiziert ist / die EU-Standardvertragsklauseln – BITTE PRÜFEN]. Laut Anthropic werden über die API übermittelte Daten nicht zum Training von KI-Modellen verwendet und nur für begrenzte Zeit gespeichert [Frist laut aktuellen Anthropic-Bedingungen prüfen].
 
 **Keine Speicherung durch uns**
-Ihre Antworten und der erzeugte Text werden auf unserem Server weder gespeichert noch protokolliert. Zum Schutz vor Missbrauch speichern wir höchstens eine Stunde lang eine unumkehrbar verschlüsselte (gehashte) Form Ihrer IP-Adresse und den Zeitpunkt der Anfrage. Daraus lassen sich keine Inhalte ableiten.
+Ihre Antworten und der erzeugte Text werden auf unserem Server weder gespeichert noch protokolliert. Zum Schutz vor Missbrauch speichern wir für die Dauer von einer Stunde eine pseudonymisierte Form Ihrer IP-Adresse (Hashwert) und die Zeitpunkte Ihrer Anfragen. Rückschlüsse auf Ihre Antworten sind daraus nicht möglich. Rechtsgrundlage ist unser berechtigtes Interesse an einem sicheren Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO).
 
 **Bewertung bei Google**
-Wenn Sie Ihren Text bei Google veröffentlichen, kopieren Sie ihn selbst und öffnen die Bewertungsseite von Google. Für die Verarbeitung dort gilt die Datenschutzerklärung von Google.
+Wenn Sie Ihren Text bei Google veröffentlichen, kopieren Sie ihn selbst und öffnen die Bewertungsseite von Google. Wir übermitteln dabei keine Daten an Google. Für die Verarbeitung dort gilt die Datenschutzerklärung von Google.
 
 **Veröffentlichung auf haarfrei-trier.de**
 Wenn Sie Ihre Bewertung stattdessen auf unserer Website veröffentlichen möchten, senden wir Ihre Sternebewertung, Ihren Anzeigenamen (Vorname und Initial des Nachnamens), den Text und das Datum per E-Mail an info@haarfrei-trier.de. Dort prüfen wir die Bewertung und schalten sie von Hand frei. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Die E-Mail bewahren wir auf, solange die Bewertung veröffentlicht ist.

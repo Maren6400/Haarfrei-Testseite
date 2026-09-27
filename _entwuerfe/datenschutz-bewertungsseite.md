@@ -16,7 +16,7 @@ Ihre Antworten und der erzeugte Text werden auf unserem Server weder gespeichert
 Wenn Sie Ihren Text bei Google veröffentlichen, kopieren Sie ihn selbst und öffnen die Bewertungsseite von Google. Wir übermitteln dabei keine Daten an Google. Für die Verarbeitung dort gilt die Datenschutzerklärung von Google.
 
 **Veröffentlichung auf haarfrei-trier.de**
-Wenn Sie Ihre Bewertung stattdessen auf unserer Website veröffentlichen möchten, senden wir Ihre Sternebewertung, Ihren Anzeigenamen (Vorname und Initial des Nachnamens), den Text und das Datum per E-Mail an info@haarfrei-trier.de. Dort prüfen wir die Bewertung und schalten sie von Hand frei. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Die E-Mail bewahren wir auf, solange die Bewertung veröffentlicht ist.
+Wenn Sie Ihre Bewertung stattdessen auf unserer Website veröffentlichen möchten, senden wir Ihre Sternebewertung, Ihren Anzeigenamen (Vorname und Initial des Nachnamens), die behandelte Körperzone (sofern angegeben), den Text und das Datum per E-Mail an info@haarfrei-trier.de. Dort prüfen wir die Bewertung und schalten sie von Hand frei. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO. Die E-Mail bewahren wir auf, solange die Bewertung veröffentlicht ist.
 
 **Interne Hinweise**
 Wenn Sie einen Verbesserungsvorschlag nur an das Studio senden, geht er per E-Mail an info@haarfrei-trier.de. Er wird nicht veröffentlicht und gelöscht, sobald er bearbeitet ist.

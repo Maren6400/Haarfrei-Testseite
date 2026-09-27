@@ -25,11 +25,16 @@ if ($art === 'bewertung') {
     if ($name === '') antwort(400, ['ok' => false, 'fehler' => 'Anzeigename fehlt']);
     if (($d['einwilligung'] ?? false) !== true) antwort(400, ['ok' => false, 'fehler' => 'Einwilligung fehlt']);
 
+    $erlaubteZonen = ['Achseln', 'Beine', 'Bikinizone', 'Gesicht', 'Arme', 'Rücken', 'Brust', 'Andere'];
+    $zonen = array_values(array_intersect($erlaubteZonen, array_filter(is_array($d['zone'] ?? null) ? $d['zone'] : [], 'is_string')));
+    $zoneText = count($zonen) ? implode(', ', $zonen) : '(nicht angegeben)';
+
     $betreff = 'Neue Website-Bewertung';
     $inhalt = "Neue Bewertung zur Veröffentlichung auf haarfrei-trier.de\n"
             . "(Einwilligung zur Veröffentlichung wurde erteilt. Bitte manuell prüfen und freigeben.)\n\n"
             . "Sterne: " . str_repeat('★', $sterne) . str_repeat('☆', 5 - $sterne) . " ($sterne von 5)\n"
             . "Anzeigename: $name\n"
+            . "Behandelte Zone: $zoneText\n"
             . "Datum: $datum\n\n"
             . "Text:\n$text\n";
 } else {

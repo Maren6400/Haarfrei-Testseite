@@ -400,7 +400,7 @@ function renderResult(){
     p.innerHTML=`<p class="bw-hint">Wird gesendet …</p>`;
     const txt=ta.value.trim(), nm=name.value.trim();
     try{
-      await postJSON(API_SENDEN,{art:"bewertung",sterne:state.stars,anzeigename:nm,text:txt,einwilligung:consent.checked,website:$("#website").value});
+      await postJSON(API_SENDEN,{art:"bewertung",sterne:state.stars,anzeigename:nm,zone:state.answers.zone,text:txt,einwilligung:consent.checked,website:$("#website").value});
       state.siteSent=true;
       p.innerHTML=`<p class="bw-ok">Danke! Ihre Bewertung wird nach Prüfung veröffentlicht.</p>
         <p class="bw-hint">Vorschau:</p>

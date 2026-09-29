@@ -239,8 +239,8 @@ button { cursor: none; font-family: inherit; }
 .stat-label { font-size: 0.68rem; letter-spacing: 0.5px; color: var(--text-dim); text-transform: uppercase; line-height: 1.4; margin-top: 3px; }
 .stat-divider { width: 1px; height: 36px; background: linear-gradient(180deg, transparent, var(--primary-light), transparent); }
 .hero-tagline { font-size: 0.62rem; color: var(--text-dim); text-align: center; margin-top: 24px; margin-bottom: 0; font-weight: 400; letter-spacing: 0.3px; }
-/* Siegel: auf Höhe des Badges "Premium Laser Studio", links/rechts bündig mit Nav-Button "Termin buchen" */
-.hero-siegel { position: absolute; top: -2px; right: calc(-100% - 4rem - (2rem - clamp(0px, calc(682px - 50vw), 2rem))); width: 162px; display: flex; align-items: center; justify-content: space-between; }
+/* Siegel: auf Höhe des Badges "Premium Laser Studio", als Paar mittig unter dem Nav-Button "Termin buchen" */
+.hero-siegel { position: absolute; top: -2px; right: calc(-100% - 4rem - (2rem - clamp(0px, calc(682px - 50vw), 2rem))); width: 162px; display: flex; align-items: center; justify-content: center; gap: 10px; }
 .hero-siegel img { height: 38px; width: auto; display: block; opacity: 0.9; }
 /* Rahmen um "Frauen kaufen bei Frauen" – gleiche Form wie der Rahmen im "Wirtschaft widerspricht"-Siegel */
 .hero-siegel .siegel-rahmen { box-sizing: border-box; height: 33px; width: 52px; margin: 0 2.5px; padding: 2px 3px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #1B1826; border-radius: 3px; opacity: 0.9; }

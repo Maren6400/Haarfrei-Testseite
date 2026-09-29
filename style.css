@@ -1148,7 +1148,10 @@ button { cursor: none; font-family: inherit; }
   .hero-sub    { order: 4; }
   .hero-actions { order: 5; }
   .hero-stats  { order: 6; }
-  .hero-siegel { position: static; order: 7; width: auto; justify-content: center; gap: 12px; }
+  .hero-siegel { position: static; order: 7; width: auto; align-self: flex-start; justify-content: flex-start; gap: 12px; }
+  /* Zahlen als 2-Spalten-Raster: Strich unter Strich */
+  .hero-stats { align-self: flex-start; display: grid; grid-template-columns: max-content 1px max-content; column-gap: 1.5rem; row-gap: 1.5rem; align-items: center; }
+  .hero-stats > .stat-divider:nth-child(4) { display: none; }
   .hero-siegel > a > img[src$=".svg"] { height: 34px; }
   .hero-siegel .siegel-rahmen { height: 29.5px; width: 46px; }
   .hero-left > h2, .hero-left > p:not(.hero-sub) { display: none; }

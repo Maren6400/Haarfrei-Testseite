@@ -245,6 +245,12 @@ button { cursor: none; font-family: inherit; }
 /* Rahmen um "Frauen kaufen bei Frauen" – gleiche Form wie der Rahmen im "Wirtschaft widerspricht"-Siegel */
 .hero-siegel .siegel-rahmen { box-sizing: border-box; height: 33px; width: 52px; margin: 0 2.5px; padding: 2px 3px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #1B1826; border-radius: 3px; opacity: 0.9; }
 .hero-siegel .siegel-rahmen img { height: 100%; width: auto; max-width: 100%; object-fit: contain; opacity: 1; }
+/* Hinweis beim Überfahren der Siegel */
+.hero-siegel .siegel-link { position: relative; }
+.hero-siegel .siegel-link::after { content: attr(data-tip); position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-4px); white-space: nowrap; background: var(--text, #1B1826); color: #fff; font-size: 0.75rem; letter-spacing: 0.3px; line-height: 1; padding: 7px 10px; border-radius: 6px; box-shadow: var(--shadow-sm); opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 5; }
+.hero-siegel .siegel-link:hover::after, .hero-siegel .siegel-link:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.hero-siegel .siegel-link:last-child::after { left: auto; right: 0; transform: translateY(-4px); }
+.hero-siegel .siegel-link:last-child:hover::after, .hero-siegel .siegel-link:last-child:focus-visible::after { transform: translateY(0); }
 
 .hero-right {
   display: flex; flex-direction: column; gap: 1.5rem;

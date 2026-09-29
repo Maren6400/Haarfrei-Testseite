@@ -240,8 +240,8 @@ button { cursor: none; font-family: inherit; }
 .stat-divider { width: 1px; height: 36px; background: linear-gradient(180deg, transparent, var(--primary-light), transparent); }
 .hero-tagline { font-size: 0.62rem; color: var(--text-dim); text-align: center; margin-top: 24px; margin-bottom: 0; font-weight: 400; letter-spacing: 0.3px; }
 /* Siegel mittig unter dem Nav-Button "Termin buchen" (rechte Kante = Button-Kante) */
-.hero-siegel { position: absolute; top: 100px; right: clamp(0px, calc(682px - 50vw), 2rem); width: 162px; display: flex; align-items: center; justify-content: center; gap: 12px; }
-.hero-siegel img { height: 34px; width: auto; display: block; opacity: 0.9; }
+.hero-siegel { position: absolute; top: 100px; right: clamp(0px, calc(682px - 50vw), 2rem); width: 162px; display: flex; align-items: center; justify-content: space-between; }
+.hero-siegel img { height: 38px; width: auto; display: block; opacity: 0.9; }
 
 .hero-right {
   display: flex; flex-direction: column; gap: 1.5rem;
@@ -1138,7 +1138,8 @@ button { cursor: none; font-family: inherit; }
   .hero-sub    { order: 4; }
   .hero-actions { order: 5; }
   .hero-stats  { order: 6; }
-  .hero-siegel { position: static; order: 7; width: auto; }
+  .hero-siegel { position: static; order: 7; width: auto; justify-content: center; gap: 12px; }
+  .hero-siegel img { height: 34px; }
   .hero-left > h2, .hero-left > p:not(.hero-sub) { display: none; }
   .hero-photo-wrap { max-width: 100%; }
   .hero-photo { height: 250px; min-height: unset; max-height: 250px; object-fit: cover; object-position: top center; }

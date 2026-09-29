@@ -197,7 +197,7 @@ button { cursor: none; font-family: inherit; }
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 4rem; align-items: center;
 }
-.hero-left {}
+.hero-left { position: relative; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1.5px solid var(--border-strong);
@@ -239,8 +239,8 @@ button { cursor: none; font-family: inherit; }
 .stat-label { font-size: 0.68rem; letter-spacing: 0.5px; color: var(--text-dim); text-transform: uppercase; line-height: 1.4; margin-top: 3px; }
 .stat-divider { width: 1px; height: 36px; background: linear-gradient(180deg, transparent, var(--primary-light), transparent); }
 .hero-tagline { font-size: 0.62rem; color: var(--text-dim); text-align: center; margin-top: 24px; margin-bottom: 0; font-weight: 400; letter-spacing: 0.3px; }
-/* Siegel mittig unter dem Nav-Button "Termin buchen" (rechte Kante = Button-Kante) */
-.hero-siegel { position: absolute; top: 100px; right: clamp(0px, calc(682px - 50vw), 2rem); width: 162px; display: flex; align-items: center; justify-content: space-between; }
+/* Siegel: auf Höhe des Badges "Premium Laser Studio", links/rechts bündig mit Nav-Button "Termin buchen" */
+.hero-siegel { position: absolute; top: -2px; right: calc(-100% - 4rem - (2rem - clamp(0px, calc(682px - 50vw), 2rem))); width: 162px; display: flex; align-items: center; justify-content: space-between; }
 .hero-siegel img { height: 38px; width: auto; display: block; opacity: 0.9; }
 
 .hero-right {
@@ -1079,6 +1079,7 @@ button { cursor: none; font-family: inherit; }
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-siegel { right: 0; }
   .hero-right { align-items: center; }
   .hero-card { max-width: 100%; }
   .hero-photo { height: 420px; }

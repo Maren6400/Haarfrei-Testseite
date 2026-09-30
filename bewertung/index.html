@@ -71,6 +71,11 @@
     .bw-preview { border: 1.5px dashed var(--border-strong); border-radius: var(--radius-lg); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
     .bw-preview .who { font-weight: 500; font-size: 0.88rem; color: var(--text-dim); }
     .bw-preview .st { color: #E0A526; letter-spacing: 2px; }
+    .bw-note { font-size: 0.85rem; color: var(--text-dim); background: var(--primary-ultra); border-left: 3px solid var(--primary-light); padding: 8px 12px; border-radius: 4px; }
+    .bw-ki { background: var(--primary-ultra); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; }
+    .bw-ki[hidden] { display: none; }
+    .bw-ki a { text-decoration: underline; }
+    .bw-ki strong { font-weight: 500; color: var(--dark); }
     .bw-legal { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
     .bw-legal a { text-decoration: underline; }
     ol.bw-how { margin: 0; padding-left: 20px; font-size: 0.9rem; display: flex; flex-direction: column; gap: 4px; color: var(--text-dim); }
@@ -113,7 +118,7 @@
       <div class="bw-bar" id="bar" hidden></div>
       <main id="screen"></main>
       <p class="bw-legal">Den Zugang zu dieser Seite erhalten Kundinnen und Kunden persönlich im Studio nach ihrer 4. Behandlung. So stellen wir sicher, dass jede Bewertung von einer echten Kundin oder einem echten Kunden stammt.</p>
-      <p class="bw-legal">Zur Formulierung des Textvorschlags werden Ihre Antworten an den KI-Dienst Anthropic (USA) übermittelt. Wir speichern Ihre Antworten nicht. Mehr dazu in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.</p>
+      <p class="bw-legal">Nur wenn Sie zustimmen, werden Ihre Antworten zur Formulierung des Textvorschlags an den KI-Dienst Anthropic (USA) übermittelt. Wir speichern Ihre Antworten nicht. Mehr dazu in unserer <a href="../datenschutz.html">Datenschutzerklärung</a>.</p>
     </div>
   </section>
 
@@ -175,7 +180,7 @@ const QUESTIONS = [
   {key:"besser", title:"Gibt es etwas, das wir besser machen können?", hint:"Freiwillig. Sie entscheiden, ob es in die Bewertung kommt.", optional:true, withScope:true},
 ];
 
-let state = {step:-1, answers:{zone:[], besserScope:"review"}, text:"", stars:5, internSent:"", siteSent:false};
+let state = {step:-1, answers:{zone:[], besserScope:"review"}, text:"", stars:5, internSent:"", siteSent:false, kiConsent:false};
 const $ = s => document.querySelector(s);
 const screen = $("#screen");
 let ctl = null;
@@ -218,6 +223,7 @@ function renderIntro(){
     <h2>Wie war Ihre Behandlung bisher?</h2>
     <p>Sie beantworten 8 kurze Fragen. Daraus entsteht ein Vorschlag für Ihre Bewertung, den Sie anschließend frei ändern können. Dauer: etwa 3 Minuten.</p>
     <p class="bw-hint">Es zählt Ihre ehrliche Erfahrung, auch wenn nicht alles perfekt war.</p>
+    <p class="bw-note">Bitte machen Sie in Ihren Antworten keine Angaben zu Erkrankungen, Medikamenten oder anderen Gesundheitsdaten.</p>
     <div class="bw-row">
       <button class="btn btn-primary" id="start">Los geht's</button>
     </div>
@@ -274,6 +280,14 @@ function renderQuestion(q){
     }
     setTimeout(()=>ta.focus({preventScroll:true}),0);
   }
+  if(state.step===QUESTIONS.length-1){
+    const k=el(`<div class="bw-ki">
+      <label class="bw-check"><input type="checkbox" id="kiConsent"> <span><strong>Textvorschlag mit KI formulieren lassen.</strong> Ich bin einverstanden, dass meine Antworten dafür an den KI-Dienst Anthropic (USA) übermittelt werden. Mehr in der <a href="../datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span></label>
+      <p class="bw-hint">Freiwillig. Ohne Häkchen setzen wir den Text direkt aus Ihren Antworten zusammen, ohne KI.</p>
+    </div>`);
+    const cb=k.querySelector("input"); cb.checked=state.kiConsent; cb.onchange=()=>state.kiConsent=cb.checked;
+    c.querySelector(".bw-row.end").before(k);
+  }
   $("#back").onclick=()=>goStep(state.step-1);
   $("#next").onclick=()=>goStep(state.step+1);
   const sk=$("#skip"); if(sk) sk.onclick=()=>{ if(q.key==="zone")a.zone=[]; else a[q.key]=""; goStep(state.step+1);};
@@ -298,13 +312,18 @@ function fallbackText(){
 }
 
 async function generate(ta,status){
+  if(!state.kiConsent){
+    state.text=fallbackText(); ta.value=state.text;
+    status.textContent="Der Text wurde direkt aus Ihren Antworten zusammengesetzt (ohne KI). Bitte lesen und nach Wunsch ändern.";
+    return;
+  }
   ctl?.abort(); ctl=new AbortController();
   const timer=setTimeout(()=>ctl.abort(),30000);
   const my=ctl;
   ta.disabled=true;
   status.textContent="Ihr Text wird formuliert …";
   try{
-    const {text,truncated}=await postJSON(API_TEXT,{answers:state.answers},my.signal);
+    const {text,truncated}=await postJSON(API_TEXT,{answers:state.answers,ki_einwilligung:true},my.signal);
     state.text=text.trim(); ta.value=state.text;
     status.textContent= truncated?"Der Text wurde gekürzt. Bitte prüfen Sie das Ende.":"Fertig. Bitte lesen Sie den Text und ändern Sie alles, was nicht stimmt.";
   }catch(e){
@@ -343,6 +362,9 @@ function renderResult(){
       <button class="btn btn-ghost" id="toQ">Antworten ändern</button>
       <button class="btn-textlink" id="regen">Neu formulieren</button>
     </div>
+    <div class="bw-ki" id="kiLaterBox" hidden>
+      <label class="bw-check"><input type="checkbox" id="kiLater"> <span>Doch mit KI formulieren lassen. Ich bin einverstanden, dass meine Antworten dafür an den KI-Dienst Anthropic (USA) übermittelt werden.</span></label>
+    </div>
   </section>`);
   const internNote=sendInternIfNeeded();
   if(internNote) c.append(internNote);
@@ -375,7 +397,11 @@ function renderResult(){
   ta.oninput=()=>state.text=ta.value;
   if(state.text){ta.value=state.text;status.textContent="Bitte lesen Sie den Text und ändern Sie alles, was nicht stimmt.";}
   else generate(ta,status);
-  $("#regen").onclick=()=>generate(ta,status);
+  const regen=$("#regen"), laterBox=$("#kiLaterBox");
+  const syncKi=()=>{regen.hidden=!state.kiConsent; laterBox.hidden=state.kiConsent;};
+  syncKi();
+  regen.onclick=()=>generate(ta,status);
+  $("#kiLater").onchange=e=>{ if(e.target.checked){ state.kiConsent=true; syncKi(); generate(ta,status); } };
   $("#toQ").onclick=()=>{state.text="";goStep(1);};
 
   $("#google").addEventListener("click",()=>{

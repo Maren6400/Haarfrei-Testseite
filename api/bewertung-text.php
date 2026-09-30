@@ -13,6 +13,7 @@ if (!$apiKey || strpos($apiKey, 'HIER-EINTRAGEN') !== false) {
 }
 
 $d = lies_json();
+if (($d['ki_einwilligung'] ?? false) !== true) antwort(400, ['ok' => false, 'fehler' => 'Einwilligung fehlt']);
 $a = is_array($d['answers'] ?? null) ? $d['answers'] : [];
 
 // Antworten säubern und kürzen

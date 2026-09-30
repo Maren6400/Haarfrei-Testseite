@@ -42,7 +42,7 @@ if ($a['besser'] !== '' && $besserScope === 'review') $lines[] = "Verbesserungsv
 
 if (count($lines) === 0) antwort(400, ['ok' => false, 'fehler' => 'Keine Antworten']);
 
-$system = 'Du formulierst aus den Antworten einer Kundin oder eines Kunden eine Google-Bewertung für Haarfrei-Trier, ein Studio für dauerhafte Haarentfernung per Laser in Trier. Die Person hat 4 Behandlungen hinter sich.
+$system = 'Du formulierst aus den Antworten einer Kundin oder eines Kunden eine Google-Bewertung für Haarfrei-Trier, ein Studio für dauerhafte Haarentfernung per Laser in Trier. Die Person hat 3 Behandlungen hinter sich.
 
 Strenge Regeln:
 - Verwende ausschließlich Inhalte aus den Antworten. Erfinde keine Fakten, Details, Zahlen oder Wertungen.

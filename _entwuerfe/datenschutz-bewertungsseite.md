@@ -3,7 +3,7 @@
 
 ## Bewertungsassistent auf haarfrei-trier.de/bewertung
 
-Kundinnen und Kunden erhalten nach ihrer 4. Behandlung persönlich im Studio Zugang zu unserer Bewertungsseite. Dort können Sie freiwillig einige Fragen zu Ihrer Behandlung beantworten. Wir helfen Ihnen dann dabei, daraus einen Bewertungstext zu formulieren.
+Kundinnen und Kunden erhalten nach ihrer 3. Behandlung persönlich im Studio Zugang zu unserer Bewertungsseite. Dort können Sie freiwillig einige Fragen zu Ihrer Behandlung beantworten. Wir helfen Ihnen dann dabei, daraus einen Bewertungstext zu formulieren.
 
 **Textformulierung durch Anthropic (USA)**
 Wenn Sie sich einen Textvorschlag erstellen lassen, übermitteln wir Ihre Antworten an die Anthropic PBC, 548 Market Street, PMB 90375, San Francisco, CA 94104, USA. Anthropic erstellt daraus mit einem KI-Sprachmodell einen Vorschlag. Übermittelt werden nur die Antworten, die Sie eingeben, und die technisch notwendigen Verbindungsdaten. Name, E-Mail-Adresse oder andere Kontaktdaten fragen wir dafür nicht ab. Bitte geben Sie in Ihren Antworten keine Gesundheitsdaten oder anderen sensiblen Angaben ein, die Sie nicht teilen möchten.

@@ -6,3 +6,5 @@ Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
+
+Sitemap: https://www.haarfrei-trier.de/sitemap.xml

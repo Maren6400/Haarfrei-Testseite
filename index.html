@@ -327,7 +327,7 @@
             <span>Bikinizone</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="unterschenkel" data-title="Unterschenkel" data-badge="Nach 4 Behandlungen" data-pos="50% 55%" aria-label="Unterschenkel anzeigen">
-            <img src="Fotos/Behandlungen/slider/unterschenkel-nachher.webp" alt="" loading="lazy" style="object-position:50% 55%" />
+            <img src="Fotos/Behandlungen/slider/unterschenkel-nachher.webp?v=3" alt="" loading="lazy" style="object-position:50% 55%" />
             <span>Unterschenkel</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="hals" data-title="Hals · PCO" data-badge="Nach 8 Behandlungen" data-pos="50% 50%" aria-label="Hals · PCO anzeigen">
@@ -335,7 +335,7 @@
             <span>Hals</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="ruecken" data-title="Rücken (Mann)" data-badge="Nach 4 Behandlungen" data-pos="50% 50%" aria-label="Rücken anzeigen">
-            <img src="Fotos/Behandlungen/slider/ruecken-nachher.webp?v=2" alt="" loading="lazy" style="object-position:50% 40%" />
+            <img src="Fotos/Behandlungen/slider/ruecken-nachher.webp?v=3" alt="" loading="lazy" style="object-position:50% 40%" />
             <span>Rücken</span>
           </button>
           </div>
@@ -610,11 +610,11 @@
       thumbs.forEach(function(t){ t.classList.toggle('is-active', t===btn); });
       var im=new Image(); im.onload=function(){
         sl.style.setProperty('--ar', ratio(im));
-        bef.src='Fotos/Behandlungen/slider/'+z+'-vorher.webp?v=2'; aft.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=2';
+        bef.src='Fotos/Behandlungen/slider/'+z+'-vorher.webp?v=3'; aft.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=3';
         bef.style.objectPosition=aft.style.objectPosition=btn.dataset.pos;
         bef.alt=alts[z]+' – vorher'; aft.alt=alts[z]+' – nachher';
         zone.textContent=btn.dataset.title; badge.textContent=btn.dataset.badge+'*'; setPos(50);
-      }; im.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=2';
+      }; im.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=3';
     }
     thumbs.forEach(function(t){ t.addEventListener('click', function(){ show(t); }); });
     var first=new Image(); first.onload=function(){ sl.style.setProperty('--ar', ratio(first)); bef.style.objectPosition=aft.style.objectPosition='50% 45%'; }; first.src='Fotos/Behandlungen/slider/achseln-nachher.webp';

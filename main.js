@@ -51,9 +51,7 @@
   const burger = document.getElementById('navBurger');
   const links = document.getElementById('navLinks');
   if (!nav) return;
-  const isHomepage = document.body.classList.contains('home') || window.location.pathname === '/' || window.location.pathname.endsWith('index.html');
-  if (!isHomepage) nav.classList.add('scrolled');
-  window.addEventListener('scroll', () => { if (isHomepage) nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
   if (burger && links) {
     burger.addEventListener('click', () => {
       links.classList.toggle('open');

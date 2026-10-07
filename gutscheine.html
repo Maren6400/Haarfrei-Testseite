@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geschenkgutschein Laser Haarentfernung Trier | Haarfrei-Trier</title>
+  <meta name="description" content="Verschenken Sie dauerhaft glatte Haut – Gutscheine für Laser-Haarentfernung in Trier. In jedem Wunschbetrag erhältlich, sofort online kaufen oder als hochwertige Karte erhalten." />
+  <link rel="canonical" href="https://www.haarfrei-trier.de/gutscheine.html" />
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="consent.css" />
+  <script src="consent.js" defer></script>
+  <style>
+    .gutschein-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 60%, var(--primary-light) 100%);
+      position: relative; overflow: hidden;
+      padding: 140px 0 80px;
+      text-align: center;
+    }
+    .gutschein-hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .gutschein-hero::after {
+      content: ''; position: absolute; bottom: -80px; left: -80px;
+      width: 350px; height: 350px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .gutschein-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+    .gutschein-hero .icon { font-size: 4rem; margin-bottom: 1.5rem; display: block; }
+    .gutschein-hero h1 { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; color: white; line-height: 1.2; margin-bottom: 1.2rem; }
+    .gutschein-hero h1 em { font-style: italic; }
+    .gutschein-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 2.5rem; }
+
+    .gutschein-main { max-width: 900px; margin: 0 auto; padding: 5rem 1.5rem; }
+
+    /* Online-Kauf Block */
+    .gutschein-online {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+      background: var(--primary-ultra); border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); padding: 3rem; margin-bottom: 3rem;
+    }
+    .gutschein-online-visual {
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      border-radius: var(--radius-lg); padding: 2.5rem; text-align: center; color: white;
+      position: relative; overflow: hidden;
+    }
+    .gutschein-online-visual::before {
+      content: ''; position: absolute; top: -40px; right: -40px;
+      width: 160px; height: 160px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .gutschein-online-visual .gift-icon { font-size: 3.5rem; display: block; margin-bottom: 1rem; position: relative; z-index: 1; }
+    .gutschein-online-visual .gift-label { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; position: relative; z-index: 1; }
+    .gutschein-online-visual .gift-sub { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 0.5rem; position: relative; z-index: 1; }
+    .gutschein-online-text h2 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; color: var(--dark); margin-bottom: 0.5rem; }
+    .gutschein-online-text h2 em { color: var(--primary); }
+    .gutschein-online-text .divider { width: 40px; height: 2px; background: var(--primary); margin: 1rem 0; }
+    .gutschein-online-text p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 1.5rem; }
+    .gutschein-online-text .highlights { list-style: none; margin-bottom: 2rem; }
+    .gutschein-online-text .highlights li { font-size: 0.88rem; color: var(--text); padding: 0.4rem 0; display: flex; align-items: center; gap: 0.6rem; }
+    .gutschein-online-text .highlights li::before { content: '✓'; color: var(--primary); font-weight: 700; }
+
+    /* Karten-Gutschein Block */
+    .gutschein-karte {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+      border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 3rem;
+      margin-bottom: 3rem;
+    }
+    .gutschein-karte-visual {
+      border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--primary-pale);
+      min-height: 200px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .gutschein-karte-visual .karte-placeholder {
+      text-align: center; padding: 2rem;
+    }
+    .gutschein-karte-visual .karte-placeholder .icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+    .gutschein-karte-visual .karte-placeholder p { font-size: 0.8rem; color: var(--text-dim); }
+    .gutschein-karte-text h2 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; color: var(--dark); margin-bottom: 0.5rem; }
+    .gutschein-karte-text h2 em { color: var(--primary); }
+    .gutschein-karte-text .divider { width: 40px; height: 2px; background: var(--primary); margin: 1rem 0; }
+    .gutschein-karte-text p { font-size: 0.92rem; color: var(--text-dim); line-height: 1.8; margin-bottom: 1rem; }
+    .gutschein-karte-text .highlight-box {
+      background: var(--primary-ultra); border-left: 3px solid var(--primary);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 0.8rem 1rem; margin-bottom: 1.5rem;
+      font-size: 0.88rem; font-weight: 600; color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .gutschein-online, .gutschein-karte { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+    }
+    /* Nav immer weiß wegen türkisem Hero-Hintergrund */
+    #nav {
+      background: rgba(255,255,255,0.95) !important;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border), var(--shadow-sm);
+    }
+    #nav .nav-link { color: var(--text-dim); }
+    #nav .nav-link:hover, #nav .nav-link.active { color: var(--primary); }
+  </style>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo"><img src="Logos/Logo_Schrift_grün.png" alt="Haarfrei-Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="nav-link nav-mobile-only">Home</a>
+        <a href="einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="preise.html" class="nav-link">Preise</a>
+        <a href="gutscheine.html" class="nav-link active">Gutscheine</a>
+        <div class="nav-item"><a href="beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a><div class="nav-dropdown"><a href="beckenbodenstuhl.html#preise">Preise</a></div></div>
+        <a href="faq.html" class="nav-link">FAQ</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="gutschein-hero">
+    <div class="gutschein-hero-inner">
+      <span class="icon reveal-up">🎁</span>
+      <h1 class="reveal-up">Das Geschenk,<br /><em>das wirklich bleibt.</em></h1>
+      <p class="reveal-up">Schenken Sie dauerhaft glatte Haut – ein unvergessliches Erlebnis für Geburtstage, Weihnachten oder einfach so. In jedem Wunschbetrag erhältlich.</p>
+      <a href="https://www.gutschein.software/kunden/haarfrei-trier/" target="_blank" class="btn btn-white btn-lg reveal-up">🎁 Gutschein jetzt kaufen</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="gutschein-main">
+
+      <!-- Online-Gutschein -->
+      <div class="gutschein-online reveal-up">
+        <div class="gutschein-online-visual">
+          <span class="gift-icon">🎁</span>
+          <div class="gift-label">Online-Gutschein</div>
+          <div class="gift-sub">Sofort verfügbar · Jeder Betrag</div>
+        </div>
+        <div class="gutschein-online-text">
+          <p class="section-label">Sofort verschenken</p>
+          <h2>Online-Gutschein<br /><em>direkt kaufen.</em></h2>
+          <div class="divider"></div>
+          <p>Wählen Sie Ihren Wunschbetrag und verschenken Sie ein echtes Wohlfühl-Erlebnis. Der Gutschein wird sofort per E-Mail zugestellt und kann direkt ausgedruckt werden.</p>
+          <ul class="highlights">
+            <li>In jedem Wunschbetrag erhältlich</li>
+            <li>Sofort per E-Mail verfügbar</li>
+            <li>Direkt ausdruckbar</li>
+            <li>Einlösbar für alle Behandlungen</li>
+          </ul>
+          <a href="https://www.gutschein.software/kunden/haarfrei-trier/" target="_blank" class="btn btn-primary">Gutschein direkt kaufen →</a>
+        </div>
+      </div>
+
+      <!-- Karten-Gutschein -->
+      <div class="gutschein-karte reveal-up">
+        <div class="gutschein-karte-visual">
+          <div class="karte-placeholder">
+            <span class="icon">💌</span>
+            <p>Hochwertiger Geschenkgutschein<br />auf edlem Papier</p>
+          </div>
+        </div>
+        <div class="gutschein-karte-text">
+          <p class="section-label">Gutschein als Karte</p>
+          <h2>Hochwertiger<br /><em>Geschenkgutschein.</em></h2>
+          <div class="divider"></div>
+          <p>Nach der Buchung und Bezahlung des Gutscheins können Sie uns kontaktieren, um einen hochwertigen Geschenkgutschein als Karte auf edlem Papier mit passendem Umschlag zu erhalten – per Post oder zur Abholung in unserer Praxis.</p>
+          <div class="highlight-box">✓ Keine Extrakosten oder Versandgebühren!</div>
+          <p style="font-size:0.85rem;color:var(--text-faint);margin-bottom:1.5rem">Bitte teilen Sie uns Ihre Adresse und das gewünschte Kartenmotiv mit.</p>
+          <a href="kontakt.html" class="btn btn-outline">Zum Kontaktformular →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section-teal">
+    <div class="container"><div class="booking-inner reveal-up">
+      <p class="section-label section-label-white">Jetzt verschenken</p>
+      <h2 class="booking-title">Ein Geschenk,<br /><em>das wirklich begeistert.</em></h2>
+      <p class="booking-sub">Dauerhaft glatte Haut – für sie, ihn oder wen Sie mögen.</p>
+      <div class="booking-actions">
+        <a href="https://www.gutschein.software/kunden/haarfrei-trier/" target="_blank" class="btn btn-white btn-lg">🎁 Gutschein kaufen</a>
+        <a href="kontakt.html" class="btn btn-ghost btn-lg" style="color:white;border-color:rgba(255,255,255,0.4)">Frage stellen</a>
+      </div>
+    </div></div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="Logos/Logo_Schrift_grün.png" alt="Haarfrei-Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="einrichtung-team.html">Team &amp; Studio</a><a href="behandlungsmethoden.html">Methoden</a><a href="preise.html">Preise</a><a href="gutscheine.html">Gutscheine</a><a href="beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="faq.html">FAQ</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a></div>
+      <div class="footer-contact"><h4>Kontakt</h4><p>Südallee 34<br/>54290 Trier</p><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Haarfrei-Trier. Alle Rechte vorbehalten.</p><div class="footer-bottom-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div>
+  </div></footer>
+
+</body>
+</html>

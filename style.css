@@ -962,6 +962,61 @@ button { cursor: none; font-family: inherit; }
   font-size: 0.78rem; color: var(--text-faint); font-style: italic;
 }
 
+
+/* ── VORHER / NACHHER SCHIEBER ── */
+.vn-wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 4rem; align-items: center; }
+.vn-text .section-desc { max-width: 30rem; margin-bottom: 2rem; }
+.vn-stage { max-width: 560px; width: 100%; margin-left: auto; }
+.vn-slider {
+  --pos: 50%; --ar: 0.8;
+  position: relative; width: 100%; aspect-ratio: var(--ar);
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+  background: var(--primary-ultra); touch-action: pan-y; user-select: none;
+  transition: aspect-ratio 0.35s ease;
+}
+.vn-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.vn-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.vn-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.25); pointer-events: none; }
+.vn-knob {
+  position: absolute; top: 50%; left: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px;
+  border-radius: 50%; background: #fff; color: var(--primary); display: flex; align-items: center; justify-content: center;
+  font-size: 1.15rem; box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.vn-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.vn-badge {
+  position: absolute; top: 16px; padding: 8px 16px; border-radius: 999px;
+  background: rgba(255,255,255,0.88); color: var(--dark); backdrop-filter: blur(6px);
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; pointer-events: none;
+}
+.vn-badge-l { left: 16px; } .vn-badge-r { right: 16px; }
+.vn-zone {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); padding: 8px 20px; border-radius: 999px;
+  background: var(--primary); color: #fff; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; pointer-events: none; white-space: nowrap;
+}
+.vn-cap { margin-top: 14px; text-align: center; font-size: 0.82rem; color: var(--text-dim); letter-spacing: 0.02em; }
+.vn-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; }
+.vn-thumb {
+  position: relative; padding: 0; border: 2px solid transparent; border-radius: 12px; overflow: hidden;
+  background: #fff; cursor: pointer; box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.08)); aspect-ratio: 1/1.1;
+  display: flex; flex-direction: column; justify-content: flex-end; font-family: inherit;
+}
+.vn-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.2s; }
+.vn-thumb span {
+  position: relative; padding: 6px 2px; background: rgba(255,255,255,0.92); color: var(--text-dim);
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; text-align: center;
+}
+.vn-thumb:hover img, .vn-thumb.is-active img { opacity: 1; }
+.vn-thumb.is-active { border-color: var(--primary); }
+.vn-thumb.is-active span { color: var(--dark); font-weight: 500; }
+@media (max-width: 900px) {
+  .vn-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .vn-stage { margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .vn-thumb span { font-size: 0.55rem; letter-spacing: 0.04em; }
+  .vn-badge { font-size: 0.58rem; padding: 6px 12px; }
+}
+
 /* ── PROBE SECTION ── */
 .probe-section {
   background: var(--dark);

@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://www.haarfrei-trier.de/" />
   <meta property="og:locale" content="de_DE" />
   <link rel="stylesheet" href="fonts/fonts.css" />
-  <link rel="stylesheet" href="style.css?v=20260929i" />
+  <link rel="stylesheet" href="style.css?v=20261007b" />
   <link rel="stylesheet" href="consent.css" />
   <script src="consent.js" defer></script>
   <script type="application/ld+json">
@@ -298,47 +298,51 @@
   <!-- VORHER / NACHHER -->
   <section class="section section-alt" id="results">
     <div class="container">
-      <div class="section-header">
-        <p class="section-label reveal-up">Ergebnisse</p>
-        <h2 class="section-title reveal-up">Sichtbare Resultate.<br /><em>Echte Kunden.</em></h2>
-        <p class="section-desc reveal-up">Echte Ergebnisse. Echte Kunden. Fotos von unseren Kundinnen und Kunden.</p>
+      <div class="vn-wrap">
+        <div class="vn-text">
+          <p class="section-label reveal-up">Ergebnisse aus unserem Studio</p>
+          <h2 class="section-title reveal-up">Ergebnisse, <br /><em>die für sich sprechen.</em></h2>
+          <p class="section-desc reveal-up">Unbearbeitete Fotos von Kundinnen und Kunden, die uns ihre Einwilligung gegeben haben. Wählen Sie eine Zone und schieben Sie den Regler: So sah es vorher aus, so sieht es nachher aus.</p>
+          <div class="reveal-up">
+            <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-primary">Kostenlose Probebehandlung buchen →</a>
+          </div>
+        </div>
+        <div class="vn-stage reveal-up">
+          <div class="vn-slider" id="vnSlider" style="--pos:50%">
+            <img class="vn-img vn-after" id="vnAfter" src="Fotos/Behandlungen/slider/achseln-nachher.webp" alt="Laser Haarentfernung Achseln Trier – nachher" />
+            <img class="vn-img vn-before" id="vnBefore" src="Fotos/Behandlungen/slider/achseln-vorher.webp" alt="Laser Haarentfernung Achseln Trier – vorher" />
+            <span class="vn-badge vn-badge-l">Vorher</span>
+            <span class="vn-badge vn-badge-r" id="vnBadge">Nachher*</span>
+            <span class="vn-zone" id="vnZone">Achseln</span>
+            <span class="vn-line" aria-hidden="true"><span class="vn-knob">⟷</span></span>
+            <input type="range" class="vn-range" id="vnRange" min="0" max="100" value="50" aria-label="Vorher-Nachher-Regler" />
+          </div>
+          <p class="vn-cap" id="vnCap">Achseln · Nach einigen Behandlungen*</p>
+          <div class="vn-thumbs" id="vnThumbs">
+          <button type="button" class="vn-thumb is-active" data-zone="achseln" data-title="Achseln" data-badge="Nach einigen Behandlungen" data-pos="50% 45%" aria-label="Achseln anzeigen">
+            <img src="Fotos/Behandlungen/slider/achseln-nachher.webp" alt="" loading="lazy" style="object-position:50% 45%" />
+            <span>Achseln</span>
+          </button>
+          <button type="button" class="vn-thumb" data-zone="bikini" data-title="Bikinizone" data-badge="Nach einigen Behandlungen" data-pos="50% 50%" aria-label="Bikinizone anzeigen">
+            <img src="Fotos/Behandlungen/slider/bikini-nachher.webp" alt="" loading="lazy" style="object-position:50% 50%" />
+            <span>Bikinizone</span>
+          </button>
+          <button type="button" class="vn-thumb" data-zone="unterschenkel" data-title="Unterschenkel" data-badge="Nach 4 Behandlungen" data-pos="50% 55%" aria-label="Unterschenkel anzeigen">
+            <img src="Fotos/Behandlungen/slider/unterschenkel-nachher.webp" alt="" loading="lazy" style="object-position:50% 55%" />
+            <span>Unterschenkel</span>
+          </button>
+          <button type="button" class="vn-thumb" data-zone="hals" data-title="Hals · PCO" data-badge="Nach 8 Sitzungen" data-pos="50% 50%" aria-label="Hals · PCO anzeigen">
+            <img src="Fotos/Behandlungen/slider/hals-nachher.webp" alt="" loading="lazy" style="object-position:50% 50%" />
+            <span>Hals</span>
+          </button>
+          <button type="button" class="vn-thumb" data-zone="ruecken" data-title="Rücken" data-badge="Nach einigen Behandlungen" data-pos="50% 40%" aria-label="Rücken anzeigen">
+            <img src="Fotos/Behandlungen/slider/ruecken-nachher.webp" alt="" loading="lazy" style="object-position:50% 40%" />
+            <span>Rücken</span>
+          </button>
+          </div>
+          <p class="vn-note">* Individuelle Ergebnisse können abweichen. Die Anzahl der Sitzungen hängt von Haut- und Haartyp ab. Alle Fotos stammen von echten Kunden mit Einwilligung.</p>
+        </div>
       </div>
-      <div class="vn-grid reveal-up">
-        <div class="vn-card">
-          <div class="vn-img-wrap">
-            <img src="Fotos/Behandlungen/haarfrei-trier-vorher-nachher-achseln.webp" alt="Laser Haarentfernung Achseln Trier – Vorher Nachher" />
-          </div>
-          <div class="vn-label">Achseln</div>
-        </div>
-        <div class="vn-card">
-          <div class="vn-img-wrap">
-            <img src="Fotos/Behandlungen/haarfrei-trier-vorher-nachher-bikini.webp" alt="Laser Haarentfernung Bikinizone Trier – Vorher Nachher" />
-          </div>
-          <div class="vn-label">Bikinizone</div>
-        </div>
-        <div class="vn-card">
-          <div class="vn-img-wrap">
-            <img src="Fotos/Behandlungen/haarfrei-trier-vorher-nachher-unterschenkel.webp" alt="Laser Haarentfernung Beine Trier – nach 4 Behandlungen" />
-          </div>
-          <div class="vn-label">Unterschenkel · nach 4 Behandlungen</div>
-        </div>
-        <div class="vn-card">
-          <div class="vn-img-wrap">
-            <img src="Fotos/Behandlungen/haarfrei-trier-vorher-nachher-hals-pco.webp" alt="Haarentfernung Hals PCO-Behaarung Trier – nach 8 Sitzungen" />
-          </div>
-          <div class="vn-label">Hals · PCO-bedingte Behaarung · nach 8 Sitzungen</div>
-        </div>
-        <div class="vn-card">
-          <div class="vn-img-wrap">
-            <img src="Fotos/Behandlungen/haarfrei-trier-vorher-nachher-ruecken.webp" alt="Laser Haarentfernung Rücken Trier – Vorher Nachher" />
-          </div>
-          <div class="vn-label">Rücken</div>
-        </div>
-      </div>
-      <div class="services-cta reveal-up">
-        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="btn btn-primary">→ Jetzt kostenlose Probebehandlung buchen</a>
-      </div>
-      <p class="vn-note reveal-up">Individuelle Ergebnisse können variieren. Alle Fotos stammen von echten Kunden mit Einwilligung.</p>
     </div>
   </section>
 
@@ -592,5 +596,30 @@
   </footer>
 
   <script src="main.js"></script>
+
+  <script>
+  (function(){
+    var sl=document.getElementById('vnSlider'); if(!sl) return;
+    var rng=document.getElementById('vnRange'), bef=document.getElementById('vnBefore'), aft=document.getElementById('vnAfter'),
+        zone=document.getElementById('vnZone'), cap=document.getElementById('vnCap'), thumbs=document.querySelectorAll('.vn-thumb');
+    var alts={achseln:'Laser Haarentfernung Achseln Trier',bikini:'Laser Haarentfernung Bikinizone Trier',unterschenkel:'Laser Haarentfernung Unterschenkel Trier',hals:'Haarentfernung Hals bei PCO Trier',ruecken:'Laser Haarentfernung Rücken Trier'};
+    function setPos(v){ sl.style.setProperty('--pos', v+'%'); rng.value=v; }
+    rng.addEventListener('input', function(){ setPos(rng.value); });
+    function ratio(img){ var r=img.naturalWidth/img.naturalHeight; return Math.min(1.35, Math.max(0.8, r)); }
+    function show(btn){
+      var z=btn.dataset.zone;
+      thumbs.forEach(function(t){ t.classList.toggle('is-active', t===btn); });
+      var im=new Image(); im.onload=function(){
+        sl.style.setProperty('--ar', ratio(im));
+        bef.src='Fotos/Behandlungen/slider/'+z+'-vorher.webp'; aft.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp';
+        bef.style.objectPosition=aft.style.objectPosition=btn.dataset.pos;
+        bef.alt=alts[z]+' – vorher'; aft.alt=alts[z]+' – nachher';
+        zone.textContent=btn.dataset.title.split(' · ')[0]; cap.textContent=btn.dataset.title+' · '+btn.dataset.badge+'*'; setPos(50);
+      }; im.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp';
+    }
+    thumbs.forEach(function(t){ t.addEventListener('click', function(){ show(t); }); });
+    var first=new Image(); first.onload=function(){ sl.style.setProperty('--ar', ratio(first)); bef.style.objectPosition=aft.style.objectPosition='50% 45%'; }; first.src='Fotos/Behandlungen/slider/achseln-nachher.webp';
+  })();
+  </script>
 </body>
 </html>

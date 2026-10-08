@@ -309,8 +309,8 @@
         </div>
         <div class="vn-stage reveal-up">
           <div class="vn-slider" id="vnSlider" style="--pos:50%">
-            <img class="vn-img vn-after" id="vnAfter" src="Fotos/Behandlungen/slider/achseln-nachher.webp" alt="Laser Haarentfernung Achseln Trier – nachher" />
-            <img class="vn-img vn-before" id="vnBefore" src="Fotos/Behandlungen/slider/achseln-vorher.webp" alt="Laser Haarentfernung Achseln Trier – vorher" />
+            <img class="vn-img vn-after" id="vnAfter" src="Fotos/Behandlungen/slider/achseln-nachher.webp?v=5" alt="Laser Haarentfernung Achseln Trier – nachher" />
+            <img class="vn-img vn-before" id="vnBefore" src="Fotos/Behandlungen/slider/achseln-vorher.webp?v=5" alt="Laser Haarentfernung Achseln Trier – vorher" />
             <span class="vn-badge vn-badge-l">Vorher</span>
             <span class="vn-badge vn-badge-r" id="vnBadge">Nach 4 Behandlungen*</span>
             <span class="vn-zone" id="vnZone">Achseln</span>
@@ -318,16 +318,16 @@
             <input type="range" class="vn-range" id="vnRange" min="0" max="100" value="50" aria-label="Vorher-Nachher-Regler" />
           </div>
           <div class="vn-thumbs" id="vnThumbs">
-          <button type="button" class="vn-thumb is-active" data-zone="achseln" data-title="Achseln" data-badge="Nach 4 Behandlungen" data-pos="50% 45%" aria-label="Achseln anzeigen">
-            <img src="Fotos/Behandlungen/slider/achseln-nachher.webp" alt="" loading="lazy" style="object-position:50% 45%" />
+          <button type="button" class="vn-thumb is-active" data-zone="achseln" data-title="Achseln" data-badge="Nach 4 Behandlungen" data-pos="50% 50%" aria-label="Achseln anzeigen">
+            <img src="Fotos/Behandlungen/slider/achseln-nachher.webp?v=5" alt="" loading="lazy" style="object-position:50% 50%" />
             <span>Achseln</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="bikini" data-title="Bikinizone" data-badge="Nach 4 Behandlungen" data-pos="50% 50%" aria-label="Bikinizone anzeigen">
-            <img src="Fotos/Behandlungen/slider/bikini-nachher.webp" alt="" loading="lazy" style="object-position:50% 50%" />
+            <img src="Fotos/Behandlungen/slider/bikini-nachher.webp?v=5" alt="" loading="lazy" style="object-position:50% 50%" />
             <span>Bikinizone</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="unterschenkel" data-title="Unterschenkel" data-badge="Nach 4 Behandlungen" data-pos="50% 50%" aria-label="Unterschenkel anzeigen">
-            <img src="Fotos/Behandlungen/slider/unterschenkel-nachher.webp?v=4" alt="" loading="lazy" style="object-position:50% 50%" />
+            <img src="Fotos/Behandlungen/slider/unterschenkel-nachher.webp?v=5" alt="" loading="lazy" style="object-position:50% 50%" />
             <span>Unterschenkel</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="hals" data-title="Hals · PCO" data-badge="Nach 8 Behandlungen" data-pos="50% 50%" aria-label="Hals · PCO anzeigen">
@@ -335,7 +335,7 @@
             <span>Hals</span>
           </button>
           <button type="button" class="vn-thumb" data-zone="ruecken" data-title="Rücken (Mann)" data-badge="Nach 4 Behandlungen" data-pos="50% 50%" aria-label="Rücken anzeigen">
-            <img src="Fotos/Behandlungen/slider/ruecken-nachher.webp?v=4" alt="" loading="lazy" style="object-position:50% 40%" />
+            <img src="Fotos/Behandlungen/slider/ruecken-nachher.webp?v=5" alt="" loading="lazy" style="object-position:50% 40%" />
             <span>Rücken</span>
           </button>
           </div>
@@ -610,14 +610,14 @@
       thumbs.forEach(function(t){ t.classList.toggle('is-active', t===btn); });
       var im=new Image(); im.onload=function(){
         sl.style.setProperty('--ar', ratio(im));
-        bef.src='Fotos/Behandlungen/slider/'+z+'-vorher.webp?v=4'; aft.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=4';
+        bef.src='Fotos/Behandlungen/slider/'+z+'-vorher.webp?v=5'; aft.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=5';
         bef.style.objectPosition=aft.style.objectPosition=btn.dataset.pos;
         bef.alt=alts[z]+' – vorher'; aft.alt=alts[z]+' – nachher';
         zone.textContent=btn.dataset.title; badge.textContent=btn.dataset.badge+'*'; setPos(50);
-      }; im.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=4';
+      }; im.src='Fotos/Behandlungen/slider/'+z+'-nachher.webp?v=5';
     }
     thumbs.forEach(function(t){ t.addEventListener('click', function(){ show(t); }); });
-    var first=new Image(); first.onload=function(){ sl.style.setProperty('--ar', ratio(first)); bef.style.objectPosition=aft.style.objectPosition='50% 45%'; }; first.src='Fotos/Behandlungen/slider/achseln-nachher.webp';
+    var first=new Image(); first.onload=function(){ sl.style.setProperty('--ar', ratio(first)); bef.style.objectPosition=aft.style.objectPosition='50% 50%'; }; first.src='Fotos/Behandlungen/slider/achseln-nachher.webp';
   })();
   </script>
 </body>

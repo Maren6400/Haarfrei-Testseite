@@ -26,6 +26,9 @@ foreach ((is_array($a['zone'] ?? null) ? $a['zone'] : []) as $z) {
 }
 $felder = ['vorher', 'beratung', 'behandlung', 'veraenderung', 'team', 'zoegern', 'besser'];
 foreach ($felder as $k) $a[$k] = kuerze($a[$k] ?? '', 1000);
+// Namen der Mitarbeiterinnen nie an die KI übermitteln (Empfehlung Rechtsprüfung)
+$namen = '/\b(Anna|Inesa|Maren|Burmeister)\b/iu';
+foreach ($felder as $k) $a[$k] = preg_replace($namen, 'die Mitarbeiterin', $a[$k]);
 $besserScope = ($a['besserScope'] ?? 'review') === 'intern' ? 'intern' : 'review';
 
 // Prompt – wörtlich aus buildPrompt() des Prototyps

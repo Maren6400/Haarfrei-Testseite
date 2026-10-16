@@ -36,7 +36,11 @@ if ($art === 'bewertung') {
             . "Anzeigename: $name\n"
             . "Behandelte Zone: $zoneText\n"
             . "Datum: $datum\n\n"
-            . "Text:\n$text\n";
+            . "Text:\n$text\n\n"
+            . "--- Nachweis der Einwilligung (bitte aufbewahren, solange die Bewertung veröffentlicht ist) ---\n"
+            . "Zeitpunkt: $datum\n"
+            . "Bestätigter Einwilligungstext (Pflicht-Checkbox):\n"
+            . "„Ich bin einverstanden, dass meine Bewertung mit diesem Anzeigenamen auf haarfrei-trier.de veröffentlicht wird. Ich kann das jederzeit per E-Mail widerrufen.“\n";
 } else {
     $betreff = 'Interner Hinweis aus Bewertung';
     $inhalt = "Interner Verbesserungsvorschlag aus der Bewertungsseite\n"

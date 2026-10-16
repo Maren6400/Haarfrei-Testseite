@@ -67,6 +67,15 @@ function kuerze($wert, $max = 1000) {
     return mb_substr($t, 0, $max, 'UTF-8');
 }
 
+// Einwilligungsprotokoll: nur Zeitpunkt + Art + Textversion, keine Inhalte, keine IP
+function protokolliere_einwilligung($art, $version) {
+    $basis = dirname(__DIR__, 2) . '/bewertung-protokoll';
+    if (!is_dir($basis) && !@mkdir($basis, 0700, true)) return;
+    if (!is_file($basis . '/.htaccess')) @file_put_contents($basis . '/.htaccess', "Require all denied\n");
+    $zeit = (new DateTime('now', new DateTimeZone('Europe/Berlin')))->format('d.m.Y, H:i:s');
+    @file_put_contents($basis . '/einwilligungen.log', "$zeit – $art – $version\n", FILE_APPEND | LOCK_EX);
+}
+
 // Datei-basiertes Rate-Limit pro IP (gehasht), z. B. 10 Anfragen pro Stunde
 function rate_limit($topf, $max = 10, $fenster = 3600) {
     $basis = dirname(__DIR__, 2) . '/bewertung-ratelimit';

@@ -166,6 +166,7 @@
 const GOOGLE_URL = "https://g.page/r/CZEUW1Eeit01EBM/review";
 const API_TEXT = "../api/bewertung-text.php";
 const API_SENDEN = "../api/bewertung-senden.php";
+const KI_TEXT_VERSION = "2";
 
 const QUESTIONS = [
   {key:"zone", title:"Welche Zone haben Sie behandeln lassen?", hint:"Mehrfachauswahl möglich.", type:"chips",
@@ -174,8 +175,7 @@ const QUESTIONS = [
   {key:"beratung", title:"Wie haben Sie die Beratung erlebt?", hint:"Zum Beispiel: Wie wurden Sie empfangen? Wurden alle Ihre Fragen verständlich beantwortet? Konnten Sie in Ruhe entscheiden?"},
   {key:"behandlung", title:"Wie hat sich die Behandlung angefühlt?", hint:"Was haben Sie gespürt? Was hat dazu beigetragen, dass Sie sich wohl und sicher gefühlt haben?"},
   {key:"veraenderung", title:"Was hat sich bisher verändert?", hint:"Wie hat sich das entwickelt, was Sie vorher gestört hat? Was merken Sie im Alltag?"},
-  {key:"wer", title:"Wer hat Sie behandelt?", hint:"Freiwillig. Der Name erscheint nur, wenn Sie ihn hier eintragen.", type:"short",
-   options:["Anna","Inesa"], optional:true},
+  {key:"team", title:"Wie haben Sie sich vom Team betreut gefühlt?", hint:"Freiwillig. Was ist Ihnen im Umgang mit Ihnen aufgefallen? Bitte nennen Sie dabei keine Namen.", optional:true},
   {key:"zoegern", title:"Was würden Sie jemandem sagen, der noch zögert?", hint:"Ein, zwei Sätze in Ihren eigenen Worten."},
   {key:"besser", title:"Gibt es etwas, das wir besser machen können?", hint:"Freiwillig. Sie entscheiden, ob es in die Bewertung kommt.", optional:true, withScope:true},
 ];
@@ -282,7 +282,7 @@ function renderQuestion(q){
   }
   if(state.step===QUESTIONS.length-1){
     const k=el(`<div class="bw-ki">
-      <label class="bw-check"><input type="checkbox" id="kiConsent"> <span><strong>Textvorschlag mit KI formulieren lassen.</strong> Ich bin einverstanden, dass meine Antworten dafür an den KI-Dienst Anthropic (USA) übermittelt werden. Mehr in der <a href="../datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span></label>
+      <label class="bw-check"><input type="checkbox" id="kiConsent"> <span><strong>Textvorschlag mit KI formulieren lassen.</strong> Ich willige ein, dass meine Antworten, einschließlich gegebenenfalls darin enthaltener Gesundheitsdaten, zur Erstellung eines Bewertungsvorschlags an den KI-Dienst Anthropic (USA) übermittelt und dort verarbeitet werden. Weitere Informationen finden Sie in unserer <a href="../datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span></label>
       <p class="bw-hint">Freiwillig. Ohne Häkchen setzen wir den Text direkt aus Ihren Antworten zusammen, ohne KI.</p>
     </div>`);
     const cb=k.querySelector("input"); cb.checked=state.kiConsent; cb.onchange=()=>state.kiConsent=cb.checked;
@@ -305,7 +305,7 @@ function fallbackText(){
   if(t(a.beratung)) parts.push("Zur Beratung: "+t(a.beratung));
   if(t(a.behandlung)) parts.push(t(a.behandlung));
   if(t(a.veraenderung)) parts.push(t(a.veraenderung));
-  if((a.wer||"").trim()) parts.push(`Behandelt hat mich ${a.wer.trim()}.`);
+  if(t(a.team)) parts.push("Zur Betreuung durch das Team: "+t(a.team));
   if(t(a.zoegern)) parts.push(t(a.zoegern));
   if((a.besser||"").trim() && a.besserScope==="review") parts.push("Verbesserungswürdig: "+t(a.besser));
   return parts.join(" ");
@@ -323,7 +323,7 @@ async function generate(ta,status){
   ta.disabled=true;
   status.textContent="Ihr Text wird formuliert …";
   try{
-    const {text,truncated}=await postJSON(API_TEXT,{answers:state.answers,ki_einwilligung:true},my.signal);
+    const {text,truncated}=await postJSON(API_TEXT,{answers:state.answers,ki_einwilligung:true,ki_text_version:KI_TEXT_VERSION},my.signal);
     state.text=text.trim(); ta.value=state.text;
     status.textContent= truncated?"Der Text wurde gekürzt. Bitte prüfen Sie das Ende.":"Fertig. Bitte lesen Sie den Text und ändern Sie alles, was nicht stimmt.";
   }catch(e){
@@ -363,7 +363,7 @@ function renderResult(){
       <button class="btn-textlink" id="regen">Neu formulieren</button>
     </div>
     <div class="bw-ki" id="kiLaterBox" hidden>
-      <label class="bw-check"><input type="checkbox" id="kiLater"> <span>Doch mit KI formulieren lassen. Ich bin einverstanden, dass meine Antworten dafür an den KI-Dienst Anthropic (USA) übermittelt werden.</span></label>
+      <label class="bw-check"><input type="checkbox" id="kiLater"> <span><strong>Doch mit KI formulieren lassen.</strong> Ich willige ein, dass meine Antworten, einschließlich gegebenenfalls darin enthaltener Gesundheitsdaten, zur Erstellung eines Bewertungsvorschlags an den KI-Dienst Anthropic (USA) übermittelt und dort verarbeitet werden. Weitere Informationen finden Sie in unserer <a href="../datenschutz.html" target="_blank">Datenschutzerklärung</a>.</span></label>
     </div>
   </section>`);
   const internNote=sendInternIfNeeded();

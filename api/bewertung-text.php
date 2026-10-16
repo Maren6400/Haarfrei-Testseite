@@ -14,6 +14,8 @@ if (!$apiKey || strpos($apiKey, 'HIER-EINTRAGEN') !== false) {
 
 $d = lies_json();
 if (($d['ki_einwilligung'] ?? false) !== true) antwort(400, ['ok' => false, 'fehler' => 'Einwilligung fehlt']);
+// Nachweis der Einwilligung (Art. 7 Abs. 1 DSGVO) – ohne Inhalte, ohne IP
+protokolliere_einwilligung('KI-Einwilligung erteilt', 'Einwilligungstext Version ' . (preg_match('/^\d{1,3}$/', (string) ($d['ki_text_version'] ?? '')) ? $d['ki_text_version'] : 'unbekannt'));
 $a = is_array($d['answers'] ?? null) ? $d['answers'] : [];
 
 // Antworten säubern und kürzen
@@ -22,7 +24,7 @@ $zone = [];
 foreach ((is_array($a['zone'] ?? null) ? $a['zone'] : []) as $z) {
     if (in_array($z, $erlaubteZonen, true) && !in_array($z, $zone, true)) $zone[] = $z;
 }
-$felder = ['vorher', 'beratung', 'behandlung', 'veraenderung', 'wer', 'zoegern', 'besser'];
+$felder = ['vorher', 'beratung', 'behandlung', 'veraenderung', 'team', 'zoegern', 'besser'];
 foreach ($felder as $k) $a[$k] = kuerze($a[$k] ?? '', 1000);
 $besserScope = ($a['besserScope'] ?? 'review') === 'intern' ? 'intern' : 'review';
 
@@ -34,7 +36,7 @@ $map = [
     'beratung'     => 'Beratung',
     'behandlung'   => 'Behandlung (Schmerz, Dauer, Atmosphäre)',
     'veraenderung' => 'Veränderung bisher',
-    'wer'          => 'Behandelt von',
+    'team'         => 'Betreuung durch das Team',
     'zoegern'      => 'Rat an Zögernde',
 ];
 foreach ($map as $k => $label) if ($a[$k] !== '') $lines[] = "$label: {$a[$k]}";
@@ -51,7 +53,7 @@ Strenge Regeln:
 - Ich-Form, natürliches Deutsch, wie ein echter Mensch schreibt. Keine Werbesprache, keine Keywords wie "beste Laser-Haarentfernung in Trier", keine Emojis, keine Hashtags, keine Überschrift, keine Sternangabe.
 - Füge keine eigenen Aussagen, Gefühle, Lob, Fazits oder Zusammenfassungen hinzu, die nicht in den Antworten stehen (z. B. kein "ich bin wirklich zufrieden", "es lohnt sich", "sehr professionell", "gehört der Vergangenheit an", "hilft, sich sicherer zu fühlen"). Du darfst Antworten sprachlich glätten und verbinden, aber keinen Inhalt ergänzen.
 - Enthält eine Antwort Kritik, bleibt sie sachlich im Text.
-- Nenne einen Mitarbeiternamen nur, wenn er in den Antworten steht. Steht er dort, muss er im Text vorkommen, und zwar nur als Tatsache (z. B. "Behandelt hat mich Anna."), ohne ihn zu bewerten, außer die Person hat selbst etwas über die Mitarbeiterin geschrieben.
+- Nenne keine Namen von Mitarbeiterinnen oder anderen Personen. Steht dennoch ein Name in den Antworten, schreibe stattdessen neutral "das Team" oder "die Mitarbeiterin".
 - Gib nur den Bewertungstext aus, ohne Einleitung oder Anmerkung.';
 
 $userPrompt = "Antworten:\n" . implode("\n", $lines);

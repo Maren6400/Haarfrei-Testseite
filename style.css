@@ -197,7 +197,7 @@ button { cursor: none; font-family: inherit; }
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 4rem; align-items: center;
 }
-.hero-left {}
+.hero-left { position: relative; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   border: 1.5px solid var(--border-strong);
@@ -239,6 +239,18 @@ button { cursor: none; font-family: inherit; }
 .stat-label { font-size: 0.68rem; letter-spacing: 0.5px; color: var(--text-dim); text-transform: uppercase; line-height: 1.4; margin-top: 3px; }
 .stat-divider { width: 1px; height: 36px; background: linear-gradient(180deg, transparent, var(--primary-light), transparent); }
 .hero-tagline { font-size: 0.62rem; color: var(--text-dim); text-align: center; margin-top: 24px; margin-bottom: 0; font-weight: 400; letter-spacing: 0.3px; }
+/* Siegel: auf Höhe des Badges "Premium Laser Studio", als Paar mittig unter dem Nav-Button "Termin buchen" */
+.hero-siegel { position: absolute; top: -2px; right: calc(-100% - 4rem - (2rem - clamp(0px, calc(682px - 50vw), 2rem))); width: 162px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.hero-siegel img { height: 38px; width: auto; display: block; opacity: 0.9; }
+/* Rahmen um "Frauen kaufen bei Frauen" – gleiche Form wie der Rahmen im "Wirtschaft widerspricht"-Siegel */
+.hero-siegel .siegel-rahmen { box-sizing: border-box; height: 33px; width: 52px; margin: 0 2.5px; padding: 2px 3px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #1B1826; border-radius: 3px; opacity: 0.9; }
+.hero-siegel .siegel-rahmen img { height: 100%; width: auto; max-width: 100%; object-fit: contain; opacity: 1; }
+/* Hinweis beim Überfahren der Siegel */
+.hero-siegel .siegel-link { position: relative; }
+.hero-siegel .siegel-link::after { content: attr(data-tip); position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-4px); white-space: nowrap; background: var(--text, #1B1826); color: #fff; font-size: 0.75rem; letter-spacing: 0.3px; line-height: 1; padding: 7px 10px; border-radius: 6px; box-shadow: var(--shadow-sm); opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; z-index: 5; }
+.hero-siegel .siegel-link:hover::after, .hero-siegel .siegel-link:focus-visible::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+.hero-siegel .siegel-link:last-child::after { left: auto; right: 0; transform: translateY(-4px); }
+.hero-siegel .siegel-link:last-child:hover::after, .hero-siegel .siegel-link:last-child:focus-visible::after { transform: translateY(0); }
 
 .hero-right {
   display: flex; flex-direction: column; gap: 1.5rem;
@@ -950,6 +962,61 @@ button { cursor: none; font-family: inherit; }
   font-size: 0.78rem; color: var(--text-faint); font-style: italic;
 }
 
+
+/* ── VORHER / NACHHER SCHIEBER ── */
+.vn-wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 4rem; align-items: center; }
+.vn-text .section-desc { max-width: 30rem; margin-bottom: 2rem; }
+.vn-stage { max-width: 560px; width: 100%; margin-left: auto; }
+.vn-slider {
+  --pos: 50%; --ar: 0.8;
+  position: relative; width: 100%; aspect-ratio: var(--ar);
+  border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+  background: var(--primary-ultra); touch-action: pan-y; user-select: none;
+  transition: aspect-ratio 0.35s ease;
+}
+.vn-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+.vn-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.vn-line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 3px; margin-left: -1.5px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.25); pointer-events: none; }
+.vn-knob {
+  position: absolute; top: 50%; left: 50%; width: 52px; height: 52px; margin: -26px 0 0 -26px;
+  border-radius: 50%; background: #fff; color: var(--primary); display: flex; align-items: center; justify-content: center;
+  font-size: 1.15rem; box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+.vn-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.vn-badge {
+  position: absolute; top: 16px; padding: 8px 16px; border-radius: 999px;
+  background: rgba(255,255,255,0.88); color: var(--dark); backdrop-filter: blur(6px);
+  font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; pointer-events: none;
+}
+.vn-badge-l { left: 16px; } .vn-badge-r { right: 16px; }
+.vn-zone {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); padding: 8px 20px; border-radius: 999px;
+  background: var(--primary); color: #fff; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; pointer-events: none; white-space: nowrap;
+}
+.vn-cap { margin-top: 14px; text-align: center; font-size: 0.82rem; color: var(--text-dim); letter-spacing: 0.02em; }
+.vn-thumbs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; }
+.vn-thumb {
+  position: relative; padding: 0; border: 2px solid transparent; border-radius: 12px; overflow: hidden;
+  background: #fff; cursor: pointer; box-shadow: var(--shadow-sm, 0 2px 8px rgba(0,0,0,0.08)); aspect-ratio: 1/1.1;
+  display: flex; flex-direction: column; justify-content: flex-end; font-family: inherit;
+}
+.vn-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.2s; }
+.vn-thumb span {
+  position: relative; padding: 6px 2px; background: rgba(255,255,255,0.92); color: var(--text-dim);
+  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; text-align: center;
+}
+.vn-thumb:hover img, .vn-thumb.is-active img { opacity: 1; }
+.vn-thumb.is-active { border-color: var(--primary); }
+.vn-thumb.is-active span { color: var(--dark); font-weight: 500; }
+@media (max-width: 900px) {
+  .vn-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+  .vn-stage { margin: 0 auto; }
+}
+@media (max-width: 480px) {
+  .vn-thumb span { font-size: 0.55rem; letter-spacing: 0.04em; }
+  .vn-badge { font-size: 0.56rem; letter-spacing: 0.06em; padding: 6px 10px; }
+}
+
 /* ── PROBE SECTION ── */
 .probe-section {
   background: var(--dark);
@@ -1076,6 +1143,7 @@ button { cursor: none; font-family: inherit; }
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-siegel { right: 0; }
   .hero-right { align-items: center; }
   .hero-card { max-width: 100%; }
   .hero-photo { height: 420px; }
@@ -1135,6 +1203,12 @@ button { cursor: none; font-family: inherit; }
   .hero-sub    { order: 4; }
   .hero-actions { order: 5; }
   .hero-stats  { order: 6; }
+  .hero-siegel { position: static; order: 7; width: auto; align-self: flex-start; justify-content: flex-start; gap: 12px; }
+  /* Zahlen als 2-Spalten-Raster: Strich unter Strich */
+  .hero-stats { align-self: flex-start; display: grid; grid-template-columns: max-content 1px max-content; column-gap: 1.5rem; row-gap: 1.5rem; align-items: center; }
+  .hero-stats > .stat-divider:nth-child(4) { display: none; }
+  .hero-siegel > a > img[src$=".svg"] { height: 40px; }
+  .hero-siegel .siegel-rahmen { height: 34.7px; width: 54.7px; margin: 0 2.6px; }
   .hero-left > h2, .hero-left > p:not(.hero-sub) { display: none; }
   .hero-photo-wrap { max-width: 100%; }
   .hero-photo { height: 250px; min-height: unset; max-height: 250px; object-fit: cover; object-position: top center; }

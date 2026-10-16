@@ -7,6 +7,7 @@
 (function () {
   var STORAGE_KEY = 'hf_consent_v2';
   var GA_ID = 'G-C786GT03VX';
+  var ADS_ID = 'AW-1066290945';
   var FB_ID = '765528657266056';
   var OAI_PIXEL_ID = 'HHuEBuATcivXCVoXxgcySe';
 
@@ -47,20 +48,54 @@
     return consent;
   }
 
+  /* ── Google Consent Mode v2 ──
+     Standard: alles abgelehnt. gtag.js (Google-Server) wird erst geladen,
+     wenn Statistik oder Marketing erlaubt wurde (Basic Consent Mode). */
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+
+  function updateGoogleConsent(consent) {
+    var ads = consent.marketing ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      ad_storage: ads,
+      ad_user_data: ads,
+      ad_personalization: ads,
+      analytics_storage: consent.statistics ? 'granted' : 'denied'
+    });
+  }
+
+  function loadGtagLibrary(id) {
+    if (window.__hfGtagLoaded) return;
+    window.__hfGtagLoaded = true;
+    gtag('js', new Date());
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(s);
+  }
+
   /* ── Tracker-Loader ── */
 
   function loadGA4() {
     if (window.__hfGA4Loaded) return;
     window.__hfGA4Loaded = true;
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
+    loadGtagLibrary(GA_ID);
     gtag('config', GA_ID);
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    document.head.appendChild(s);
+  }
+
+  function loadGoogleAds() {
+    if (window.__hfAdsLoaded) return;
+    window.__hfAdsLoaded = true;
+    loadGtagLibrary(ADS_ID);
+    gtag('config', ADS_ID);
   }
 
   function loadMetaPixel() {
@@ -121,7 +156,9 @@
 
   function applyTrackers(consent) {
     if (!consent) return;
+    updateGoogleConsent(consent);
     if (consent.statistics) loadGA4();
+    if (consent.marketing) loadGoogleAds();
     if (consent.marketing) loadMetaPixel();
     if (consent.marketing) loadOpenAIPixel();
     if (consent.externalMedia) revealMediaEmbeds();
@@ -180,7 +217,7 @@
                 '<span class="hf-consent-switch-knob"></span>' +
               '</button>' +
             '</div>' +
-            '<p>Steuert Meta Pixel (und künftig weitere Marketing-Dienste).</p>' +
+            '<p>Steuert Google Ads (Conversion-Messung), Meta Pixel und weitere Marketing-Dienste.</p>' +
           '</div>' +
           '<div class="hf-consent-category">' +
             '<div class="hf-consent-category-head">' +

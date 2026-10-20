@@ -300,15 +300,21 @@ function answeredCount(){
 
 function fallbackText(){
   const a=state.answers, parts=[];
-  const t=s=>{s=(s||"").trim(); if(!s) return ""; return /[.!?]$/.test(s)?s:s+".";};
-  if(a.zone.length) parts.push(`Ich lasse bei Haarfrei-Trier ${a.zone.join(" und ")} behandeln.`);
-  if(t(a.vorher)) parts.push(t(a.vorher));
-  if(t(a.beratung)) parts.push("Zur Beratung: "+t(a.beratung));
-  if(t(a.behandlung)) parts.push(t(a.behandlung));
-  if(t(a.veraenderung)) parts.push(t(a.veraenderung));
-  if(t(a.team)) parts.push("Zur Betreuung durch das Team: "+t(a.team));
-  if(t(a.zoegern)) parts.push(t(a.zoegern));
-  if((a.besser||"").trim() && a.besserScope==="review") parts.push("Verbesserungswürdig: "+t(a.besser));
+  // Satz säubern: Anfang groß, Satzzeichen am Ende
+  const t=s=>{s=(s||"").trim(); if(!s) return ""; s=s.charAt(0).toUpperCase()+s.slice(1); return /[.!?]$/.test(s)?s:s+".";};
+  const kurz=s=>(s||"").trim().split(/\s+/).length<5;
+  // Kurze Stichworte bekommen eine Einleitung, ganze Sätze bleiben, wie sie sind
+  const satz=(s,wort,einleitung)=>{ if(!t(s)) return ""; return (kurz(s) && !new RegExp(wort,"i").test(s)) ? einleitung+s.trim().replace(/[.!?]?$/,".") : t(s); };
+  if(a.zone.length){ const z=a.zone.length>1 ? a.zone.slice(0,-1).join(", ")+" und "+a.zone[a.zone.length-1] : a.zone[0]; parts.push(`Ich lasse bei Haarfrei-Trier ${z} behandeln.`); }
+  if(t(a.vorher)) parts.push(satz(a.vorher,"vorher|gestört|früher","Vorher hat mich gestört: "));
+  if(t(a.beratung)) parts.push(satz(a.beratung,"beratung|beraten","Die Beratung: "));
+  if(t(a.behandlung)) parts.push(satz(a.behandlung,"behandlung","Bei der Behandlung: "));
+  if(t(a.veraenderung)) parts.push(satz(a.veraenderung,"veränder|inzwischen|jetzt|heute","Inzwischen: "));
+  if(t(a.team)) parts.push(satz(a.team,"team","Das Team: "));
+  if(t(a.zoegern)) parts.push(satz(a.zoegern,"zöger|empfehl|rat","Mein Rat an alle, die noch zögern: "));
+  // Verbesserungsvorschlag nur, wenn es wirklich einer ist
+  const keinVorschlag=/^\s*(nichts|nix|nein|keine?[sn]?|nö|-+|alles\s+(ist\s+|war\s+)?(super|gut|toll|top|prima|perfekt|bestens)|passt( alles)?|alles (passt|bestens))\s*[.!]*\s*$/i;
+  if((a.besser||"").trim() && a.besserScope==="review" && !keinVorschlag.test(a.besser)) parts.push("Was man noch verbessern könnte: "+a.besser.trim().replace(/[.!?]?$/,"."));
   return parts.join(" ");
 }
 

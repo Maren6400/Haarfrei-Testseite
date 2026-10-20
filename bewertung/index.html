@@ -71,6 +71,7 @@
     .bw-preview { border: 1.5px dashed var(--border-strong); border-radius: var(--radius-lg); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
     .bw-preview .who { font-weight: 500; font-size: 0.88rem; color: var(--text-dim); }
     .bw-preview .st { color: #E0A526; letter-spacing: 2px; }
+    .bw-note a { text-decoration: underline; }
     .bw-note { font-size: 0.85rem; color: var(--text-dim); background: var(--primary-ultra); border-left: 3px solid var(--primary-light); padding: 8px 12px; border-radius: 4px; }
     .bw-ki { background: var(--primary-ultra); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; }
     .bw-ki[hidden] { display: none; }
@@ -377,6 +378,7 @@ function renderResult(){
       <li>Den Text in das Feld einfügen (lange tippen, „Einfügen“).</li>
       <li>Auf „Posten“ tippen.</li>
     </ol>
+    <p class="bw-note">Bei Google erscheint der Name Ihres Google-Kontos. Möchten Sie das nicht, können Sie Ihre Bewertung unten auch auf haarfrei-trier.de veröffentlichen, nur mit Vorname und Initial. Alternativ können Sie Ihren Namen in Ihrem Google-Konto ändern (<a href="https://myaccount.google.com/personal-info" target="_blank" rel="noopener">myaccount.google.com</a> → „Persönliche Daten“ → „Name“). Er ändert sich dann allerdings in allen Google-Diensten, zum Beispiel auch in Gmail.</p>
     <div class="bw-divider">oder</div>
     <button class="btn btn-outline btn-full" id="siteToggle" aria-expanded="false">Kein Google-Konto? Auf haarfrei-trier.de veröffentlichen</button>
     <div id="site" hidden style="flex-direction:column;gap:14px">

@@ -1,0 +1,6 @@
+# Konfiguration, Hilfsdateien und versteckte Dateien sperren
+<FilesMatch "^(\.|_)">
+  Require all denied
+</FilesMatch>
+Options -Indexes
+Header set X-Robots-Tag "noindex, nofollow"

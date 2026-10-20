@@ -1,1 +1,6 @@
 .DS_Store
+
+# Bewertungsseite: Schlüssel niemals ins Repo
+bewertung-config.php
+.bewertung-config.php
+api/.bewertung-config.php

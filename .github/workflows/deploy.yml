@@ -28,3 +28,6 @@ jobs:
             **/.git*
             **/.git*/**
             .github/**
+            _entwuerfe/**
+            _vorlage/**
+            api/bewertung-config.beispiel.php

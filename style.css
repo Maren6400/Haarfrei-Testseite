@@ -656,6 +656,8 @@ button { cursor: none; font-family: inherit; }
 .contact-form h3 { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 400; color: var(--dark); margin-bottom: 2rem; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.2rem; }
+.form-status { margin-top: 1rem; font-size: 0.95rem; line-height: 1.5; color: var(--primary); text-align: center; }
+.form-status.is-error { color: #b3261e; }
 .form-group label { font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); font-weight: 500; }
 .form-group input, .form-group textarea, .form-group select {
   background: var(--off-white); border: 1.5px solid var(--border);

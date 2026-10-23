@@ -152,10 +152,12 @@
                 </select>
               </div>
               <div class="form-group"><label>Nachricht</label><textarea name="nachricht" rows="5" placeholder="Ihre Nachricht..." required></textarea></div>
+              <div style="position:absolute;left:-9999px;" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
               <button type="submit" class="btn btn-primary btn-full">
                 <span>Nachricht senden</span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
             </form>
           </div>
         </div>

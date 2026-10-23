@@ -166,7 +166,15 @@ document.querySelectorAll('#contactForm').forEach(form => {
     const btn = form.querySelector('button[type="submit"]');
     const span = btn?.querySelector('span');
     if (!span) return;
+    const status = form.querySelector('.form-status');
+    const zeige = (text, fehler) => {
+      if (!status) return;
+      status.textContent = text;
+      status.classList.toggle('is-error', !!fehler);
+      status.hidden = false;
+    };
     span.textContent = 'Wird gesendet…'; btn.disabled = true;
+    if (status) status.hidden = true;
     fetch(form.action, { method: 'POST', body: new FormData(form) })
       .then(r => r.json())
       .then(data => {
@@ -174,15 +182,18 @@ document.querySelectorAll('#contactForm').forEach(form => {
           span.textContent = 'Nachricht gesendet ✓';
           btn.style.background = 'var(--primary-2)';
           form.reset();
+          zeige(data.message || 'Vielen Dank für Ihre Nachricht! Wir melden uns so schnell wie möglich bei Ihnen.', false);
           setTimeout(() => { span.textContent = 'Nachricht senden'; btn.disabled = false; btn.style.background = ''; }, 3000);
         } else {
-          span.textContent = 'Fehler – bitte erneut versuchen';
+          span.textContent = 'Nachricht senden';
           btn.disabled = false;
+          zeige(data.message || 'Fehler – bitte erneut versuchen.', true);
         }
       })
       .catch(() => {
-        span.textContent = 'Fehler – bitte erneut versuchen';
+        span.textContent = 'Nachricht senden';
         btn.disabled = false;
+        zeige('Fehler – bitte erneut versuchen.', true);
       });
   });
 });

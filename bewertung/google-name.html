@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ihr Wunschname für Google-Bewertungen – Haarfrei-Trier</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../fonts/fonts.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../consent.css" />
+  <script src="../consent.js" defer></script>
+  <style>
+    body, button, a, .btn, .chip, label { cursor: auto; }
+    button, a, .btn, .chip, label, .stars button { cursor: pointer; }
+    .cursor, .cursor-follower { display: none !important; }
+
+    .bw-hero { padding: 150px 0 60px; }
+    .bw-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+    .bw-hero p { margin-bottom: 0; }
+
+    .bw-section { padding: 48px 0 90px; background: var(--primary-xtra); }
+    .bw-wrap { max-width: 600px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 18px; }
+
+    .bw-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .bw-stepcount { font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+    .bw-bar { display: grid; grid-template-columns: repeat(8, 1fr); gap: 5px; }
+    .bw-bar[hidden] { display: none; }
+    .bw-bar i { height: 4px; border-radius: 2px; background: var(--primary-pale); }
+    .bw-bar i.on { background: var(--primary); }
+
+    .bw-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 30px 24px; display: flex; flex-direction: column; gap: 16px; }
+    .bw-card h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2rem); line-height: 1.2; color: var(--dark); }
+    .bw-card p { color: var(--text); }
+    .bw-hint { color: var(--text-dim) !important; font-size: 0.9rem; }
+    .bw-lbl { font-weight: 500; font-size: 0.9rem; color: var(--dark); }
+
+    .bw-card textarea, .bw-card input[type=text] {
+      width: 100%; font: inherit; font-weight: 400; color: var(--text); background: var(--off-white);
+      border: 1.5px solid var(--border-strong); border-radius: var(--radius); padding: 12px 14px;
+    }
+    .bw-card textarea { min-height: 130px; resize: vertical; line-height: 1.6; }
+    .bw-card textarea:focus, .bw-card input:focus, .bw-card button:focus-visible, .bw-card a:focus-visible {
+      outline: 2px solid var(--primary); outline-offset: 2px;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { font: inherit; font-size: 0.9rem; font-weight: 400; border: 1.5px solid var(--border-strong); background: var(--white); color: var(--text); border-radius: 999px; padding: 6px 16px; transition: all .2s; }
+    .chip:hover { border-color: var(--primary); }
+    .chip[aria-pressed="true"] { background: var(--primary); border-color: var(--primary); color: var(--white); }
+
+    .bw-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .bw-row.end { justify-content: space-between; }
+    .bw-card .btn { justify-content: center; text-align: center; }
+    .bw-card .btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-textlink { background: none; border: none; color: var(--text-dim); padding: 0.9rem 4px; font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; }
+    .btn-textlink:hover { color: var(--primary); }
+
+    .bw-radio { display: flex; flex-direction: column; gap: 8px; font-size: 0.92rem; margin-top: 12px; }
+    .bw-radio label, .bw-check { display: flex; gap: 10px; align-items: flex-start; }
+    .bw-radio input, .bw-check input { margin-top: 5px; accent-color: var(--primary); width: 16px; height: 16px; flex-shrink: 0; }
+
+    .bw-status { font-size: 0.88rem; color: var(--text-dim); min-height: 1.4em; }
+    .bw-ok { font-size: 0.9rem; color: var(--primary); font-weight: 500; }
+    .bw-err { font-size: 0.9rem; color: #a13a2c; }
+    .bw-divider { display: flex; align-items: center; gap: 12px; color: var(--text-faint); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+    .bw-divider::before, .bw-divider::after { content: ""; flex: 1; height: 1px; background: var(--border-strong); }
+    .stars { display: flex; gap: 4px; }
+    .stars button { font-size: 30px; line-height: 1; background: none; border: none; color: var(--primary-pale); padding: 2px; }
+    .stars button.on { color: #E0A526; }
+    .bw-preview { border: 1.5px dashed var(--border-strong); border-radius: var(--radius-lg); padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .bw-preview .who { font-weight: 500; font-size: 0.88rem; color: var(--text-dim); }
+    .bw-preview .st { color: #E0A526; letter-spacing: 2px; }
+    .bw-note a { text-decoration: underline; }
+    .bw-note strong { font-weight: 500; color: var(--dark); }
+    .bw-note { font-size: 0.85rem; color: var(--text-dim); background: var(--primary-ultra); border-left: 3px solid var(--primary-light); padding: 8px 12px; border-radius: 4px; }
+    .bw-ki { background: var(--primary-ultra); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; }
+    .bw-ki[hidden] { display: none; }
+    .bw-ki a { text-decoration: underline; }
+    .bw-ki strong { font-weight: 500; color: var(--dark); }
+    .bw-legal { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+    .bw-legal a { text-decoration: underline; }
+    ol.bw-how { margin: 0; padding-left: 20px; font-size: 0.9rem; display: flex; flex-direction: column; gap: 4px; color: var(--text-dim); }
+    .bw-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    @media (prefers-reduced-motion: no-preference) { .bw-card { animation: bwIn .25s ease-out; } @keyframes bwIn { from { transform: translateY(6px); opacity: .6; } to { transform: none; opacity: 1; } } }
+    @media (max-width: 480px) { .bw-card { padding: 24px 18px; } .bw-row.end > .btn-primary.btn-full { width: 100%; } }
+    .gn-wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; display: flex; flex-direction: column; gap: 22px; }
+    .gn-intro { font-size: 1rem; color: var(--text); }
+    .gn-hinweis { font-size: 0.85rem; color: var(--text-dim); background: var(--primary-ultra); border-left: 3px solid var(--primary-light); padding: 10px 14px; border-radius: 4px; }
+    .gn-step { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 22px; display: grid; grid-template-columns: 200px 1fr; gap: 22px; align-items: start; }
+    .gn-step img { width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); }
+    .gn-nr { display: inline-flex; width: 30px; height: 30px; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 600; align-items: center; justify-content: center; margin-bottom: 8px; }
+    .gn-step h2 { font-family: var(--font-serif); font-weight: 400; font-size: 1.5rem; color: var(--dark); margin-bottom: 8px; }
+    .gn-step p { color: var(--text); font-size: 0.95rem; }
+    .gn-step strong { font-weight: 500; color: var(--dark); }
+    .gn-gut { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 20px 22px; }
+    .gn-gut h2 { font-family: var(--font-serif); font-weight: 400; font-size: 1.4rem; color: var(--dark); margin-bottom: 6px; }
+    .gn-zurueck { text-align: center; }
+    @media (max-width: 600px) { .gn-step { grid-template-columns: 1fr; } .gn-step img { max-width: 260px; margin: 0 auto; display: block; } }
+  </style>
+</head>
+<body>
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo"><img src="../Logos/Logo_Schrift_grün.png" alt="Haarfrei-Trier" /></a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html" class="nav-link nav-mobile-only">Home</a>
+        <a href="../einrichtung-team.html" class="nav-link">Studio &amp; Team</a>
+        <a href="../behandlungsmethoden.html" class="nav-link">Methoden</a>
+        <a href="../preise.html" class="nav-link">Preise</a>
+        <a href="../gutscheine.html" class="nav-link">Gutscheine</a>
+        <div class="nav-item"><a href="../beckenbodenstuhl.html" class="nav-link">Beckenbodenstuhl</a><div class="nav-dropdown"><a href="../beckenbodenstuhl.html#preise">Preise</a></div></div>
+        <a href="../faq.html" class="nav-link">FAQ</a>
+        <a href="../kontakt.html" class="nav-link">Kontakt</a>
+        <a href="https://www.etermin.net/haarfrei-trier" target="_blank" class="nav-link nav-cta">Termin buchen</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero bw-hero">
+    <div class="container"><div class="page-hero-content">
+      <h1>Ihr <em>Wunschname</em> für Bewertungen</h1>
+      <p>Kurzanleitung für Google Maps</p>
+    </div></div>
+  </section>
+
+  <section class="bw-section">
+    <div class="gn-wrap">
+      <p class="gn-intro">So richten Sie bei Google einen eigenen öffentlichen Anzeigenamen und ein Bild für Ihre Bewertungen ein, zum Beispiel Ihre Initialen. Ihr normales Google-Konto bleibt unverändert.</p>
+      <p class="gn-hinweis">Die Schritte gelten, wenn die Option in Ihrem Konto angezeigt wird. Je nach App-Version und Konto können Ansicht und Verfügbarkeit abweichen. Die Bilder sind Beispielansichten vom iPhone (Stand: Oktober 2026).</p>
+      <div class="gn-step">
+        <img src="google-name/schritt-1.jpg" alt="Schritt 1: Profil öffnen" width="540" height="1175" loading="lazy">
+        <div><span class="gn-nr">1</span><h2>Profil öffnen</h2><p>Öffnen Sie <strong>Google Maps</strong> und tippen Sie oben rechts auf Ihr <strong>Profilbild</strong>. Wählen Sie <strong>Mein Profil</strong> und anschließend <strong>Profil bearbeiten</strong>.</p></div>
+      </div>
+      <div class="gn-step">
+        <img src="google-name/schritt-2.jpg" alt="Schritt 2: Option aktivieren" width="540" height="1175" loading="lazy">
+        <div><span class="gn-nr">2</span><h2>Option aktivieren</h2><p>Setzen Sie das <strong>Häkchen</strong> bei „Einen benutzerdefinierten Anzeigenamen und ein benutzerdefiniertes Bild für Beiträge verwenden“.</p></div>
+      </div>
+      <div class="gn-step">
+        <img src="google-name/schritt-3.jpg" alt="Schritt 3: Bild und Name wählen" width="540" height="1175" loading="lazy">
+        <div><span class="gn-nr">3</span><h2>Bild und Name wählen</h2><p>Ein <strong>Bild ist erforderlich</strong>. Tippen Sie auf das <strong>Kamerasymbol</strong> und wählen Sie ein beliebiges passendes Motiv, z. B. ein <strong>von Google vorgeschlagenes Bild</strong>. Ein eigenes Foto ist nicht nötig. Geben Sie dann Ihren <strong>Anzeigenamen</strong> ein, z. B. <strong>M.B.</strong></p></div>
+      </div>
+      <div class="gn-step">
+        <img src="google-name/schritt-4.jpg" alt="Schritt 4: Speichern" width="540" height="1175" loading="lazy">
+        <div><span class="gn-nr">4</span><h2>Speichern</h2><p>Prüfen Sie Bild und Anzeigenamen. Tippen Sie anschließend auf <strong>Speichern</strong>.</p></div>
+      </div>
+      <div class="gn-step">
+        <img src="google-name/schritt-5.jpg" alt="Schritt 5: Bestätigen" width="540" height="1175" loading="lazy">
+        <div><span class="gn-nr">5</span><h2>Bestätigen</h2><p>Prüfen Sie die Vorschau und tippen Sie auf <strong>Bestätigen</strong>. Die Änderung ist damit abgeschlossen.</p></div>
+      </div>
+      <div class="gn-gut">
+        <h2>Gut zu wissen</h2>
+        <p>Der neue Anzeigename und das Bild gelten auch für <strong>frühere und zukünftige öffentliche Beiträge</strong> in Google Maps und der Google Suche, einschließlich Bewertungen. Die Aktualisierung kann etwas dauern. Name und Bild Ihres normalen Google-Kontos bleiben unverändert.</p>
+        <p class="bw-hint" style="margin-top:8px">Mehr Informationen: <a href="https://support.google.com/maps/" target="_blank" rel="noopener" style="text-decoration:underline">Google Maps-Hilfe</a></p>
+      </div>
+      <p class="gn-zurueck bw-hint">Fertig? Schließen Sie dieses Fenster und kehren Sie zu Ihrer Bewertung zurück. Ihr Text ist dort noch vorhanden.</p>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="container">
+    <div class="footer-top">
+      <div class="footer-brand"><img src="../Logos/Logo_Schrift_grün.png" alt="Haarfrei-Trier" class="footer-logo-img" /><p>Premium Laser-Haarentfernung in Trier.</p></div>
+      <div class="footer-links"><h4>Studio</h4><a href="../einrichtung-team.html">Team &amp; Studio</a><a href="../behandlungsmethoden.html">Methoden</a><a href="../preise.html">Preise</a>
+          <a href="../beckenbodenstuhl.html">Beckenbodenstuhl</a><a href="../faq.html">FAQ</a></div>
+      <div class="footer-links"><h4>Rechtliches</h4><a href="../impressum.html">Impressum</a><a href="../datenschutz.html#bewertungen">Datenschutz</a><a href="../agb.html">AGB</a><!-- Widerrufsbutton für haarfrei-trier.com -->
+<a id="hbRevocationButton" href="https://connect.haendlerbund.de/widerrufsformular/haarfrei-trier-com/01KTR38Y5P0MH9XJWDP1ZWBXYX" data-shop-id="01KTR38Y5P0MH9XJWDP1ZWBXYX" data-key="Q61YcGO2QGtcY5LELUb3uIAk5S39bNo3" data-preview="false" data-lang="de" rel="noopener" aria-label="Widerrufsformular öffnen" target="_blank"><span>Vertrag widerrufen</span></a>
+<script async src="https://connect.haendlerbund.de/widgets/revocation-button.js"></script></div>
+      <div class="footer-links"><h4>Kontakt</h4><a href="tel:016072176446">0160 / 721 76 46</a><a href="mailto:info@haarfrei-trier.de">info@haarfrei-trier.de</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Haarfrei-Trier</span>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/maren.viergutz/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="4" fill="#1877F2"/>
+            <path d="M16 8h-2a1 1 0 00-1 1v2h3l-.5 3H13v7h-3v-7H8v-3h2V9a4 4 0 014-4h2v3z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/haarfrei_trier/" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+                <stop offset="0%" stop-color="#fdf497"/>
+                <stop offset="45%" stop-color="#fd5949"/>
+                <stop offset="60%" stop-color="#d6249f"/>
+                <stop offset="90%" stop-color="#285AEB"/>
+              </radialGradient>
+            </defs>
+            <rect width="24" height="24" rx="5" fill="url(#ig-grad)"/>
+            <rect x="6" y="6" width="12" height="12" rx="3" fill="none" stroke="white" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+            <circle cx="16.5" cy="7.5" r="0.9" fill="white"/>
+          </svg>
+        </a>
+      </div>
+      <span><a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html#bewertungen">Datenschutz</a> · <a href="#" class="hf-open-consent">Cookie-Einstellungen</a></span>
+    </div>
+  </div></footer>
+<script src="../main.js"></script>
+</body>
+</html>

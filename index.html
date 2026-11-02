@@ -360,6 +360,16 @@
         <div class="t-carousel" id="tCarousel">
           <div class="testimonial-card">
             <div class="t-stars">★★★★★</div>
+            <p>„Ich habe die Achseln und die Bikinizone behandeln lassen. Vorher haben mich eingewachsene Haare, Entzündungen und Rasurpickel gestört, und ich musste meinen Alltag ständig nach der Rasur planen. Beim Erstberatungsgespräch wurde ich super freundlich empfangen und alle meine Fragen wurden zufriedenstellend beantwortet. Bei den Behandlungen gibt sich das Team sehr viel Mühe. Mir war es zu keinem Zeitpunkt unangenehm. Die einzelnen Schritte werden vorher angekündigt und es wird sehr sorgfältig mit viel Feingefühl gearbeitet. Die Haare sind deutlich weniger und feiner geworden, die Abstände zwischen den Rasuren werden immer größer. Spontanes Nachrasieren ist jetzt problemlos möglich, da kein Rasurbrand mehr entsteht. Eingewachsene Haare und Entzündungen gehören der Vergangenheit an. Das bedeutet für mich ein ganz neues Gefühl von Freiheit und Flexibilität. Das gesamte Team ist stets freundlich und herzlich. Ich kann das Studio aus voller Überzeugung weiterempfehlen!“</p>
+            <div class="t-author"><div class="t-avatar">M</div><div><strong>Mira H.</strong><span>Achseln &amp; Bikinizone</span></div></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
+            <p>„Ich lasse bei Haarfrei-Trier Gesicht behandeln. Vorher hat mich gestört: Ständiges Zupfen. Immer freundlich empfangen und gut beraten. Bei der Behandlung: War völlig okay. Es ist zum Glück weniger geworden. Beide sind sehr bemüht dass man sich wohl fühlt. Einfach ausprobieren, es lohnt sich in jedem Fall.“</p>
+            <div class="t-author"><div class="t-avatar">A</div><div><strong>AF</strong><span>Gesicht</span></div></div>
+          </div>
+          <div class="testimonial-card">
+            <div class="t-stars">★★★★★</div>
             <p>„Mein Mann und ich kommen aus Luxemburg und fahren gerne bis nach Trier, weil wir so einen professionellen Service nirgendwo sonst geboten bekommen. Frau Burmeister ist jederzeit erreichbar, nimmt sich Zeit für alle Fragen und erklärt jeden Schritt genau. Klare Empfehlung!"</p>
             <div class="t-author"><div class="t-avatar">F</div><div><strong>Françoise B.</strong><span>Gesicht &amp; Beine</span></div></div>
           </div>
@@ -419,8 +429,37 @@
         resetAuto();
         window.addEventListener('resize', update);
         update();
+
+        // Lange Bewertungen auf ca. 7 Zeilen kürzen, mit "Weiterlesen"
+        function kuerzen(){
+          cards.forEach(function(c){
+            var p = c.querySelector('p'); if(!p) return;
+            p.classList.add('t-clamp');
+            var btn = c.querySelector('.t-mehr');
+            var zuLang = p.scrollHeight > p.clientHeight + 2;
+            if(zuLang && !btn){
+              btn = document.createElement('button');
+              btn.type = 'button'; btn.className = 't-mehr'; btn.textContent = 'Weiterlesen';
+              btn.addEventListener('click', function(){
+                var offen = p.classList.toggle('t-offen');
+                btn.textContent = offen ? 'Weniger anzeigen' : 'Weiterlesen';
+                clearInterval(auto); // beim Lesen nicht weiterblättern
+              });
+              p.after(btn);
+            } else if(!zuLang && btn && !p.classList.contains('t-offen')){ btn.remove(); }
+          });
+        }
+        kuerzen();
+        window.addEventListener('resize', kuerzen);
+        window.addEventListener('load', function(){ kuerzen(); setTimeout(kuerzen, 800); });
+        if(document.fonts && document.fonts.ready) document.fonts.ready.then(kuerzen);
       })();
       </script>
+      <style>
+        #tCarousel .testimonial-card p.t-clamp { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:7; line-clamp:7; overflow:hidden; margin-bottom:0.6rem; }
+        #tCarousel .testimonial-card p.t-clamp.t-offen { display:block; -webkit-line-clamp:unset; line-clamp:unset; overflow:visible; }
+        #tCarousel .t-mehr { background:none; border:none; padding:0; margin:0 0 1.2rem; color:var(--primary); font-size:0.8rem; font-weight:500; text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+      </style>
     </div>
   </section>
 
